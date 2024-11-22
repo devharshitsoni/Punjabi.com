@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Punjabi.com</title>
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" sizes="32x32" />
+    <!-- Corrected path -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@100..900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <!-- Slick CSS from CDN -->
+    <!-- Owl Carousel CSS -->
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+    <!-- Custom CSS -->
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="./assets/css/book.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- Corrected path -->
+</head>
+
+<body>
+    <!-- preloader -->
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+    <!--======================= nav ======================================== -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-center align-items-center outer-div">
+                <div class="outer-div-inner">
+                    <div class="d-flex justify-content-between outer-div-inner-first align-items-center w-100">
+                        <!-- Left Section: Toggle Button and Logo -->
+                        <div class="d-flex align-items-center">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <a class="navbar-brand ms-3" href="#"><img src="./assets/images/logo.png" alt="Logo" /></a>
+                        </div>
+
+                        <!-- Right Section: Language Dropdown and Profile Icon -->
+                        <div class="d-flex align-items-center tnp">
+                            <ul class="navbar-nav translator d-flex d-md-none align-items-center">
+                                <!-- Language Dropdown -->
+                                <li class="nav-item dropdown me-3">
+                                    <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                        id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Pun
+                                    </a>
+                                    <ul class="dropdown-menu header-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Hindi</a></li>
+                                        <li><a class="dropdown-item" href="#">English</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Profile Icon -->
+                            </ul>
+                            <div class="nav-divider mx-2 d-flex d-md-none"></div>
+                            <div class="nav-item d-flex d-lg-none">
+                                <a href="#" class="profile-icon">
+                                    <img src="./assets/images/proflle-icon.svg" alt="Profile" class="rounded-circle"
+                                        width="37" height="37" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Cart Icon (optional) -->
+                        <!-- Uncomment this if you need the cart icon as well -->
+                        <!-- 
+                <a href="#" class="cart-icon d-flex d-md-none ms-3">
+                    <img src="./assets/images/cart.svg" alt="Cart" width="24" height="24" />
+                </a>
+                -->
+                    </div>
+
+                    <div class="d-flex d-md-none justify-content-center w-100 search-div">
+                        <div class="nav-item dropdown d-flex justify-content-center w-100">
+                            <div class="search-bar w-100">
+                                <form class="d-flex w-100" role="search">
+                                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                    <input class="form-control me-2 w-100" type="search" aria-label="Search" />
+                                    <i class="fa-solid fa-microphone mic-icon" onclick="activateMic()"></i>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse d-lg-block justify-content-center px-2" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><span>News</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Culture
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#"> Boliyan </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"> Muhawara </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"> Baby Names </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Literature
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Poetry</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Audio Books</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Kids Section
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Games</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Poem</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Stories</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Essay</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Entertainment
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Radio</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Jokes</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <div class="search-bar">
+                                <form class="d-flex ms-3" role="search">
+                                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                    <input class="form-control me-2" type="search" placeholder="Search"
+                                        aria-label="Search" />
+                                    <i class="fa-solid fa-microphone mic-icon" onclick="activateMic()"></i>
+                                </form>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown ms-2 w-2">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Pun
+                            </a>
+                            <ul class="dropdown-menu header-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Hindi</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">English</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <button class="btn main-btn" type="button">Login</button>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                    <a href="#" class="cart-icon me-3">
+                        <img src="./assets/images/cart.svg" alt="Cart" width="24" height="24" />
+                    </a>
+                </li> -->
+                        <li class="nav-item dropdown">
+                            <a href="#" class="profile-icon">
+                                <img src="./assets/images/proflle-icon.svg" alt="Profile" class="rounded-circle"
+                                    width="40" height="40" />
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- New elements after the nav-items -->
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-start offcanvas-glass d-lg-none" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="">
+                <div class="offcanvas-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <a href="#" class="offcanvas-title" id="offcanvasNavbarLabel"><img src="./assets/images/logo.png"
+                            alt="" /></a>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><span>News</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Culture
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#"> Boliyan </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"> Muhawara </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"> Baby Names </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Literature
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Poetry</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Audio Books</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Kids Section
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Games</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Poem</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Stories</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Essay</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Entertainment
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Radio</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Jokes</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--===================================== end navbar =====================================  -->
+
+    <style>
+        .custom-label {
+            margin-bottom: 0;
+            margin-right: 8px;
+           
+            font-size: 16px;
+            font-family: "Roboto", sans-serif;
+            color: #454545;
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-label span {
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        .custom-select {
+            width: 260px;
+            height: 32px;
+            font-size: 14px;
+            padding: 4px 12px;
+            margin: 0 10px;
+            border-radius: 4px !important;
+        }
+
+        .custom-select-2 {
+            height: 32px;
+            padding: 4px 12px;
+            width: 90px;
+            margin: 6px 5px;
+            border-radius: 4px !important;
+        }
+
+        .calendar-icon {
+            margin: 5px 10px;
+            height: 32px;
+            cursor: pointer;
+        }
+
+        .calendar-label {
+            font-size: 14px;
+            margin-top: 10px;
+            font-family: "Roboto", sans-serif;
+            color: #454545;
+        }
+
+        .months img {
+            height: 14px;
+            width: 14px;
+        }
+
+        .months a {
+            color: #348214;
+            border-right: 1.5px solid #348214;
+            padding: 0 5px;
+            font-size: 14px;
+            font-family: 'Roboto', sans-serif;
+
+
+        }
+
+        .months span {
+            font-size: 14px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            color: #454545;
+        }
+
+        .next {
+            font-weight: bold;
+        }
+
+        .indian-holiday {
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            color: #454545;
+            margin-bottom: 0;
+
+        }
+
+
+
+
+
+
+
+
+        .custom-table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.custom-table thead th {
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    padding: 10px;
+    font-size: 14px;
+    border-top: 2px solid #e0e0e0;
+    border-bottom: 2px solid #e0e0e0;
+    font-family: "Roboto", sans-serif;
+}
+
+.custom-table thead th:nth-child(1),
+.custom-table thead th:nth-child(2),
+.custom-table thead th:nth-child(4) {
+    width: 15%; /* Adjust width for "Date", "Day", and "Type" */
+}
+
+
+.custom-table tbody td {
+    padding: 8px 10px;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    text-align: left; /* Default alignment */
+}
+
+/* Alignment adjustments for specific columns */
+.custom-table tbody td:nth-child(4) {
+    text-align: right; /* Align "Type" to the right */
+    padding-right: 20px; /* Ensure padding for consistent spacing */
+}
+
+.custom-table tbody tr:nth-child(even) {
+    background-color: #f4f4f4; /* Zebra striping for rows */
+}
+
+.custom-table tbody tr:hover {
+    background-color: #e9ecef; /* Hover effect */
+}
+.custom-table tbody td:nth-child(2),
+.custom-table tbody td:nth-child(3),
+.custom-table tbody td:nth-child(4){
+font-weight: 400;
+font-family: 'Roboto',sans-serif;
+font-size: 14px;
+}
+/* Specific styling for the "Name" column */
+.custom-table tbody td:nth-child(3) {
+    color: #348214; /* Off-green color */
+    font-weight: 400; /* Make the text bold for emphasis */
+}
+/* Specific styling for the "Name" column */
+.custom-table tbody td:nth-child(1) {
+    
+    font-weight: bold; /* Make the text bold for emphasis */
+}
+
+
+
+
+
+        .ads-banner {
+            background-color: #2e356b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            min-height: 400px;
+        }
+
+        .holiday-header {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+@media  (max-width:768px) {
+    .filtering-options{
+        display: flex;
+        flex-direction: column;
+    }
+    .custom-select{
+        margin: 10px 0;
+        width: 200px;
+    }
+    .year-filter{
+        margin-top: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    .custom-select-2{
+        margin-top: 10px;
+        margin-left: 0;
+    }
+    .calendar-icon{
+        margin-top: 10px;
+    }
+    .calendar-label{
+        width: 30%;
+    }
+}
+
+    </style>
+
+    <div class="container my-4">
+        <h2 class="text-center heading mb-2 text-uppercase">Holiday in punjab</h2>
+        <p class="text-center story-para mb-4">
+            ਲੱਗੇ ਰੱਖਦੀ ਚੰਗੇ ਅਨੁਕੂਲ ਦੁਆਰਾ ਸਾਰੇ ਗੁੰਜਾਉਣ ਰਿਹਾ। ਸਾਰੇ ਹੁੰਦੀ ਅੱਖਾਂ ਸਿਖਰ
+            ਤੇਰੀਆਂ ਦੁਪਹਿਰ। ਗੱਭਰੂ ਹਾਥੀ ਚਾਹੀਦਾ ਬਣਾਈ ਉਨ੍ਹਾਂ ਧਿਆਨ ਘੁੰਮਦਾ। ਚਿੜੀ ਬੱਚਤ ਹਾਥੀ
+            ਉਹਨਾਂ ਵੱਖ-ਵੱਖ ਤੁਸੀਂ ਡਾਕਘਰਾਂ। ਭੱਜੇ ਹਾਥੀ ਕੀਤਾ ਸ਼ਾਨਾਂ। ਚੀਜ਼ਾਂ ਬਚਪਨ ਸਾਵਧਾਨੀ
+            ਮੁਸ਼ਕਿਲਾਂ ਮੌਕਾ ਕੱਢਿਆ ਬਿਗਲ ਚੁੱਕਣ ਡੰਡਿਆਂ। ਵਾਂਝ ਵੀਣਾਂ ਸਾਰੀ ਆਪਣੇ ਸਰੀਰਕ।
+            ਉਦੇਸ਼ ਹੁੰਦੀ ਕਰਦਿਆਂ ਹੋਇਆ। ਸਾਰੇ ਨਹੀਂ ਰੋਕਣ ਕਿਵੇਂ। ਮੰਗੀਏ ਜਿਵੇਂ ਕੀਤਾ ਪਾਣੀ।
+            ਆਪਣੀ ਬਹੁਤ ਪਾਣੀ ਪਿੰਡਾ ਪ੍ਰਕਾਰ ਸਥਿਤੀ ਆਪਣੀ ਖਿਸਕਣ ਭੈਣਾਂ। ਡੱਡੂ ਕੁੱਝ ਹਾਥੀ ਕਿਸੇ
+            ਆਪਣੇ ਤੋੜਦਾ–ਮਰੋੜਦਾ। ਚਿੰਘਾੜਤਾ ਅਮਰੀਕਾ ਪੱਧਰ ਨਹੀਂ। ਸ਼ੁਰੂ ਚਿੜੀ ਪਿੱਛੋਂ ਬਹੁਤ ਬਣਦੇ
+            ਕਸਰਤ ਆਪਣੇ ਸਾਰੇ ਸਮਝਾਈ। ਲੱਗੇ ਬੱਚਤ ਸਹਾਇਤਾ ਆਲ੍ਹਣੇ। ਜੀਵਨ ਉਸਨੂੰ ਸੱਚੀਂ ਖੁਰਲੀ
+            ਤਲਾਸ਼ ਬਿਮਾਰ ਮੁਸ਼ਕਿਲਾਂ ਮੇਰੀ ਚੀਕਾਂ। ਕਰਦਾ ਭੈਣ=ਭਾਈ ਸਾਰੇ ਸਿਵਾ ਸਚਮੁੱਚ ਨਫ਼ਰਤ।
+        </p>
+
+        <!-- Holiday Table -->
+        <div class="row">
+            <div class="col-lg-9 ">
+                <!-- Filtering Options -->
+                <div class="d-flex justify-content-between  align-items-center mb-3">
+                    <div class="d-flex align-items-center filtering-options">
+                        <div class="d-flex">
+                            <!-- Showing Label and Holiday Type Select -->
+                        <label for="holiday-type" class="form-label custom-label">Showing: <span>76</span></label>
+                        <select id="holiday-type" class="form-select custom-select">
+                            <option>All holidays</option>
+                            <option>National Holidays</option>
+                            <option>Restricted Holidays</option>
+                        </select>
+                        </div>
+
+                       <div class="d-flex year-filter">
+                         <!-- Year Label and Year Select -->
+                         <label for="year-select" class="form-label custom-label me-2">For:</label>
+                         <select id="year-select" class="form-select custom-select-2">
+                             <option>2024</option>
+                             <option>2023</option>
+                             <option>2022</option>
+                         </select>
+                      
+                          <!-- Calendar Icon and Checkbox -->
+                          <img src="./assets/images/calender.svg" alt="Calendar" class="calendar-icon">
+                          <label for="show-calendar" class="form-check-label calendar-label">Show holidays on a
+                              calendar</label>
+                      </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="mb-3">
+                    <p class="months">
+                        <img src="./assets/images/down.svg" alt="">
+                        <span>Jump to:</span>
+                        <a href="#" class="text-decoration-none mx-1 next">NEXT </a>
+                        <a href="#jan" class="text-decoration-none mx-1">JAN </a>
+                        <a href="#feb" class="text-decoration-none mx-1">FEB </a>
+                        <a href="#mar" class="text-decoration-none mx-1">MAR </a>
+                        <a href="#apr" class="text-decoration-none mx-1">APR </a>
+                        <a href="#may" class="text-decoration-none mx-1">MAY </a>
+                        <a href="#jun" class="text-decoration-none mx-1">JUN </a>
+                        <a href="#jul" class="text-decoration-none mx-1">JUL </a>
+                        <a href="#aug" class="text-decoration-none mx-1">AUG </a>
+                        <a href="#sep" class="text-decoration-none mx-1">SEP </a>
+                        <a href="#oct" class="text-decoration-none mx-1">OCT </a>
+                        <a href="#nov" class="text-decoration-none mx-1">NOV </a>
+                        <a href="#dec" class="text-decoration-none mx-1">DEC </a>
+                    </p>
+                </div>
+
+
+                <p class="indian-holiday">Holidays India in 2024</p>
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Day</th>
+                            <th>Name</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jan 1</td>
+                            <td>Monday</td>
+                            <td>Holiday Name</td>
+                            <td>Restricted Holiday</td>
+                        </tr>
+                        <tr>
+                            <td>Jan 13</td>
+                            <td>Saturday</td>
+                            <td>Holiday Name</td>
+                            <td>Restricted Holiday</td>
+                        </tr>
+                        <tr>
+                            <td>Jan 13</td>
+                            <td>Saturday</td>
+                            <td>Holiday Name</td>
+                            <td>Restricted Holiday</td>
+                        </tr>
+                        <tr>
+                            <td>Jan 13</td>
+                            <td>Saturday</td>
+                            <td>Holiday Name</td>
+                            <td>Restricted Holiday</td>
+                        </tr>
+                        <tr>
+                            <td>Jan 13</td>
+                            <td>Saturday</td>
+                            <td>Holiday Name</td>
+                            <td>Restricted Holiday</td>
+                        </tr>
+                        <!-- Additional rows can be added as needed -->
+                    </tbody>
+                </table>
+
+
+
+                <div class="col-12 section-title my-4">Result Realted To Books</div>
+
+            <div class=" row">
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <img src="./assets/images/cards/2.png" class="card-img-top"
+                            alt="Book 1">
+                        <div class="card-body  d-flex justify-content-between">
+                            <h5 class="card-title">Book Name 1</h5>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <img src="./assets/images/cards/1.png" class="card-img-top"
+                            alt="Book 1">
+                        <div class="card-body  d-flex justify-content-between">
+                            <h5 class="card-title">Book Name 1</h5>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <img src="./assets/images/cards/3.png" class="card-img-top"
+                            alt="Book 1">
+                        <div class="card-body  d-flex justify-content-between">
+                            <h5 class="card-title">Book Name 1</h5>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <img src="./assets/images/cards/5.png" class="card-img-top"
+                            alt="Book 1">
+                        <div class="card-body  d-flex justify-content-between">
+                            <h5 class="card-title">Book Name 1</h5>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <img src="./assets/images/cards/6.png" class="card-img-top"
+                            alt="Book 1">
+                        <div class="card-body  d-flex justify-content-between">
+                            <h5 class="card-title">Book Name 1</h5>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+            </div>
+
+            <!-- Ads and Banner Sidebar -->
+            <div class="col-lg-3 d-none d-md-block">
+                <div class="ads-banner">
+                    <p>ADS AND BANNER FUNCTION</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap and Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./assets/js/js.js"></script>
+</body>
+
+</html>

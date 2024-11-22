@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Punjabi.com</title>
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" sizes="32x32" />
+    <!-- Corrected path -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@100..900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <!-- Slick CSS from CDN -->
+    <!-- Owl Carousel CSS -->
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Custom CSS -->
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="./assets/css/book.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- Corrected path -->
+
+</head>
+
+<body>
+    <!-- preloader -->
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+    <!--======================= nav ======================================== -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-center align-items-center outer-div">
+                <div class="outer-div-inner">
+                    <div class="d-flex justify-content-between outer-div-inner-first align-items-center w-100">
+                        <!-- Left Section: Toggle Button and Logo -->
+                        <div class="d-flex align-items-center">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <a class="navbar-brand ms-3" href="#"><img src="./assets/images/logo.png" alt="Logo" /></a>
+                        </div>
+
+                        <!-- Right Section: Language Dropdown and Profile Icon -->
+                        <div class="d-flex align-items-center tnp">
+                            <ul class="navbar-nav translator d-flex d-md-none align-items-center">
+                                <!-- Language Dropdown -->
+                                <li class="nav-item dropdown me-3">
+                                    <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                        id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Pun
+                                    </a>
+                                    <ul class="dropdown-menu header-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Hindi</a></li>
+                                        <li><a class="dropdown-item" href="#">English</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Profile Icon -->
+                            </ul>
+                            <div class="nav-divider mx-2 d-flex d-md-none"></div>
+                            <div class="nav-item d-flex d-lg-none">
+                                <a href="#" class="profile-icon">
+                                    <img src="./assets/images/proflle-icon.svg" alt="Profile" class="rounded-circle"
+                                        width="37" height="37" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Cart Icon (optional) -->
+                        <!-- Uncomment this if you need the cart icon as well -->
+                        <!-- 
+                    <a href="#" class="cart-icon d-flex d-md-none ms-3">
+                        <img src="./assets/images/cart.svg" alt="Cart" width="24" height="24" />
+                    </a>
+                    -->
+                    </div>
+
+                    <div class="d-flex d-md-none justify-content-center w-100 search-div">
+                        <div class="nav-item dropdown d-flex justify-content-center w-100">
+                            <div class="search-bar w-100">
+                                <form class="d-flex w-100" role="search">
+                                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                    <input class="form-control me-2 w-100" type="search" aria-label="Search" />
+                                    <i class="fa-solid fa-microphone mic-icon" onclick="activateMic()"></i>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse d-lg-block justify-content-center px-2" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><span>News</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Culture
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#"> Boliyan </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"> Muhawara </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"> Baby Names </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Literature
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Poetry</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Audio Books</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Kids Section
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Games</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Poem</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Stories</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Essay</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Entertainment
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Radio</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Jokes</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <div class="search-bar">
+                                <form class="d-flex ms-3" role="search">
+                                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                    <input class="form-control me-2" type="search" placeholder="Search"
+                                        aria-label="Search" />
+                                    <i class="fa-solid fa-microphone mic-icon" onclick="activateMic()"></i>
+                                </form>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown ms-2 w-2">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Pun
+                            </a>
+                            <ul class="dropdown-menu header-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Hindi</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">English</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <button class="btn main-btn" type="button">Login</button>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                        <a href="#" class="cart-icon me-3">
+                            <img src="./assets/images/cart.svg" alt="Cart" width="24" height="24" />
+                        </a>
+                    </li> -->
+                        <li class="nav-item dropdown">
+                            <a href="#" class="profile-icon">
+                                <img src="./assets/images/proflle-icon.svg" alt="Profile" class="rounded-circle"
+                                    width="40" height="40" />
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- New elements after the nav-items -->
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-start offcanvas-glass d-lg-none" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="">
+                <div class="offcanvas-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <a href="#" class="offcanvas-title" id="offcanvasNavbarLabel"><img src="./assets/images/logo.png"
+                            alt="" /></a>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><span>News</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Culture
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#"> Boliyan </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"> Muhawara </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"> Baby Names </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Literature
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Poetry</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Audio Books</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Kids Section
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Games</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Poem</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Stories</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Essay</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Entertainment
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Radio</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Jokes</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--===================================== end navabr =====================================  -->
+
+
+
+    <!-- ======================Header========================= -->
+
+
+
+
+    <!-- Navigation Header -->
+    <nav class="nav-quiz">
+        <div class="container">
+            <a href="#">
+                <i class="fa-solid fa-arrow-left"></i> Punjabi.com
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="container quiz-container">
+        <!-- Title Section -->
+        <div class="row heading-quiz-section">
+            <div class="col-md-8">
+                <h1>Games & Quizzes</h1>
+            </div>
+            <div class="col-md-4 custom-dropdown">
+                <select class="form-select custom-select " aria-label="Select Quiz Category">
+                    <option value="1">Category 1</option>
+                    <option value="2">Category 2</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Quiz Cards Section -->
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="quiz-card card">
+                    <img src="./assets/images/quiz-games/taj.svg" class="card-img-top custom-quiz-image"
+                        alt="Place Quiz">
+                    <div class="quiz-card-body">
+                        <h5 class="card-heading">Name That Place! Quiz</h5>
+                        <p class="card-description">Our salute to flags from around the world. Can you name the
+                            countries they belong to?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="quiz-card card">
+                    <img src="./assets/images/quiz-games/Flag-Australia.svg" class="card-img-top custom-quiz-image"
+                        alt="World Flag Quiz">
+                    <div class="quiz-card-body">
+                        <h5 class="card-heading">Name That World Flag!</h5>
+                        <p class="card-description">Our salute to flags from around the world. Can you name the
+                            countries they belong to?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="quiz-card card">
+                    <img src="./assets/images/quiz-games/Flag-Australia.svg" class="card-img-top custom-quiz-image"
+                        alt="World Flag Quiz">
+                    <div class="quiz-card-body">
+                        <h5 class="card-heading">Name That World Flag!</h5>
+                        <p class="card-description">Our salute to flags from around the world. Can you name the
+                            countries they belong to?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Quizzes Section -->
+        <div class="new-quiz-title">New Quizzes</div>
+        <div class="row new-quizes">
+            <!-- First New Quiz -->
+            <div class="col-md-4 mb-3">
+                <div class="d-flex">
+                    <div class="new-quiz-thumbnail-wrapper">
+                        <img src="./assets/images/quiz-games/Greek-god-Athena-Mythology.svg" class="new-quiz-thumbnail"
+                            alt="Greek God Quiz">
+                    </div>
+                    <div class="new-quiz-info">
+                        <h5 class="new-quiz-heading">Name That Greek God Quiz</h5>
+                        <p class="new-quiz-description">Prepare for your next trip to Mount Olympus by identifying these
+                            deities...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second New Quiz -->
+            <div class="col-md-4 mb-3">
+                <div class="d-flex">
+                    <div class="new-quiz-thumbnail-wrapper">
+                        <img src="./assets/images/quiz-games/Greek-god-Athena-Mythology.svg" class="new-quiz-thumbnail"
+                            alt="World Flag Quiz">
+                    </div>
+                    <div class="new-quiz-info">
+                        <h5 class="new-quiz-heading">Flags of the World Quiz: Undercover Edition</h5>
+                        <p class="new-quiz-description">Can you identify the country based on just a fraction of a flag?
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Third New Quiz -->
+            <div class="col-md-4 mb-3">
+                <div class="d-flex">
+                    <div class="new-quiz-thumbnail-wrapper">
+                        <img src="./assets/images/quiz-games/Greek-god-Athena-Mythology.svg" class="new-quiz-thumbnail"
+                            alt="World Flag Quiz">
+                    </div>
+                    <div class="new-quiz-info">
+                        <h5 class="new-quiz-heading">Flags of the World Quiz: Undercover Edition</h5>
+                        <p class="new-quiz-description">Can you identify the country based on just a fraction of a flag?
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fourth New Quiz -->
+            <div class="col-md-4 mb-3">
+                <div class="d-flex">
+                    <div class="new-quiz-thumbnail-wrapper">
+                        <img src="./assets/images/quiz-games/Greek-god-Athena-Mythology.svg" class="new-quiz-thumbnail"
+                            alt="Greek God Quiz">
+                    </div>
+                    <div class="new-quiz-info">
+                        <h5 class="new-quiz-heading">Name That Greek God Quiz</h5>
+                        <p class="new-quiz-description">Prepare for your next trip to Mount Olympus by identifying these
+                            deities...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fifth New Quiz -->
+            <div class="col-md-4 mb-3">
+                <div class="d-flex">
+                    <div class="new-quiz-thumbnail-wrapper">
+                        <img src="./assets/images/quiz-games/Greek-god-Athena-Mythology.svg" class="new-quiz-thumbnail"
+                            alt="World Flag Quiz">
+                    </div>
+                    <div class="new-quiz-info">
+                        <h5 class="new-quiz-heading">Flags of the World Quiz: Undercover Edition</h5>
+                        <p class="new-quiz-description">Can you identify the country based on just a fraction of a flag?
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3 pt-3 ">
+                <a class="see-all-btn" href="#"> See All <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+
+
+            <!-- See All Button -->
+            <div class="col-12 mt-4 text-center">
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container ">
+        <!-- Featured Games Section -->
+        <h3 class="new-quiz-title">Featured Games</h3>
+        <div class="row new-quizes">
+            <!-- Featured Game Cards -->
+            <div class="col-md-4 col-lg-3">
+                <div class="featured-game-card">
+                    <img src="./assets/images/quiz-games/sudoko.svg" alt="Game Image">
+                    <h5 class="game-title">Game Name</h5>
+                    <p class="game-description">Can you solve four words at once?</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="featured-game-card">
+                    <img src="./assets/images/quiz-games/sudoko.svg" alt="Game Image">
+                    <h5 class="game-title">Game Name</h5>
+                    <p class="game-description">A daily trivia game</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="featured-game-card">
+                    <img src="./assets/images/quiz-games/sudoko.svg" alt="Game Image">
+                    <h5 class="game-title">Game Name</h5>
+                    <p class="game-description">A daily trivia game</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="featured-game-card">
+                    <img src="./assets/images/quiz-games/sudoko.svg" alt="Game Image">
+                    <h5 class="game-title">Game Name</h5>
+                    <p class="game-description">A daily trivia game</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="featured-game-card">
+                    <img src="./assets/images/quiz-games/sudoko.svg" alt="Game Image">
+                    <h5 class="game-title">Game Name</h5>
+                    <p class="game-description">A daily trivia game</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="featured-game-card">
+                    <img src="./assets/images/quiz-games/sudoko.svg" alt="Game Image">
+                    <h5 class="game-title">Game Name</h5>
+                    <p class="game-description">A daily trivia game</p>
+                </div>
+            </div>
+
+            <!-- Repeat for more featured games -->
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ======================End========================= -->
+
+
+    <!-- editoer picks -->
+
+
+    <section class="container editors-picks-section py-0">
+        <h3 class="new-quiz-title">Editors' Picks</h3>
+        <div class="slider-wrapper">
+            <div class="quiz-arrow arrow-left">&#10094;</div>
+            <div class="slider-container">
+                <!-- Example Cards for Editors' Picks -->
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed1.svg" alt="Quiz 1">
+                    <div class="card-body">
+                        <div class="quiz-title">Quiz 1</div>
+                        <div class="quiz-description">Do you know the difference between a protractor and a compass?
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed2.svg" alt="Quiz 1">
+                    <div class="card-body">
+                        <div class="quiz-title">Quiz 1</div>
+                        <div class="quiz-description">Do you know the difference between a protractor and a compass?
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed1.svg" alt="Quiz 2">
+                    <div class="card-body">
+                        <div class="quiz-title">Quiz 2</div>
+                        <div class="quiz-description">Can you identify these novels by their famous first lines?</div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed2.svg" alt="Quiz 2">
+                    <div class="card-body">
+                        <div class="quiz-title">Quiz 2</div>
+                        <div class="quiz-description">Can you identify these novels by their famous first lines?</div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed1.svg" alt="Quiz 2">
+                    <div class="card-body">
+                        <div class="quiz-title">Quiz 2</div>
+                        <div class="quiz-description">Can you identify these novels by their famous first lines?</div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed1.svg" alt="Quiz 2">
+                    <div class="card-body">
+                        <div class="quiz-title">Quiz 2</div>
+                        <div class="quiz-description">Can you identify these novels by their famous first lines?</div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed1.svg" alt="Quiz 2">
+                    <div class="card-body">
+                        <div class="quiz-title">Quiz 2</div>
+                        <div class="quiz-description">Can you identify these novels by their famous first lines?</div>
+                    </div>
+                </div>
+                <!-- Add more cards as needed -->
+            </div>
+            <div class="quiz-arrow arrow-right">&#10095;</div>
+        </div>
+    </section>
+
+
+    <section class="container top-poets-section py-0">
+        <div class="slider-wrapper">
+            <div class="quiz-arrow arrow-left">&#10094;</div>
+            <div class="slider-container">
+                <!-- Example Cards for Top Poets -->
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed1.svg" alt="Poet 1">
+                    <div class="card-body">
+                        <div class="quiz-title">Poet 1</div>
+                        <div class="quiz-description">Explore the works of one of the greatest poets in history.</div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed1.svg" alt="Poet 2">
+                    <div class="card-body">
+                        <div class="quiz-title">Poet 2</div>
+                        <div class="quiz-description">Dive into poems that have shaped literature.</div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed2.svg" alt="Poet 3">
+                    <div class="card-body">
+                        <div class="quiz-title">Poet 3</div>
+                        <div class="quiz-description">Learn about the unique style of this modern-day poet.</div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed1.svg" alt="Poet 3">
+                    <div class="card-body">
+                        <div class="quiz-title">Poet 3</div>
+                        <div class="quiz-description">Learn about the unique style of this modern-day poet.</div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed2.svg" alt="Poet 3">
+                    <div class="card-body">
+                        <div class="quiz-title">Poet 3</div>
+                        <div class="quiz-description">Learn about the unique style of this modern-day poet.</div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed2.svg" alt="Poet 3">
+                    <div class="card-body">
+                        <div class="quiz-title">Poet 3</div>
+                        <div class="quiz-description">Learn about the unique style of this modern-day poet.</div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed1.svg" alt="Poet 3">
+                    <div class="card-body">
+                        <div class="quiz-title">Poet 3</div>
+                        <div class="quiz-description">Learn about the unique style of this modern-day poet.</div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed1.svg" alt="Poet 3">
+                    <div class="card-body">
+                        <div class="quiz-title">Poet 3</div>
+                        <div class="quiz-description">Learn about the unique style of this modern-day poet.</div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed1.svg" alt="Poet 3">
+                    <div class="card-body">
+                        <div class="quiz-title">Poet 3</div>
+                        <div class="quiz-description">Learn about the unique style of this modern-day poet.</div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed1.svg" alt="Poet 3">
+                    <div class="card-body">
+                        <div class="quiz-title">Poet 3</div>
+                        <div class="quiz-description">Learn about the unique style of this modern-day poet.</div>
+                    </div>
+                </div>
+                <!-- Add more cards as needed -->
+            </div>
+            <div class="quiz-arrow arrow-right">&#10095;</div>
+        </div>
+    </section>
+    <!-- end -->
+
+
+
+    <!-- ====================popular======================= -->
+
+    <!-- Popular Section -->
+    <section class="container popular-section pt-0">
+        <h3 class="new-quiz-title">Popular</h3>
+        <div class="slider-wrapper">
+            <div class="quiz-arrow arrow-left">&#10094;</div>
+            <div class="slider-container">
+                <!-- Example Cards for Popular Section -->
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/popular-flag.svg" alt="Popular Quiz 1">
+                    <div class="card-body">
+                        <div class="quiz-title">Name That World Flag!</div>
+                        <div class="quiz-description">Our salute to flags from around the
+                            world. Can you name the countries...</div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/world-map.svg" alt="Popular Quiz 2">
+                    <div class="card-body">
+                        <div class="quiz-title">Guess the Countries of the
+                            World Quiz</div>
+                        <div class="quiz-description">Test your global positioning skills.</div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/us.svg" alt="Popular Quiz 3">
+                    <div class="card-body">
+                        <div class="quiz-title">U.S. State Capitals Quiz</div>
+                        <div class="quiz-description">From Albany to Trenton, can you
+                            name them all?</div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed1.svg" alt="Popular Quiz 3">
+                    <div class="card-body">
+                        <div class="quiz-title">World Capitals Quiz</div>
+                        <div class="quiz-description">Can you identify the world’s national
+                            capitals? In this quiz...</div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed1.svg" alt="Popular Quiz 3">
+                    <div class="card-body">
+                        <div class="quiz-title">Popular Quiz 3</div>
+                        <div class="quiz-description">How well do you know these famous books?</div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed1.svg" alt="Popular Quiz 3">
+                    <div class="card-body">
+                        <div class="quiz-title">Popular Quiz 3</div>
+                        <div class="quiz-description">How well do you know these famous books?</div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed1.svg" alt="Popular Quiz 3">
+                    <div class="card-body">
+                        <div class="quiz-title">Popular Quiz 3</div>
+                        <div class="quiz-description">How well do you know these famous books?</div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed1.svg" alt="Popular Quiz 3">
+                    <div class="card-body">
+                        <div class="quiz-title">Popular Quiz 3</div>
+                        <div class="quiz-description">How well do you know these famous books?</div>
+                    </div>
+                </div>
+                <div class="slider-card">
+                    <img src="./assets/images/quiz-games/ed1.svg" alt="Popular Quiz 3">
+                    <div class="card-body">
+                        <div class="quiz-title">Popular Quiz 3</div>
+                        <div class="quiz-description">How well do you know these famous books?</div>
+                    </div>
+                </div>
+                <!-- Add more cards as needed -->
+            </div>
+            <div class="quiz-arrow arrow-right">&#10095;</div>
+        </div>
+    </section>
+
+
+
+
+    <!-- =================================all quiz categories======================== -->
+
+    <section class="container quiz-categories-section">
+        <h2 class="text-center quiz-categories-title">All Quiz Categories</h2>
+        <div class="row justify-content-center">
+            <!-- Quiz Category Buttons -->
+            <div class="col-auto category-button">
+                <a href="#" class="btn quiz-category-btn">Entertainment & Pop Culture</a>
+            </div>
+            <div class="col-auto category-button">
+                <a href="#" class="btn quiz-category-btn">Geography & Travel</a>
+            </div>
+            <div class="col-auto category-button">
+                <a href="#" class="btn quiz-category-btn">Health & Medicine</a>
+            </div>
+            <div class="col-auto category-button">
+                <a href="#" class="btn quiz-category-btn">Lifestyle & Social Issues</a>
+            </div>
+            <div class="col-auto category-button">
+                <a href="#" class="btn quiz-category-btn">Literature</a>
+            </div>
+            <div class="col-auto category-button">
+                <a href="#" class="btn quiz-category-btn">Philosophy & Religion</a>
+            </div>
+            <div class="col-auto category-button">
+                <a href="#" class="btn quiz-category-btn">Politics, Law & Government</a>
+            </div>
+            <div class="col-auto category-button">
+                <a href="#" class="btn quiz-category-btn">Science</a>
+            </div>
+            <div class="col-auto category-button">
+                <a href="#" class="btn quiz-category-btn">Sports & Recreation</a>
+            </div>
+            <div class="col-auto category-button">
+                <a href="#" class="btn quiz-category-btn">Technology</a>
+            </div>
+            <div class="col-auto category-button">
+                <a href="#" class="btn quiz-category-btn">Visual Arts</a>
+            </div>
+            <div class="col-auto category-button">
+                <a href="#" class="btn quiz-category-btn">World History</a>
+            </div>
+            <div class="col-auto category-button">
+                <a href="#" class="btn quiz-category-btn">Image & Picture Quizzes</a>
+            </div>
+            <div class="col-auto category-button">
+                <a href="#" class="btn quiz-category-btn">Vocabulary Quizzes</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- =================================end======================== -->
+
+
+
+    <!-- Include jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Bootstrap and Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                items: 1,
+                nav: true,
+                navText: [
+                    '<img src="./assets/images/games/prev.png" alt="Previous" class="custom-prev" >', // Customize the path and size
+                    '<img src="./assets/images/games/next.png" alt="Next" class="custom-next" >'   // Customize the path and size
+                ],
+            });
+        });
+
+    </script>
+
+    <!-- Custom JS (if any external JS file) -->
+    <script src="./assets/js/js.js"></script>
+
+    <!-- Inline Custom JS for Owl Carousel -->
+
+</body>
+
+</html>

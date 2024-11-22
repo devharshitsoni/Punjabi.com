@@ -1,0 +1,2194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punjabi.com</title>
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" sizes="32x32" /> <!-- Corrected path -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Slick CSS from CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="./assets/css/book.css">
+    <link rel="stylesheet" href="./assets/css/style.css"> <!-- Corrected path -->
+
+
+
+
+</head>
+
+<body>
+    <!-- preloader -->
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+    <!--======================= nav ======================================== -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid ">
+            <div class="d-flex  justify-content-center align-items-center outer-div">
+                <div class="outer-div-inner ">
+                    <div class="d-flex justify-content-between outer-div-inner-first align-items-center  w-100 ">
+                        <!-- Left Section: Toggle Button and Logo -->
+                        <div class="d-flex align-items-center">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <a class="navbar-brand ms-3" href="#"><img src="./assets/images/logo.png" alt="Logo" /></a>
+                        </div>
+
+                        <!-- Right Section: Language Dropdown and Profile Icon -->
+                        <div class="d-flex align-items-center tnp">
+                            <ul class="navbar-nav translator d-flex d-md-none align-items-center">
+                                <!-- Language Dropdown -->
+                                <li class="nav-item dropdown me-3">
+                                    <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                        id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Pun
+                                    </a>
+                                    <ul class="dropdown-menu header-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Hindi</a></li>
+                                        <li><a class="dropdown-item" href="#">English</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Profile Icon -->
+
+                            </ul>
+                            <div class="nav-divider mx-2 d-flex d-md-none"></div>
+                            <div class="nav-item d-flex d-lg-none">
+                                <a href="#" class="profile-icon">
+                                    <img src="./assets/images/proflle-icon.svg" alt="Profile" class="rounded-circle"
+                                        width="37" height="37" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Cart Icon (optional) -->
+                        <!-- Uncomment this if you need the cart icon as well -->
+                        <!-- 
+                        <a href="#" class="cart-icon d-flex d-md-none ms-3">
+                            <img src="./assets/images/cart.svg" alt="Cart" width="24" height="24" />
+                        </a>
+                        -->
+                    </div>
+
+                    <div class="d-flex d-md-none justify-content-center w-100 search-div">
+                        <div class="nav-item dropdown d-flex justify-content-center w-100">
+                            <div class="search-bar w-100">
+                                <form class="d-flex w-100" role="search">
+                                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                    <input class="form-control me-2 w-100" type="search" aria-label="Search">
+                                    <i class="fa-solid fa-microphone mic-icon" onclick="activateMic()"></i>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="collapse navbar-collapse d-lg-block justify-content-center px-2" id="navbarNav">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><span>News</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Culture
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Boliyan
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Muhawara
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Baby Names
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Literature
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Poetry</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Audio Books</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Kids Section
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Games</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Poem</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Stories</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Essay</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Entertainment
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Radio</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Jokes</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <div class="search-bar">
+                                <form class="d-flex ms-3" role="search">
+                                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                    <input class="form-control me-2" type="search" placeholder="Search"
+                                        aria-label="Search">
+                                    <i class="fa-solid fa-microphone mic-icon" onclick="activateMic()"></i>
+                                </form>
+                            </div>
+                        </li>
+
+
+                        <li class="nav-item  dropdown  ms-2 w-2">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Pun
+                            </a>
+                            <ul class="dropdown-menu header-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Hindi</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">English</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <button class="btn main-btn " type="button">Login</button>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                            <a href="#" class="cart-icon me-3">
+                                <img src="./assets/images/cart.svg" alt="Cart" width="24" height="24" />
+                            </a>
+                        </li> -->
+                        <li class="nav-item dropdown">
+                            <a href="#" class="profile-icon">
+                                <img src="./assets/images/proflle-icon.svg" alt="Profile" class="rounded-circle"
+                                    width="40" height="40" />
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- New elements after the nav-items -->
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="offcanvas offcanvas-start offcanvas-glass d-lg-none" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="">
+                <div class="offcanvas-header ">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <a href="#" class="offcanvas-title" id="offcanvasNavbarLabel"><img src="./assets/images/logo.png"
+                            alt="" /></a>
+
+                </div>
+                <div class="offcanvas-body">
+
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+
+
+                        <li class="nav-item ">
+                            <a class="nav-link active" aria-current="page" href="#"><span>News</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Culture
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Boliyan
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Muhawara
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Baby Names
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Literature
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Poetry</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Audio Books</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Kids Section
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Games</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Poem</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Stories</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Essay</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Entertainment
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Radio</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Jokes</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+
+
+
+
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+    <!--===================================== end navabr =====================================  -->
+
+
+    <!-- =====================================second card section =====================================-->
+
+    <div class="container poet-week  d-none d-sm-block">
+        <!-- Section Heading -->
+        <h2 class="text-center heading">Most Searched Poet This Week</h2>
+
+
+        <!-- Paragraph Section -->
+        <p class="text-center my-3">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta iure labore debitis numquam saepe doloremque
+            iusto fugiat repudiandae nostrum nulla non voluptas doloribus, deserunt nam et totam obcaecati maiores
+            asperiores perferendis aspernatur delectus quae unde reiciendis! Esse quia ex nostrum impedit neque hic in
+            harum quo facere, doloribus alias temporibus?
+        </p>
+
+        <!-- Cards Section -->
+        <div class="row mt-5 d-none d-md-flex">
+            <!-- Card 1 -->
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="custom-card-2  text-center">
+                    <div class="poet-image-wrapper">
+                        <img src="./assets/images/filter_books/card-head.png" alt="Poet Image" class="poet-image mb-2">
+                    </div>
+                    <h5 class="poet-name">Shiv Kumar Batalvi</h5>
+                    <p class="poet-info">1978-2002</p>
+                    <div class="d-flex justify-content-between book-covers">
+                        <a href="#"><img src="./assets/images/filter_books/card-b1.png" alt="Book 1"
+                                class="img-fluid"></a>
+                        <a href="#"><img src="./assets/images/filter_books/card-b2.png" alt="Book 2"
+                                class="img-fluid"></a>
+                        <a href="#"><img src="./assets/images/filter_books/card-b3.png" alt="Book 3"
+                                class="img-fluid"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="custom-card-2 text-center">
+                    <div class="poet-image-wrapper">
+                        <img src="./assets/images/filter_books/card-head.png" alt="Poet Image" class="poet-image mb-2">
+                    </div>
+                    <h5 class="poet-name">Shiv Kumar Batalvi</h5>
+                    <p class="poet-info">1978-2002</p>
+                    <div class="d-flex justify-content-between book-covers">
+                        <a href="#"><img src="./assets/images/filter_books/card-b1.png" alt="Book 1"
+                                class="img-fluid"></a>
+                        <a href="#"><img src="./assets/images/filter_books/card-b2.png" alt="Book 2"
+                                class="img-fluid"></a>
+                        <a href="#"><img src="./assets/images/filter_books/card-b3.png" alt="Book 3"
+                                class="img-fluid"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="custom-card-2  text-center">
+                    <div class="poet-image-wrapper">
+                        <img src="./assets/images/filter_books/card-head.png" alt="Poet Image" class="poet-image mb-2">
+                    </div>
+                    <h5 class="poet-name">Shiv Kumar Batalvi</h5>
+                    <p class="poet-info">1978-2002</p>
+                    <div class="d-flex justify-content-between book-covers">
+                        <a href="#"><img src="./assets/images/filter_books/card-b1.png" alt="Book 1"
+                                class="img-fluid"></a>
+                        <a href="#"><img src="./assets/images/filter_books/card-b2.png" alt="Book 2"
+                                class="img-fluid"></a>
+                        <a href="#"><img src="./assets/images/filter_books/card-b3.png" alt="Book 3"
+                                class="img-fluid"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="custom-card-2  text-center">
+                    <div class="poet-image-wrapper">
+                        <img src="./assets/images/filter_books/card-head.png" alt="Poet Image" class="poet-image mb-2">
+                    </div>
+                    <h5 class="poet-name">Shiv Kumar Batalvi</h5>
+                    <p class="poet-info">1978-2002</p>
+                    <div class="d-flex justify-content-between book-covers">
+                        <a href="#"><img src="./assets/images/filter_books/card-b1.png" alt="Book 1"
+                                class="img-fluid"></a>
+                        <a href="#"><img src="./assets/images/filter_books/card-b2.png" alt="Book 2"
+                                class="img-fluid"></a>
+                        <a href="#"><img src="./assets/images/filter_books/card-b3.png" alt="Book 3"
+                                class="img-fluid"></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat for other cards with same structure -->
+        </div>
+    </div>
+
+    <!--===================================== end =====================================-->
+
+    <!--===================================== filter secion===================================== -->
+
+    <div class="container poet-week ">
+        <!-- Section Heading -->
+        <h3 class="text-center heading">Author </h3>
+
+
+        <!-- Paragraph Section -->
+        <p class="text-center mt-3">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta iure labore debitis numquam saepe doloremque
+            iusto fugiat repudiandae nostrum nulla non voluptas doloribus, deserunt nam et totam obcaecati maiores
+            asperiores perferendis aspernatur delectus quae unde reiciendis! Esse quia ex nostrum impedit neque hic in
+            harum quo facere, doloribus alias temporibus?
+        </p>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="tab-section">
+                        <div class="genre-section">
+                            <div class="scrollable-tabs">
+                                <button class="tab-btn active" data-tab="tab1">Politician</button>
+                                <button class="tab-btn" data-tab="tab2">Shayar</button>
+                                <button class="tab-btn" data-tab="tab3">Philosopher</button>
+                                <button class="tab-btn" data-tab="tab4">Option</button>
+                                <button class="tab-btn" data-tab="tab5">Option 2</button>
+                                <button class="tab-btn" data-tab="tab6">Option 3</button>
+                                <button class="tab-btn" data-tab="tab7">Option 4</button>
+                                <button class="tab-btn" data-tab="tab8">Option 5</button>
+                                <div class="underline"></div> <!-- Underline div inside scrollable-tabs -->
+                            </div>
+                        </div>
+                        <div class="alphabet-filter">
+                            <div class="scrollable-alphabet">
+                                <button class="alphabet-btn active" data-alphabet="A">A</button>
+                                <button class="alphabet-btn" data-alphabet="B">B</button>
+                                <button class="alphabet-btn" data-alphabet="C">C</button>
+                                <button class="alphabet-btn" data-alphabet="D">D</button>
+                                <button class="alphabet-btn" data-alphabet="E">E</button>
+                                <button class="alphabet-btn" data-alphabet="F">F</button>
+                                <button class="alphabet-btn" data-alphabet="G">G</button>
+                                <button class="alphabet-btn" data-alphabet="H">H</button>
+                                <button class="alphabet-btn" data-alphabet="I">I</button>
+                                <button class="alphabet-btn" data-alphabet="J">J</button>
+                                <button class="alphabet-btn" data-alphabet="K">K</button>
+                                <button class="alphabet-btn" data-alphabet="L">L</button>
+                                <button class="alphabet-btn" data-alphabet="M">M</button>
+                                <button class="alphabet-btn" data-alphabet="N">N</button>
+                                <button class="alphabet-btn" data-alphabet="O">O</button>
+                                <button class="alphabet-btn" data-alphabet="P">P</button>
+                                <button class="alphabet-btn" data-alphabet="Q">Q</button>
+                                <button class="alphabet-btn" data-alphabet="R">R</button>
+                                <button class="alphabet-btn" data-alphabet="S">S</button>
+                                <button class="alphabet-btn" data-alphabet="T">T</button>
+                                <button class="alphabet-btn" data-alphabet="U">U </button>
+                                <button class="alphabet-btn" data-alphabet="V">V</button>
+                                <button class="alphabet-btn" data-alphabet="W">W</button>
+                                <button class="alphabet-btn" data-alphabet="X">X</button>
+                                <button class="alphabet-btn" data-alphabet="Y">Y</button>
+                                <button class="alphabet-btn" data-alphabet="Z">Z</button>
+                            </div>
+                        </div>
+                        <div class="content-section">
+                            <div class="row" id="tab1">
+
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">ailverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">ailverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">ailverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-section">
+                            <div class="row" id="tab2">
+
+
+
+
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">cilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">cilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">cilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">cilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">cilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">cilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">cilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">cilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">cilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">cilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">cilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">cilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">cilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">cilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">cilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">cilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">cilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">cilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">cilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">cilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-section">
+                            <div class="row" id="tab3">
+
+
+
+
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">ailverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">dilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">cilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">dilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">dilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">dilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">dilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">dilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">dilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">dilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">dilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">dilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">dilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">dilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">dilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">dilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">dilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">dilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">dilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">dilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-section">
+                            <div class="row" id="tab4">
+
+
+
+
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">eilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">eilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">eilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">eilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">eilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">eilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">eilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">eilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">eilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">eilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">eilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">eilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">eilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">eilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">eilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">eilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">eilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">eilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">eilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">eilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-section">
+                            <div class="row" id="tab5">
+
+
+
+
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">filverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">filverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">filverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">filverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">filverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">filverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">filverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">filverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">filverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">filverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">filverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">filverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">filverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">filverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">filverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">filverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">filverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">filverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">filverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">filverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-section">
+                            <div class="row" id="tab6">
+
+
+
+
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">gilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">gilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">gilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">gilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">gilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">gilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">gilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">gilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">gilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">gilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">gilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">gilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">gilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">gilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">gilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">gilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">gilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">gilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">gilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">gilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-section">
+                            <div class="row" id="tab7">
+
+
+
+
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">silverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-section">
+                            <div class="row" id="tab8">
+
+
+
+
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/1.png" alt="Image 1">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/2.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/3.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/4.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/5.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-custom col-md-3 col-sm-4 col-6">
+                                    <div class="content-item">
+                                        <img src="./assets/images/filter_books/6.png" alt="Image 2">
+                                        <div class="image-info">
+                                            <p class="name">bilverlion</p>
+                                            <p class="date">1950-1970</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pagination-section">
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+    <!-- ===================================== Main Content Section ===================================== -->
+    <section class="main-content pb-2">
+        <div class="container">
+            <h2 class="text-center heading mb-4">Most Selled Book Written By Author</h2>
+            <p class="text-center  mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt excepturi aut
+                odio eligendi nostrum dolore. Dicta exercitationem hic iste minima, quaerat necessitatibus! In impedit,
+                optio voluptatem illo enim ducimus nobis aut aspernatur quos velit, consectetur ex ullam fugit vitae ut,
+                quibusdam asperiores nisi est autem debitis obcaecati assumenda reprehenderit maiores!</p>
+            <div class="row book-layout">
+                <!-- Book 1 -->
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="card">
+                        <img src="./assets/images/cards/1.png" class="card-img-top" alt="Book 1">
+                        <div class="card-body  d-flex justify-content-between">
+                            <h5 class="card-title ">Book Name 1</h5>
+                            <span class="badge trending-badge">New</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Book 2 -->
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="card">
+                        <img src="./assets/images/cards/1.png" class="card-img-top" alt="Book 1">
+                        <div class="card-body  d-flex justify-content-between">
+                            <h5 class="card-title">Book Name 1</h5>
+                            <span class="badge trending-badge">New</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Book 3 -->
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="card">
+                        <img src="./assets/images/cards/1.png" class="card-img-top" alt="Book 1">
+                        <div class="card-body  d-flex justify-content-between">
+                            <h5 class="card-title">Book Name 1</h5>
+                            <span class="badge trending-badge">New</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Book 4 -->
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="card">
+                        <img src="./assets/images/cards/1.png" class="card-img-top" alt="Book 1">
+                        <div class="card-body  d-flex justify-content-between">
+                            <h5 class="card-title">Book Name 1</h5>
+                            <span class="badge trending-badge">New</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Book 5 -->
+                <div class="col-6 col-md-4 col-lg-2 mb-4">
+                    <div class="card">
+                        <img src="./assets/images/cards/1.png" class="card-img-top" alt="Book 1">
+                        <div class="card-body  d-flex justify-content-between">
+                            <h5 class="card-title">Book Name 1</h5>
+                            <span class="badge trending-badge">New</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Watch More Button -->
+            <!-- Watch More Button -->
+            <div class="text-center my-4">
+                <button class="btn card-btn"><a href="books.html">Watch More</a></button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- Bootstrap and Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+ <!-- Include jQuery library -->
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Custom JS -->
+     
+    <script src="./assets/js/js.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Punjabi.com</title>
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" sizes="32x32" />
+    <!-- Corrected path -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@100..900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <!-- Slick CSS from CDN -->
+    <!-- Owl Carousel CSS -->
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Custom CSS -->
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="./assets/css/book.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- Corrected path -->
+
+</head>
+
+<body>
+    <!-- preloader -->
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+    <!--======================= nav ======================================== -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-center align-items-center outer-div">
+                <div class="outer-div-inner">
+                    <div class="d-flex justify-content-between outer-div-inner-first align-items-center w-100">
+                        <!-- Left Section: Toggle Button and Logo -->
+                        <div class="d-flex align-items-center">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <a class="navbar-brand ms-3" href="#"><img src="./assets/images/logo.png" alt="Logo" /></a>
+                        </div>
+
+                        <!-- Right Section: Language Dropdown and Profile Icon -->
+                        <div class="d-flex align-items-center tnp">
+                            <ul class="navbar-nav translator d-flex d-md-none align-items-center">
+                                <!-- Language Dropdown -->
+                                <li class="nav-item dropdown me-3">
+                                    <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                        id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Pun
+                                    </a>
+                                    <ul class="dropdown-menu header-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Hindi</a></li>
+                                        <li><a class="dropdown-item" href="#">English</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Profile Icon -->
+                            </ul>
+                            <div class="nav-divider mx-2 d-flex d-md-none"></div>
+                            <div class="nav-item d-flex d-lg-none">
+                                <a href="#" class="profile-icon">
+                                    <img src="./assets/images/proflle-icon.svg" alt="Profile" class="rounded-circle"
+                                        width="37" height="37" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Cart Icon (optional) -->
+                        <!-- Uncomment this if you need the cart icon as well -->
+                        <!-- 
+                    <a href="#" class="cart-icon d-flex d-md-none ms-3">
+                        <img src="./assets/images/cart.svg" alt="Cart" width="24" height="24" />
+                    </a>
+                    -->
+                    </div>
+
+                    <div class="d-flex d-md-none justify-content-center w-100 search-div">
+                        <div class="nav-item dropdown d-flex justify-content-center w-100">
+                            <div class="search-bar w-100">
+                                <form class="d-flex w-100" role="search">
+                                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                    <input class="form-control me-2 w-100" type="search" aria-label="Search" />
+                                    <i class="fa-solid fa-microphone mic-icon" onclick="activateMic()"></i>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse d-lg-block justify-content-center px-2" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><span>News</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Culture
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#"> Boliyan </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"> Muhawara </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"> Baby Names </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Literature
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Poetry</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Audio Books</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Kids Section
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Games</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Poem</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Stories</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Essay</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Entertainment
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Radio</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Jokes</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <div class="search-bar">
+                                <form class="d-flex ms-3" role="search">
+                                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                    <input class="form-control me-2" type="search" placeholder="Search"
+                                        aria-label="Search" />
+                                    <i class="fa-solid fa-microphone mic-icon" onclick="activateMic()"></i>
+                                </form>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown ms-2 w-2">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Pun
+                            </a>
+                            <ul class="dropdown-menu header-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Hindi</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">English</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <button class="btn main-btn" type="button">Login</button>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                        <a href="#" class="cart-icon me-3">
+                            <img src="./assets/images/cart.svg" alt="Cart" width="24" height="24" />
+                        </a>
+                    </li> -->
+                        <li class="nav-item dropdown">
+                            <a href="#" class="profile-icon">
+                                <img src="./assets/images/proflle-icon.svg" alt="Profile" class="rounded-circle"
+                                    width="40" height="40" />
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- New elements after the nav-items -->
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-start offcanvas-glass d-lg-none" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="">
+                <div class="offcanvas-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <a href="#" class="offcanvas-title" id="offcanvasNavbarLabel"><img src="./assets/images/logo.png"
+                            alt="" /></a>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><span>News</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Culture
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#"> Boliyan </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"> Muhawara </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"> Baby Names </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Literature
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Poetry</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Audio Books</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Kids Section
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Games</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Poem</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Stories</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Essay</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Entertainment
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Radio</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Jokes</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--===================================== end navabr =====================================  -->
+
+    <!-- news section -->
+    <!-- ===================================== Main Content Section ===================================== -->
+  
+
+
+
+
+
+
+    <style>
+       .main-game {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 20px auto;
+    background-image: url('./assets/images/card-game-bg.svg'); /* Adjust this path if necessary */
+    background-size: cover; /* Adjust this to 'cover' or 'contain' based on preference */
+    background-position: center;
+    background-repeat: no-repeat; /* Ensure no repetition */
+   
+}
+
+
+        /* Flexbox for 3x3 grid */
+        .flex-3x3 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            /* Gap between cards */
+        }
+
+        .flex-3x3 .card-container {
+            display: flex;
+            justify-content: center;
+            width: calc(11.33% - 15px);
+            /* 3x3 Grid - 3 cards per row */
+        }
+
+        /* Flexbox for 4x4 grid */
+        .flex-4x4 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .flex-4x4 .card-container {
+            display: flex;
+            justify-content: center;
+            width: calc(19% - 10px);
+            /* 4x4 Grid - 4 cards per row */
+        }
+
+        /* Flexbox for 5x5 grid */
+        .flex-5x5 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .flex-5x5 .card-container {
+            display: flex;
+            justify-content: center;
+            width: calc(16% - 15px);
+            /* 5x5 Grid - 5 cards per row */
+        }
+
+        /* Flexbox for 6x6 grid */
+        .flex-6x6 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .flex-6x6 .card-container {
+            display: flex;
+            justify-content: center;
+            width: calc(14.66% - 15px);
+            /* 6x6 Grid - 6 cards per row */
+        }
+
+        /* Flexbox for larger grids (e.g., 7x7, 8x8, etc.) */
+        .flex-7x7 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .flex-7x7 .card-container {
+            display: flex;
+            justify-content: center;
+            width: calc(12.28% - 15px);
+            /* 7x7 Grid - 7 cards per row */
+        }
+
+        .flex-8x8 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .flex-8x8 .card-container {
+            display: flex;
+            justify-content: center;
+            width: calc(10.5% - 15px);
+            /* 8x8 Grid - 8 cards per row */
+        }
+
+        .flex-9x9 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .flex-9x9 .card-container {
+            display: flex;
+            justify-content: center;
+            width: calc(9.11% - 15px);
+            /* 9x9 Grid - 9 cards per row */
+        }
+
+        .game-title {
+            font-family: "Josefin Sans", sans-serif;
+            color: #000000;
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .game-title span {
+            color: #4B70F5;
+        }
+
+        /* Flexbox for the cards section */
+        .cards-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            gap: 15px;
+            /* Space between cards */
+        }
+
+        /* Styles for card layouts */
+
+        .card-container {
+            perspective: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            border: none;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        /* Card flip effect on hover */
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .card-face.back {
+            transform: rotateY(180deg);
+        }
+
+        .card-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Specific heights for different card types */
+        .small-card .card {
+            background: transparent;
+            width: 125px;
+            height: 150px;
+        }
+
+        .medium-card .card {
+            background: transparent;
+            width: 171px;
+            /* Width for medium cards */
+            height: 200px;
+            /* Height for medium cards */
+        }
+
+        .large-card .card {
+            background: transparent;
+            width: 212px;
+            /* Width for large cards */
+            height: 250px;
+            /* Height for large cards */
+        }
+
+        .card-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .cta-text {
+            color: #000000;
+            font-size: 34px;
+            font-family: "Josefin Sans", sans-serif;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .cta-text .card-game {
+            font-weight: bold;
+            color: #4B70F5 !important;
+            /* Highlight color for the card game text */
+        }
+
+        .cta-text span {
+            font-weight: bold;
+            color: #4B70F5 !important;
+            /* Highlight color for the card game text */
+        }
+
+        .card-buttons {
+            display: flex;
+            flex-direction: column;
+            /* Arrange button rows vertically */
+            align-items: center;
+            /* Center buttons */
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: center;
+            /* Center button rows */
+            margin-bottom: 10px;
+            /* Space between rows */
+        }
+
+        .custom-btn {
+            font-family: "Josefin Sans", sans-serif;
+            background-color: #4B70F5;
+            color: rgb(255, 255, 255);
+            padding: 5px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 21px;
+            font-weight: 600;
+            margin: 5px 15px;
+            /* Space between buttons */
+            text-align: center;
+            display: block;
+            /* Make button a block element */
+        }
+
+        .custom-btn span {
+            font-size: 14px;
+            font-weight: 700;
+            margin: -5px;
+            /* Remove margin for no space */
+            display: block;
+            /* Ensure spans are on new lines */
+        }
+
+        .custom-btn.green {
+            color: #4B70F5;
+            background-color: transparent;
+            border: 1px solid #4B70F5;
+            /* Green color for specific buttons */
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 1200px) {
+            .flex-4x4 .card-container {
+                width: calc(33.33% - 15px);
+                /* Larger cards for smaller screens */
+            }
+
+            .button-row {
+                flex-direction: row;
+            }
+
+            .small-card {
+        padding: 0 !important;
+        display: flex;
+        width: calc(12% - 0px); /* Single column layout for mobile */
+    }
+    .medium-card {
+        padding: 0 !important;
+        display: flex;
+        width: calc(17% - 0px); /* Single column layout for mobile */
+    }
+    .large-card{
+        padding: 0 !important;
+        display: flex;
+        width: calc(23% - 0px); /* Single column layout for mobile */
+    }
+
+        }
+
+        /* Tablet screens */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .button-row {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+
+            .custom-btn {
+                padding: 5px 30px;
+            }
+
+            .cards-section {
+                justify-content: center;
+                /* Keep cards centered */
+            }
+
+            .card-container {
+                width: calc(31% - 15px);
+                /* Adjust for 3 cards per row */
+            }
+
+            .custom-btn {
+                padding: 5px 30px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .flex-4x4 .card-container {
+                width: calc(18% - 15px);
+                /* Adjust grid to 2 columns */
+            }
+
+            .flex-3x3 .card-container {
+                width: calc(18% - 15px);
+                /* Adjust grid to 2 columns */
+            }
+            .small-card {
+        padding: 0 !important;
+        display: flex;
+        width: calc(12% - 0px); /* Single column layout for mobile */
+    }
+    .medium-card {
+        padding: 0 !important;
+        display: flex;
+        width: calc(17% - 0px); /* Single column layout for mobile */
+    }
+    .large-card{
+        padding: 0 !important;
+        display: flex;
+        width: calc(23% - 0px); /* Single column layout for mobile */
+    }
+
+            .game-title {
+                font-size: 2rem;
+            }
+
+            .cta-text {
+                font-size: 1.25rem;
+            }
+
+            .custom-btn {
+                font-size: 0.9rem;
+                padding: 5px 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .flex-3x3 .card-container,
+            .flex-4x4 .card-container {
+                width: calc(50% - 15px);
+                /* Make cards stack better on small screens */
+            }
+
+            .cards-section {
+        justify-content: center;
+        margin: 0; /* Keep cards centered */
+    }
+
+
+
+            .card-buttons {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 10px;
+
+            }
+
+            .custom-btn {
+                padding: 10px 0;
+                margin: 0;
+                text-align: center;
+                margin: 6px;
+                width: 100%;
+            }
+
+            .button-row {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .cta-text {
+                font-size: 1rem;
+            }
+
+            .game-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            .flex-3x3 .card-container,
+            .flex-4x4 .card-container {
+                width: calc(31% - 2px);
+                /* Single column layout for mobile */
+            }
+
+            .flex-5x5 .card-container {
+                width: calc(28% - 2px);
+            }
+
+            .flex-6x6 .card-container {
+                width: calc(28% - 0px);
+            }
+
+            .flex-7x7 .card-container {
+                width: calc(28% - 0px);
+            }
+
+            .flex-8x8 .card-container {
+                width: calc(28% - 0px);
+            }
+
+            .flex-9x9 .card-container {
+                width: calc(28% - 0px);
+            }
+            .card-container{
+                gap: 0;
+            }
+        
+.card-container img{
+    width: auto;
+    height: 80px;
+}
+            .custom-btn {
+                font-size: 0.8rem;
+                padding: 5px 20px;
+            }
+
+            .game-title {
+                font-size: 1.5rem;
+                margin-bottom: -44px;
+            }
+
+            .cta-text {
+                margin-top: -40px;
+                font-size: 1.2rem;
+            }
+
+            .cards-section {
+        justify-content: center;
+        margin: 9px; /* Keep cards centered */
+    }
+
+    .small-card {
+        padding: 0 !important;
+        display: flex;
+        width: calc(12% - 0px); /* Single column layout for mobile */
+    }
+    .medium-card {
+        padding: 0 !important;
+        display: flex;
+        width: calc(17% - 0px); /* Single column layout for mobile */
+    }
+    .medium-card img{
+        height: 90px;
+        width: auto;  
+    }
+    .large-card{
+        padding: 0 !important;
+        display: flex;
+        width: calc(16% - 0px); /* Single column layout for mobile */
+    }
+    .large-card img{
+        height: 100px;
+        width: auto;
+    }
+        }
+    </style>
+
+
+
+
+
+
+
+    <div class="container main-game">
+        <!-- Game Title -->
+        <h1 class="game-title">Card Memory <span>Game</span></h1>
+
+        <!-- Cards Section -->
+        <div class="cards-section" id="cards-section">
+            <div class="card-container small-card">
+                <div class="card">
+                    <div class="card-face front">
+                        <img src="./assets/images/card-game/small-card.svg" alt="Small Card Image">
+                    </div>
+                    <div class="card-face back">
+                        <img src="./assets/images/card-game/tractor-card.svg" alt="Back Small Card Image">
+                    </div>
+                </div>
+            </div>
+            <div class="card-container medium-card">
+                <div class="card">
+                    <div class="card-face front">
+                        <img src="./assets/images/card-game/medium.svg" alt="Medium Card Image">
+                    </div>
+                    <div class="card-face back">
+                        <img src="./assets/images/card-game/tractor-card.svg" alt="Back Medium Card Image">
+                    </div>
+                </div>
+            </div>
+            <div class="card-container large-card">
+                <div class="card">
+                    <div class="card-face front">
+                        <img src="./assets/images/card-game/large.svg" alt="Large Card Image">
+                    </div>
+                    <div class="card-face back">
+                        <img src="./assets/images/card-game/tractor-card.svg" alt="Back Large Card Image">
+                    </div>
+                </div>
+            </div>
+            <div class="card-container medium-card">
+                <div class="card">
+                    <div class="card-face front">
+                        <img src="./assets/images/card-game/medium.svg" alt="Medium Card Image">
+                    </div>
+                    <div class="card-face back">
+                        <img src="./assets/images/card-game/tractor-card.svg" alt="Back Medium Card Image">
+                    </div>
+                </div>
+            </div>
+            <div class="card-container small-card">
+                <div class="card">
+                    <div class="card-face front">
+                        <img src="./assets/images/card-game/small-card.svg" alt="Small Card Image">
+                    </div>
+                    <div class="card-face back">
+                        <img src="./assets/images/card-game/tractor-card.svg" alt="Back Small Card Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action Text -->
+        <p class="cta-text">How sharp is your <span>Memory</span>? Test it with our <span class="card-game">Card
+                Game!</span></p>
+
+        <!-- Difficulty Buttons Layout -->
+        <div class="container card-buttons" id="card-buttons">
+            <div class="button-row">
+                <a href="#" class="custom-btn" id="btn-6-cards">
+                    <div>6 Card</div>
+                    <span>(3 Pair)</span>
+                </a>
+                <a href="#" class="custom-btn green" id="btn-8-cards">
+                    <div>8 Card</div>
+                    <span>(4 Pair)</span>
+                </a>
+                <a href="#" class="custom-btn" id="btn-10-cards">
+                    <div>10 Card</div>
+                    <span>(5 Pair)</span>
+                </a>
+                <a href="#" class="custom-btn green" id="btn-12-cards">
+                    <div>12 Card</div>
+                    <span>(6 Pair)</span>
+                </a>
+            </div>
+            <div class="button-row">
+                <a href="#" class="custom-btn" id="btn-14-cards">
+                    <div>14 Card</div>
+                    <span>(7 Pair)</span>
+                </a>
+                <a href="#" class="custom-btn green" id="btn-16-cards">
+                    <div>16 Card</div>
+                    <span>(8 Pair)</span>
+                </a>
+                <a href="#" class="custom-btn" id="btn-18-cards">
+                    <div>18 Card</div>
+                    <span>(9 Pair)</span>
+                </a>
+            </div>
+        </div>
+        <!-- Game Control Buttons (Initially Hidden) -->
+        <div class="container game-controls  justify-content-center" id="game-controls" style="display: none;">
+            <a href="#" class="custom-btn" id="btn-exit">Exit</a>
+            <a href="#" class="custom-btn green" id="btn-new-game">New Game</a>
+         
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cardsSection = document.querySelector(".cards-section");
+            const cardButtons = document.querySelector(".card-buttons");
+            const gameControls = document.getElementById("game-controls");
+
+            // Initial front screen card layout (6 cards for better appearance)
+            const initialCards = `
+                <div class="card-container small-card">
+                    <div class="card">
+                        <div class="card-face front"><img src="./assets/images/card-game/small-card.svg" alt="Small Card Image"></div>
+                        <div class="card-face back"><img src="./assets/images/card-game/tractor-card.svg" alt="Back Small Card Image"></div>
+                    </div>
+                </div>
+                <div class="card-container medium-card">
+                    <div class="card">
+                        <div class="card-face front"><img src="./assets/images/card-game/medium.svg" alt="Medium Card Image"></div>
+                        <div class="card-face back"><img src="./assets/images/card-game/tractor-card.svg" alt="Back Medium Card Image"></div>
+                    </div>
+                </div>
+                <div class="card-container large-card">
+                    <div class="card">
+                        <div class="card-face front"><img src="./assets/images/card-game/large.svg" alt="Large Card Image"></div>
+                        <div class="card-face back"><img src="./assets/images/card-game/tractor-card.svg" alt="Back Large Card Image"></div>
+                    </div>
+                </div>
+                <div class="card-container medium-card">
+                    <div class="card">
+                        <div class="card-face front"><img src="./assets/images/card-game/medium.svg" alt="Medium Card Image"></div>
+                        <div class="card-face back"><img src="./assets/images/card-game/tractor-card.svg" alt="Back Medium Card Image"></div>
+                    </div>
+                </div>
+                <div class="card-container small-card">
+                    <div class="card">
+                        <div class="card-face front"><img src="./assets/images/card-game/small-card.svg" alt="Small Card Image"></div>
+                        <div class="card-face back"><img src="./assets/images/card-game/tractor-card.svg" alt="Back Small Card Image"></div>
+                    </div>
+                </div>
+            `;
+
+            // Display the initial front screen cards
+            cardsSection.innerHTML = initialCards;
+
+            // Button click listeners for game start
+            ["btn-6-cards", "btn-8-cards", "btn-10-cards", "btn-12-cards", "btn-14-cards", "btn-16-cards", "btn-18-cards"]
+                .forEach((id, index) => {
+                    document.getElementById(id).addEventListener("click", () => {
+                        // Define grid sizes based on card count
+                        const gridClass = getGridClass((index + 1) * 2 + 4);
+                        updateCardLayout((index + 1) * 2 + 4, gridClass);
+                    });
+                });
+
+            // Exit and New Game button listeners
+            document.getElementById("btn-exit").addEventListener("click", exitGame);
+            document.getElementById("btn-new-game").addEventListener("click", restartGame);
+
+            // Function to update card layout for the game
+            function updateCardLayout(cardCount, gridClass) {
+                // Clear existing cards and set new grid layout class
+                cardsSection.className = `cards-section ${gridClass}`;
+                cardsSection.innerHTML = Array(cardCount).fill().map(() => `
+                    <div class="card-container small-card">
+                        <div class="card">
+                            <div class="card-face front"><img src="./assets/images/card-game/small-card.svg" alt="Card Image"></div>
+                            <div class="card-face back"><img src="./assets/images/card-game/tractor-card.svg" alt="Card Back Image"></div>
+                        </div>
+                    </div>`).join('');
+
+                // Add click-to-flip functionality to cards
+                document.querySelectorAll('.card-container').forEach(card => {
+                    card.addEventListener("click", () => card.querySelector(".card").classList.toggle("flipped"));
+                });
+
+                // Hide card buttons and show game controls
+                cardButtons.style.display = "none";
+                gameControls.style.display = "flex";
+            }
+
+            // Exit game: reset to front screen layout
+            function exitGame() {
+                cardButtons.style.display = "block";
+                gameControls.style.display = "none";
+                cardsSection.className = "cards-section"; // Reset class to default (no flex grid)
+                cardsSection.innerHTML = initialCards; // Restore initial card set
+            }
+
+            // Restart game: refresh the current card layout
+            function restartGame() {
+                // Get the current card count from existing children
+                const cardCount = cardsSection.childElementCount;
+                const gridClass = getGridClass(cardCount); // Get the current grid class
+                updateCardLayout(cardCount, gridClass); // Refresh layout
+            }
+
+            // Function to get the grid class based on card count
+            function getGridClass(cardCount) {
+                switch (cardCount) {
+                    case 6:
+                        return 'flex-3x3';
+                    case 8:
+                        return 'flex-4x4';
+                    case 10:
+                        return 'flex-5x5';
+                    case 12:
+                        return 'flex-6x6';
+                    case 14:
+                        return 'flex-7x7';
+                    case 16:
+                        return 'flex-8x8';
+                    case 18:
+                        return 'flex-9x9';
+                    default:
+                        return 'flex-3x3'; // Default grid for any other cases
+                }
+            }
+        });
+    </script>
+
+
+
+    <!-- ===================================== second Section ===================================== -->
+
+    <div class="container game-container">
+        <h2 class="text-left feature-heading ">FEATURED </h2>
+        <div class="row featured-games-row page" id="page-1">
+            <!-- Featured Game 1 -->
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/6.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Star Wars Outlaws</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+            <!-- Featured Game 2 -->
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/7.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/8.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/9.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/10.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/6.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/7.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/8.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/9.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/10.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+            <!-- Repeat similar blocks for other games -->
+        </div>
+        <div class="row featured-games-row page" id="page-2" style="display:none;">
+            <!-- Featured Game 1 -->
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/7.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Star Wars Outlaws</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+            <!-- Featured Game 2 -->
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/7.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/8.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/9.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/10.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/6.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/7.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/8.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/9.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/10.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+            <!-- Repeat similar blocks for other games -->
+        </div>
+        <div class="row featured-games-row page" id="page-3" style="display:none;">
+            <!-- Featured Game 1 -->
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/6.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Star Wars Outlaws</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+            <!-- Featured Game 2 -->
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/7.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/8.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/9.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/10.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/6.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/7.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/8.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/9.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+
+            <div class="col featured-game-card">
+                <img src="./assets/images/games/10.png" alt="Star Wars Outlaws" class="img-fluid">
+                <div class="featured-games-text-2">
+                    <h5>Gotham Knights</h5>
+                    <p>Game description here...</p>
+                </div>
+            </div>
+
+            <!-- Repeat similar blocks for other games -->
+        </div>
+
+        <!-- Pagination -->
+        <!-- Pagination -->
+        <div class="pagination-section">
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item" id="prev-page">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#" data-page="1">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#" data-page="2">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#" data-page="3">3</a></li>
+                    <li class="page-item" id="next-page">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Include jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Bootstrap and Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                items: 1,
+                nav: true,
+                navText: [
+                    '<img src="./assets/images/games/prev.png" alt="Previous" class="custom-prev" >', // Customize the path and size
+                    '<img src="./assets/images/games/next.png" alt="Next" class="custom-next" >'   // Customize the path and size
+                ],
+            });
+        });
+
+    </script>
+
+    <!-- Custom JS (if any external JS file) -->
+    <script src="./assets/js/js.js"></script>
+
+    <!-- Inline Custom JS for Owl Carousel -->
+
+</body>
+
+</html>

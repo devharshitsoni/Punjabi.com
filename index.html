@@ -1,0 +1,2240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punjabi.com</title>
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" sizes="32x32" /> <!-- Corrected path -->
+
+    <!-- Google Fonts -->
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- FullCalendar CSS -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="./assets/css/style.css"> <!-- Corrected path -->
+
+
+    <style>
+        #calendar img {
+            display: block;
+            /* Ensure images are displayed */
+            margin: auto;
+            /* Center the images */
+        }
+
+        /* General calendar container styles */
+        #calendar {
+            width: 100%;
+
+            margin: 0 auto;
+            padding: 15px;
+            height: 450px;
+            border-radius: 6px;
+            border: 1px solid #dddddd;
+        }
+
+        /* Remove hover effect on the day grid frames */
+        .fc-daygrid-day-frame:hover {
+
+
+            border-radius: 2.5px !important;
+            /* Ensures no background color on hover */
+        }
+
+
+
+        /* Calendar header styling */
+        .fc-toolbar-title {
+            text-align: center;
+            font-size: 19px !important;
+            font-weight: 700;
+            font-family: 'Roboto', sans-serif !important;
+            color: #000;
+            flex-grow: 1;
+        }
+
+        .fc .fc-scrollgrid {
+            border: none;
+
+        }
+
+        /* Previous and next button styles */
+        .fc-toolbar .fc-prev-button,
+        .fc-toolbar .fc-next-button {
+            background: transparent !important;
+            border: none !important;
+            color: #9DA6B7 !important;
+            font-size: 20px !important;
+            font-weight: bold !important;
+            cursor: pointer !important;
+        }
+
+        .fc-prev-button:hover,
+        .fc-next-button:hover {
+            color: #00695c;
+        }
+
+        .fc .fc-button-primary:focus,
+        .fc .fc-button-primary:not(:disabled).fc-button-active:focus,
+        .fc .fc-button-primary:not(:disabled):active:focus {
+            box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 0px 0.2rem;
+        }
+
+        /* Calendar grid (day cells) */
+        .fc-daygrid-body tr:last-child {
+            display: none !important;
+            /* Hide the last row */
+        }
+
+        .fc-day-today {
+            background-color: #2E6B55 !important;
+            border-radius: 4px;
+
+
+
+        }
+
+        /* Styling the day number within 'today' cell */
+        .fc-day-today .fc-daygrid-day-number {
+            color: #fff !important;
+            font-size: 1.25rem;
+
+            text-align: center;
+        }
+
+        /* Day numbers for all calendar days */
+        .fc .fc-daygrid-day-number {
+            font-size: 1.207rem;
+            font-family: 'Roboto', sans-serif !important;
+            color: #000;
+            font-weight: 400;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            margin: 0;
+        }
+
+        /* Ensure day numbers are centered in the grid */
+        .fc-daygrid-day-frame {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Calendar weekday header styling */
+        .fc .fc-col-header-cell-cushion {
+            color: #000;
+            font-weight: 400;
+            font-size: 1.071rem !important;
+            font-family: 'Inter', sans-serif !important;
+            text-decoration: none;
+            padding: 2px 4px;
+        }
+
+        /* Removing borders from the calendar grid */
+        .fc .fc-scrollgrid-section>*,
+        .fc-theme-standard td,
+        .fc-theme-standard th {
+            border: none;
+        }
+
+        /* Hover effect for calendar days */
+        .fc-daygrid-day-frame:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        /* Styling for event dots */
+        .fc .fc-daygrid-event-dot {
+            background-color: #ffeb3b;
+            border-radius: 50%;
+            width: 6px;
+            height: 6px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- preloader -->
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+    <!--======================= nav ======================================== -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid ">
+            <div class="d-flex  justify-content-center align-items-center outer-div">
+                <div class="outer-div-inner ">
+                    <div class="d-flex justify-content-between outer-div-inner-first align-items-center  w-100 ">
+                        <!-- Left Section: Toggle Button and Logo -->
+                        <div class="d-flex align-items-center">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <a class="navbar-brand ms-3" href="#"><img src="./assets/images/logo.png" alt="Logo" /></a>
+                        </div>
+
+                        <!-- Right Section: Language Dropdown and Profile Icon -->
+                        <div class="d-flex align-items-center tnp">
+                            <ul class="navbar-nav translator d-flex d-md-none align-items-center">
+                                <!-- Language Dropdown -->
+                                <li class="nav-item dropdown me-3">
+                                    <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                        id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Pun
+                                    </a>
+                                    <ul class="dropdown-menu header-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Hindi</a></li>
+                                        <li><a class="dropdown-item" href="#">English</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Profile Icon -->
+
+                            </ul>
+                            <div class="nav-divider mx-2 d-flex d-md-none"></div>
+                            <div class="nav-item d-flex d-lg-none">
+                                <a href="#" class="profile-icon">
+                                    <img src="./assets/images/proflle-icon.svg" alt="Profile" class="rounded-circle"
+                                        width="37" height="37" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Cart Icon (optional) -->
+                        <!-- Uncomment this if you need the cart icon as well -->
+                        <!-- 
+                        <a href="#" class="cart-icon d-flex d-md-none ms-3">
+                            <img src="./assets/images/cart.svg" alt="Cart" width="24" height="24" />
+                        </a>
+                        -->
+                    </div>
+
+                    <div class="d-flex d-md-none justify-content-center w-100 search-div">
+                        <div class="nav-item dropdown d-flex justify-content-center w-100">
+                            <div class="search-bar w-100">
+                                <form class="d-flex w-100" role="search">
+                                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                    <input class="form-control me-2 w-100" type="search" aria-label="Search">
+                                    <i class="fa-solid fa-microphone mic-icon" onclick="activateMic()"></i>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="collapse navbar-collapse d-lg-block justify-content-center px-2" id="navbarNav">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./e-book.html"><span>News</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Culture
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Boliyan
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Muhawara
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Baby Names
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Literature
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Poetry</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Audio Books</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Kids Section
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Games</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Poem</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Stories</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Essay</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Entertainment
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Radio</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Jokes</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <div class="search-bar">
+                                <form class="d-flex ms-3" role="search">
+                                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                    <input class="form-control me-2" type="search" placeholder="Search"
+                                        aria-label="Search">
+                                    <i class="fa-solid fa-microphone mic-icon" onclick="activateMic()"></i>
+                                </form>
+                            </div>
+                        </li>
+
+
+                        <li class="nav-item  dropdown  ms-2 w-2">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Pun
+                            </a>
+                            <ul class="dropdown-menu header-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Hindi</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">English</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <button class="btn main-btn " type="button">Login</button>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                            <a href="#" class="cart-icon me-3">
+                                <img src="./assets/images/cart.svg" alt="Cart" width="24" height="24" />
+                            </a>
+                        </li> -->
+                        <li class="nav-item dropdown">
+                            <a href="#" class="profile-icon">
+                                <img src="./assets/images/proflle-icon.svg" alt="Profile" class="rounded-circle"
+                                    width="40" height="40" />
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- New elements after the nav-items -->
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="offcanvas offcanvas-start offcanvas-glass d-lg-none" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="">
+                <div class="offcanvas-header ">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <a href="#" class="offcanvas-title" id="offcanvasNavbarLabel"><img src="./assets/images/logo.png"
+                            alt="" /></a>
+
+                </div>
+                <div class="offcanvas-body">
+
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+
+
+                        <li class="nav-item ">
+                            <a class="nav-link active" aria-current="page" href="#"><span>News</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Culture
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Boliyan
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Muhawara
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Baby Names
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Literature
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Poetry</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Audio Books</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Kids Section
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Games</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Poem</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Stories</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Essay</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Entertainment
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Radio</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Jokes</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+
+
+
+
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+    <!--===================================== end navabr =====================================  -->
+
+    <!--=====================================  Swiper ===================================== -->
+    <div class="swiper mySwiper1">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="./assets/images/hero-slider/1.jpg" alt="Banner Image 1" />
+            </div>
+            <div class="swiper-slide">
+                <img src="./assets/images/hero-slider/2.png" alt="Banner Image 2" />
+            </div>
+            <div class="swiper-slide">
+                <img src="./assets/images/hero-slider/3.jpg" alt="Banner Image 3" />
+            </div>
+            <div class="swiper-slide">
+                <img src="./assets/images/hero-slider/1.jpg" alt="Banner Image 1" />
+            </div>
+            <div class="swiper-slide">
+                <img src="./assets/images/hero-slider/2.png" alt="Banner Image 2" />
+            </div>
+            <!-- Add more slides as needed -->
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <!--=====================================  end ===================================== -->
+
+
+
+
+
+    <div class="swiper mySwiper2">
+        <div class="swiper-wrapper ">
+            <div class="swiper-slide ">
+                <div class="quote-content">
+                    <img src="./assets/images/slider-mark.png" alt="Quote Icon">
+                    <p>We help our clients succeed by creating brand
+                        identities, digital experiences, material that
+                        communicate clearly, achieve marketing goals!</p>
+                    <h4>Nathalie Grossman</h4>
+                    <p class="quiz-p-date">1988-2021l</p>
+
+                </div>
+                <div class="custom-progress-bar-container">
+                    <div class="custom-progress-bar"></div>
+                </div>
+            </div>
+            <div class="swiper-slide ">
+                <div class="quote-content">
+                    <img src="./assets/images/slider-mark.png" alt="Quote Icon">
+                    <p>We help our clients succeed by creating brand
+                        identities, digital experiences, material that
+                        communicate clearly, achieve marketing goals!</p>
+                    <h4>Nathalie Grossman</h4>
+                    <p class="quiz-p-date">1988-2021l</p>
+
+                </div>
+                <div class="custom-progress-bar-container">
+                    <div class="custom-progress-bar"></div>
+                </div>
+            </div>
+            <div class="swiper-slide ">
+                <div class="quote-content">
+                    <img src="./assets/images/slider-mark.png" alt="Quote Icon">
+                    <p>We help our clients succeed by creating brand
+                        identities, digital experiences, material that
+                        communicate clearly, achieve marketing goals!</p>
+                    <h4>Nathalie Grossman</h4>
+                    <p class="quiz-p-date">1988-2021l</p>
+
+                </div>
+                <div class="custom-progress-bar-container">
+                    <div class="custom-progress-bar"></div>
+                </div>
+            </div>
+            <div class="swiper-slide ">
+                <div class="question-content">
+                    <p>We help our clients succeed by creating brand identities, digital experiences, material that
+                        communicate clearly, achieve marketing goals!</p>
+                    <div class="options">
+                        <div><input type="radio" name="option" /> We help our clients succeed by </div>
+                        <div><input type="radio" name="option" />We help our clients succeed by </div>
+                        <div><input type="radio" name="option" /> We help our clients succeed by </div>
+                        <div><input type="radio" name="option" /> We help our clients succeed by </div>
+                    </div>
+                </div>
+
+                <div class="custom-progress-bar-container">
+                    <div class="custom-progress-bar"></div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="swiper-button-prev custom-swiper-button-prevv"></div>
+        <div class="swiper-button-next custom-swiper-button-nextt"></div>
+
+
+    </div>
+
+
+
+    <style>
+        /* Container for the slide */
+        .mySwiper2 {
+            margin-top: 41px !important;
+max-width: 1400px;
+            margin: 0 auto;
+            padding-bottom: 0 !important;
+            height: auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        .mySwiper2 .swiper-slide {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0.2 !important;
+            transform: scale(1) !important;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+           
+
+            min-height: 420px;
+            text-align: center;
+           
+            position: relative;
+          
+           
+        }
+
+    
+        .mySwiper2 .swiper-slide-active {
+            opacity: 1 !important;
+            z-index: 1000;
+        }
+
+        :root {
+            --swiper-theme-color: #3382149a;
+        }
+
+
+        .mySwiper2 .swiper-slide-active {
+            opacity: 1 !important;
+            /* Full opacity for active slide */
+
+            /* Scale up active slide */
+        }
+
+
+        .swiper-pagination-progressbar-fill {
+            background: #2D7A35;
+            color: #2D7A35 !important;
+        }
+
+        .quote-content {
+            margin: 0 auto;
+
+        }
+
+        .quote-content p {
+            font-size: 20px;
+            font-weight: 400;
+            padding: 0 0;
+            line-height: 30px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .quote-content h4 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18.85px;
+            font-weight: 800;
+            margin-bottom: 2px;
+        }
+
+        .quote-content .quiz-p-date {
+            font-size: 14.86px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+        }
+
+        .mySwiper2 .swiper-wrapper {
+            text-align: center;
+
+
+        }
+
+        .quote-content img {
+            width: auto;
+            margin: 0 auto;
+            height: auto;
+        }
+
+
+
+
+
+        .question-content {
+            text-align: center;
+            /* Center text */
+            padding: 0 0px;
+            /* Add padding */
+            margin-top: 0;
+
+        }
+
+        .question-content>p {
+            font-size: 20px;
+            color: #000000;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 20px;
+            line-height: 30px;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* 2 columns */
+            gap: 15px;
+            /* Space between radio options */
+            margin-top: 20px;
+            /* Space above options */
+        }
+
+        .options div {
+            display: flex;
+            align-items: center;
+            /* Center radio button and text vertically */
+            border: 1px solid #ccc;
+            /* Grayish border */
+            border-radius: 5px;
+            /* Rounded corners for options */
+            padding: 10px;
+            
+
+            /* Padding around each option */
+        }
+
+
+
+        .options input[type="radio"] {
+            width: 20px;
+            /* Increase size of radio button */
+            height: 20px;
+            /* Increase size of radio button */
+            margin-right: 10px;
+            /* Space between radio and label */
+            accent-color: #2D7A35;
+            /* Change the color of the radio button */
+        }
+
+        /* Optional: Style for the radio labels */
+        .options label {
+            font-size: 16px;
+            /* Increase font size for labels */
+            color: #333;
+            /* Text color */
+        }
+
+
+        /* The actual progress bar that will fill up */
+        .custom-progress-bar-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 14px;
+            background-color: rgba(45, 122, 53, 0.2);
+            margin: 0 0px;
+        }
+
+        .custom-swiper-pagination .swiper-pagination-progressbar-fill {
+            background: #2D7A35;
+            height: 100%;
+        }
+
+        .custom-progress-bar {
+            height: 100%;
+            /* Match the container height */
+            width: 100%;
+            /* Start with a width of 0% */
+            background-color: #2d7a3581;
+            /* Progress bar color */
+            transition: width 2s ease;
+            /* Smooth transition for progress */
+
+        }
+
+
+
+        .custom-swiper-button-prevv {
+            top: 90%;
+            left: 47%;
+            background-image: url('./assets/images/prev.png');
+            /* Path to prev icon */
+        }
+
+
+        .custom-swiper-button-nextt {
+            top: 90%;
+            right: 47%;
+            background-image: url('./assets/images/next.png');
+            /* Path to next icon */
+        }
+
+        .custom-swiper-button-prevv,
+        .custom-swiper-button-nextt {
+            background-repeat: no-repeat !important;
+            background-position: center !important;
+            background-size: contain !important;
+            width: 40px;
+            /* Button width */
+            z-index: 10000;
+            /* Ensure they are on top */
+            height: 40px;
+            /* Button height */
+            cursor: pointer;
+            opacity: 0.7;
+            /* Slight transparency */
+            transition: opacity 0.3s ease;
+            /* Smooth hover effect */
+        }
+
+        .custom-swiper-button-prevv::after,
+        .custom-swiper-button-nextt::after {
+            display: none;
+        }
+
+        .swiper-pagination-progressbar,
+        .swiper-container-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+            border-radius: 0 !important;
+            background: transparent;
+        }
+        @media (max-width: 1540px){
+            .custom-swiper-button-prevv {
+                top: 92% !important;
+                left: 46% !important;
+                background-image: url('./assets/images/prev.png');
+                /* Path to prev icon */
+            }
+            .quote-content p {
+                font-size: 18px;
+                padding: 0;
+            }
+            .question-content>p {
+              font-size: 18px;  
+              padding: 0;
+
+            }
+
+            .custom-swiper-button-nextt {
+                top: 92% !important;
+                right: 46% !important;
+                background-image: url('./assets/images/next.png');
+                /* Path to next icon */
+            }
+        }
+        @media (max-width: 1024px){
+            .mySwiper2 .swiper-slide{
+                padding-top: 0;
+                min-height: 480px;
+                
+            }
+           
+        }
+        @media (max-width: 850px){
+            .custom-swiper-button-prevv {
+                top: 92% !important;
+                left: 42% !important;
+                background-image: url('./assets/images/prev.png');
+                /* Path to prev icon */
+            }
+            .options {
+                display: flex !important;
+                flex-direction: column !important;
+                /* 2 columns */
+                gap: 10px;
+                /* Space between radio options */
+                margin-top: 20px;
+                /* Space above options */
+            }
+
+            .custom-swiper-button-nextt {
+                top: 92% !important;
+                right: 42% !important;
+                background-image: url('./assets/images/next.png');
+                /* Path to next icon */
+            }
+        }
+        @media (max-width: 768px) {
+            .mySwiper2 .swiper-slide{
+                padding-top: 0;
+                min-height: 480px;
+                
+            }
+          
+            .options {
+                display: flex !important;
+                flex-direction: column !important;
+                /* 2 columns */
+                gap: 10px;
+                /* Space between radio options */
+                margin-top: 20px;
+                /* Space above options */
+            }
+            .custom-swiper-button-prevv {
+                top: 92% !important;
+                left: 43% !important;
+                background-image: url('./assets/images/prev.png');
+                /* Path to prev icon */
+            }
+
+
+            .custom-swiper-button-nextt {
+                top: 92% !important;
+                right: 43% !important;
+                background-image: url('./assets/images/next.png');
+                /* Path to next icon */
+            }
+        }
+
+        @media (max-width: 568px) {
+            .mySwiper2 .swiper-slide{
+                padding-top: 0;
+                min-height: 480px;
+            }
+            .custom-swiper-button-prevv {
+                top: 93% !important;
+                left: 34% !important;
+                background-image: url('./assets/images/prev.png');
+                /* Path to prev icon */
+            }
+            .custom-swiper-button-nextt {
+                top: 93% !important;
+                right: 34% !important;
+                background-image: url('./assets/images/next.png');
+                /* Path to next icon */
+            }
+            .question-content>p {
+                padding: 0;
+                font-size: 18px !important;
+                text-align: center;
+            }
+            /* .mySwiper2 .swiper-slide { 
+            min-height: 420px;  
+            } */
+            .quote-content p {
+                font-size: 18px;
+                font-weight: 400;
+                padding: 0 0;
+                text-align: center;
+                line-height: 30px;
+                font-family: 'Inter', sans-serif;
+            }
+
+           
+
+            .options {
+                display: flex !important;
+                flex-direction: column !important;
+                /* 2 columns */
+                gap: 10px;
+                /* Space between radio options */
+                margin-top: 20px;
+                /* Space above options */
+            }
+        }
+
+    </style>
+
+
+
+    <!-- ===================================== top poets ===================================== -->
+    <section class="container-fluid top-poets">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col">
+                    <h2 class="heading">Punjab’s Top Poets</h2>
+                </div>
+            </div>
+            <div class="gallery-wrapper">
+                <div class="container">
+                    <!-- Navigation Arrows -->
+                    <div class="arrow arrow-left" id="arrow-left">&#10094;</div>
+                    <div class="gallery-container d-flex hide-scroll-bar" id="gallery-container">
+                        <!-- Slide 1 -->
+                        <div class="gallery-item">
+                            <img src="./assets/images/gallery-slider/1.png" alt="Description 1" class="gallery-image">
+                            <div class="image-info">
+                                <p class="name">silverlion</p>
+                                <p class="date">1950-1970</p>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="gallery-item">
+                            <img src="./assets/images/gallery-slider/1.png" alt="Description 1" class="gallery-image">
+                            <div class="image-info">
+                                <p class="name">silverlion</p>
+                                <p class="date">1960-1980</p>
+                            </div>
+                        </div>
+                        <!-- Add more slides as needed -->
+                        <div class="gallery-item">
+                            <img src="./assets/images/gallery-slider/3.png" alt="Description 3" class="gallery-image">
+                            <div class="image-info">
+                                <p class="name">silverlion</p>
+                                <p class="date">1960-1980</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./assets/images/gallery-slider/4.png" alt="Description 4" class="gallery-image">
+                            <div class="image-info">
+                                <p class="name">silverlion</p>
+                                <p class="date">1960-1980</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./assets/images/gallery-slider/5.png" alt="Description 5" class="gallery-image">
+                            <div class="image-info">
+                                <p class="name">silverlion</p>
+                                <p class="date">1960-1980</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./assets/images/gallery-slider/6.png" alt="Description 6" class="gallery-image">
+                            <div class="image-info">
+                                <p class="name">silverlion</p>
+                                <p class="date">1960-1980</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./assets/images/gallery-slider/6.png" alt="Description 6" class="gallery-image">
+                            <div class="image-info">
+                                <p class="name">silverlion</p>
+                                <p class="date">1960-1980</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./assets/images/gallery-slider/6.png" alt="Description 6" class="gallery-image">
+                            <div class="image-info">
+                                <p class="name">silverlion</p>
+                                <p class="date">1960-1980</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./assets/images/gallery-slider/6.png" alt="Description 6" class="gallery-image">
+                            <div class="image-info">
+                                <p class="name">silverlion</p>
+                                <p class="date">1960-1980</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./assets/images/gallery-slider/6.png" alt="Description 6" class="gallery-image">
+                            <div class="image-info">
+                                <p class="name">silverlion</p>
+                                <p class="date">1960-1980</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./assets/images/gallery-slider/6.png" alt="Description 6" class="gallery-image">
+                            <div class="image-info">
+                                <p class="name">silverlion</p>
+                                <p class="date">1960-1980</p>
+                            </div>
+                        </div>
+                        <div class="watch-more-item gallery-item">
+                            <a href="path-to-your-next-page.html" class="watch-more">Watch more 100+</a>
+                        </div>
+                    </div>
+                    <div class="arrow arrow-right" id="arrow-right">&#10095;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--=====================================  end ===================================== -->
+
+    <!--=====================================  books =====================================  -->
+
+
+    <section class="container-fluid books ">
+        <div class="container">
+            <h2 class="text-center head ">Punjabi's Book Collection</h2>
+            <p class="text-center py-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                velit
+                esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                culpa
+                qui officia deserunt mollit anim id est laborum.</p>
+
+            <!-- Grid of cards -->
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-1 g-sm-4">
+                <!-- Card 1 -->
+                <div class="col">
+                    <div class="card book-card">
+                        <img src="./assets/images/cards/1.png" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <div class=" d-flex justify-content-between">
+                                <h5 class="card-title">silverlion</h5>
+                                <!-- <span class="trending-badge new">New</span> -->
+                            </div>
+                            <p class="card-text sub-heading">ਖੁਸ਼ਵੰਤ ਸਿੰਘ</p>
+                            
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col">
+                    <div class="card book-card">
+                        <img src="./assets/images/cards/2.png" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <div class=" d-flex justify-content-between">
+                                <h5 class="card-title">silverlion</h5>
+                                <!-- <span class="trending-badge">Trending</span> -->
+                            </div>
+                            <p class="card-text sub-heading">ਖੁਸ਼ਵੰਤ ਸਿੰਘ</p>
+                            
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col">
+                    <div class="card book-card">
+                        <img src="./assets/images/cards/3.png" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <div class=" d-flex justify-content-between">
+                                <h5 class="card-title">silverlion</h5>
+                                <!-- <span class="trending-badge">Trending</span> -->
+                            </div>
+                            <p class="card-text sub-heading">Devon Lane</p>
+                            
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="col">
+                    <div class="card book-card">
+                        <img src="./assets/images/cards/4.png" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <div class=" d-flex justify-content-between  g-2   gap: 10px;">
+                                <h5 class="card-title ">silverlion</h5>
+                                <!-- <span class="trending-badge buyest">Most Buyest</span> -->
+                            </div>
+                            <p class="card-text  sub-heading">Devon Lane</p>
+                            
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="col">
+                    <div class="card book-card">
+                        <img src="./assets/images/cards/5.png" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <div class=" d-flex justify-content-between">
+                                <h5 class="card-title">silverlion</h5>
+                                <!-- <span class="trending-badge">Trending</span> -->
+                            </div>
+                            <p class="card-text sub-heading">Devon Lane</p>
+                            
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card book-card">
+                        <img src="./assets/images/cards/6.png" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <div class=" d-flex justify-content-between">
+                                <h5 class="card-title">silverlion</h5>
+                                <!-- <span class="trending-badge">Trending</span> -->
+                            </div>
+                            <p class="card-text sub-heading">Devon Lane</p>
+                            
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card book-card">
+                        <img src="./assets/images/cards/7.png" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <div class=" d-flex justify-content-between">
+                                <h5 class="card-title">silverlion</h5>
+                                <!-- <span class="trending-badge">Trending</span> -->
+                            </div>
+                            <p class="card-text sub-heading">Devon Lane</p>
+                            
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card book-card">
+                        <img src="./assets/images/cards/8.png" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <div class=" d-flex justify-content-between">
+                                <h5 class="card-title">silverlion</h5>
+                                <!-- <span class="trending-badge">Trending</span> -->
+                            </div>
+                            <p class="card-text sub-heading">Devon Laneਘ</p>
+                            
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card book-card">
+                        <img src="./assets/images/cards/9.png" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <div class=" d-flex justify-content-between">
+                                <h5 class="card-title">silverlion</h5>
+                                <!-- <span class="trending-badge">Trending</span> -->
+                            </div>
+                            <p class="card-text sub-heading">Devon Lane</p>
+                            
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card book-card">
+                        <img src="./assets/images/cards/10.png" class="card-img-top" alt="Book Image">
+                        <div class="card-body">
+                            <div class=" d-flex justify-content-between">
+                                <h5 class="card-title">silverlion</h5>
+                                <!-- <span class="trending-badge">Trending</span> -->
+                            </div>
+                            <p class="card-text sub-heading">Devon Lane</p>
+                            
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat for the next row (6-10 cards) -->
+                <!-- Add more cards here following the same structure -->
+            </div>
+            <!-- Watch More Button -->
+            <div class="text-center my-4">
+                <button class="btn card-btn"><a href="books.html">Watch More</a></button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =====================================end =====================================  -->
+
+    <!-- ===================================== calender =====================================  -->
+    <div class="container calender-sec ">
+        <div class="row">
+            <!-- Left Section: Calendar -->
+            <div class="col-lg-6">
+                <div id='calendar'></div>
+            </div>
+
+            <!-- Right Section: Events List -->
+            <!-- Right Section: Events List -->
+            <div class="event-card col-lg-6">
+                <div class="event-container">
+                    <div class="event-content">
+                        <div class="scrollable-wrapper">
+                            <table class="">
+                                <thead class="border-none">
+                                    <tr class="border-none">
+                                        <th class="event-title-date border-none date-heading">Date</th>
+                                        <th class="event-title-event border-none">Event</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="scrollable-tbody text-left">
+                                    <tr class="main-event">
+                                        <td class="table-data-date">12/06/2024</td>
+                                        <td class="table-data-event rn">Weekday : Thursday</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-data-date">13/06/2024</td>
+                                        <td class="table-data-event">
+                                            Holiday : Ganesh Chaturthi 2024
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-data-date">14/06/2024</td>
+                                        <td class="table-data-event">
+                                            Nakshatra : Moola <span>(Up To 9:52 Pm)</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-data-date">15/06/2024</td>
+                                        <td class="table-data-event">
+                                            Dur Muhurat : 10:20 AM – 11:09 AM
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-data-date">16/06/2024</td>
+                                        <td class="table-data-event">
+                                            Karana : Kaulava <span>(Up To 9:52 Pm)</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-data-date">17/06/2024</td>
+                                        <td class="table-data-event">
+                                            Karana : Kaulava <span>(Up To 9:52 Pm)</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-data-date">17/06/2024</td>
+                                        <td class="table-data-event">
+                                            Karana : Kaulava <span>(Up To 9:52 Pm)</span>
+                                        </td>
+                                    </tr>
+
+                                    <!-- DUMMY -->
+                                    <tr>
+                                        <td class="table-data-date">Dummy</td>
+                                        <td class="table-data-event">Arjun<span>Krishna</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- ===================================== end =====================================  -->
+
+
+
+
+    <!-- ========================= banner section=============================== -->
+    <section class="banner-section ">
+        <div class="content">
+            <h1>Any mechanical keyboard enthusiasts in design?</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. </p>
+            <div class="buttons">
+                <a href="#" class="btn banner-btn">PLAY NOW</a>
+                <a href="#" class="btn banner-btn-2">VIEW MORE</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================= end=============================== -->
+
+
+    <!-- ========================= profile shyari ========================= -->
+
+    <section class="profile-section ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 profile-left">
+                    <img src="./assets/images/profile.png" alt="Profile Image" class="img-fluid">
+                    <div class="profile-info">
+                        <p class="profie-name">John Doe</p>
+                        <p class="profile-dob">7/18/17</p>
+                    </div>
+                </div>
+                <div class="col-md-8 profile-right">
+                    <h3>tinypanda866</h3>
+                    <hr class="divider">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--=========================  end ========================= -->
+
+    <!--=========================  blog section ========================= -->
+    <section class="blog-section ">
+        <div class="container">
+            <h1 class="section-heading">Punjabi News’s Section</h1>
+            <p class="section-paragraph">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.
+            </p>
+            <div class="row">
+                <div class="col-12 col-lg-7 col-md-12  blog-left">
+                    <div class="blog-item">
+                        <img src="./assets/images/blog/1.svg" alt="Blog Image Left" class="img-fluid">
+                        <div class="blog-content">
+                            <h3 class="blog-heading">Any mechanical keyboard enthusiasts in design?</h3>
+                            <p class="blog-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                            <div class="blog-footer">
+                                <div class="d-flex">
+                                    <span class="author-name">By <span class="author">John Doe</span> |</span>
+                                    <span class="date">5/27/15</span>
+                                </div>
+                                <div class="d-flex">
+                                    <a href="#" class="link-icon index-like-icon">
+
+                                        <i class="fa-solid fa-heart like-icon-img"></i>
+                                    </a>
+                                    <a href="#" class="link-icon">
+                                        <i class="fa-solid fa-share"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-item">
+                        <img src="./assets/images/blog/2.svg" alt="Blog Image Right" class="img-fluid">
+                        <div class="blog-content">
+                            <h3 class="blog-heading">Any mechanical keyboard enthusiasts in design?</h3>
+                            <p class="blog-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                            <div class="blog-footer">
+                                <div class="d-flex">
+                                    <span class="author-name">By <span class="author">John Doe</span> |</span>
+                                    <span class="date">5/27/15</span>
+                                </div>
+                                <div class="d-flex">
+                                    <a href="#" class="link-icon index-like-icon">
+
+                                        <i class="fa-solid fa-heart like-icon-img"></i>
+                                    </a>
+                                    <a href="#" class="link-icon">
+                                        <i class="fa-solid fa-share"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-5 col-md-12 blog-right">
+                    <div class="blog-item">
+
+                        <img src="./assets/images/blog/3.svg" alt="Blog Image Right" class="img-fluid">
+                        <div class="blog-content">
+                            <h3 class="blog-heading">Any mechanical keyboard enthusiasts in design?</h3>
+                            <p class="blog-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                incididunt ut labore et dolore magna aliqua. Ut eni enim ad minim veniam, quis
+                            </p>
+                        </div>
+                        <div class="blog-footer">
+                            <div class="">
+                                <span class="author-name">By <span class="author">John Doe</span> |</span>
+                                <span class="date">5/27/15</span>
+                            </div>
+                            <div class="d-flex">
+                                <a href="#" class="link-icon index-like-icon">
+
+                                    <i class="fa-solid fa-heart like-icon-img"></i>
+                                </a>
+                                <a href="#" class="link-icon">
+                                    <i class="fa-solid fa-share"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row">
+
+                <div class="col-12 col-lg-5 col-md-12 blog-right">
+                    <div class="blog-item">
+                        <div class="blog-item-inner">
+                            <img src="./assets/images/blog/6.svg" alt="Blog Image Right" class="img-fluid">
+                            <div class="blog-content">
+                                <h3 class="blog-heading">Any mechanical keyboard enthusiasts in design?</h3>
+                                <p class="blog-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut elit ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris laboris nisi ut aliquip ex ea commodo consequat.
+                                    incididunt ut labore et dolore magna aliqua. Ut eni enim ad minim veniam, quis
+                                </p>
+                            </div>
+                            <div class="blog-footer">
+                                <div class="d-flex">
+                                    <span class="author-name">By <span class="author">John Doe</span> |</span>
+                                    <span class="date">5/27/15</span>
+                                </div>
+                                <div class="d-flex">
+                                    <a href="#" class="link-icon index-like-icon">
+
+                                        <i class="fa-solid fa-heart like-icon-img"></i>
+                                    </a>
+                                    <a href="#" class="link-icon">
+                                        <i class="fa-solid fa-share"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-7 col-md-12 blog-left">
+                    <div class="blog-item">
+                        <img src="./assets/images/blog/5.svg" alt="Blog Image Left" class="img-fluid">
+                        <div class="blog-content">
+                            <h3 class="blog-heading">Any mechanical keyboard enthusiasts in design?</h3>
+                            <p class="blog-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                            <div class="blog-footer">
+                                <div class="d-flex">
+                                    <span class="author-name">By <span class="author">John Doe</span> |</span>
+                                    <span class="date">5/27/15</span>
+                                </div>
+                                <div class="d-flex">
+                                    <a href="#" class="link-icon index-like-icon">
+
+                                        <i class="fa-solid fa-heart like-icon-img"></i>
+                                    </a>
+                                    <a href="#" class="link-icon">
+                                        <i class="fa-solid fa-share"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-item">
+                        <img src="./assets/images/blog/4.svg" alt="Blog Image Right" class="img-fluid">
+                        <div class="blog-content">
+                            <h3 class="blog-heading">Any mechanical keyboard enthusiasts in design?</h3>
+                            <p class="blog-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                            <div class="blog-footer">
+                                <div class="d-flex">
+                                    <span class="author-name">By <span class="author">John Doe</span> |</span>
+                                    <span class="date">5/27/15</span>
+                                </div>
+                                <div class="d-flex">
+                                    <a href="#" class="link-icon index-like-icon">
+
+                                        <i class="fa-solid fa-heart like-icon-img"></i>
+                                    </a>
+                                    <a href="#" class="link-icon">
+                                        <i class="fa-solid fa-share"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Watch More Button -->
+            <div class="text-center my-4">
+                <button class="btn card-btn"><a href="#">Watch More</a></button>
+            </div>
+        </div>
+    </section>
+
+    <!--=========================  end ========================= -->
+
+    <!-- ========================= pujabs radio channnel========================= -->
+
+    <section class="container radio-channel-section">
+        <div class="row mb-2">
+            <div class="col">
+                <h2 class="heading">Punjab’s Top Radio Channels</h2>
+                <p class="text-center px-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta sapiente
+                    minus voluptatum eveniet, officiis ullam reiciendis omnis tenetur eligendi sit nihil aspernatur
+                    corporis dignissimos praesentium fugiat id deserunt veritatis nemo culpa pariatur! Obcaecati,
+                    corporis distinctio. In aliquam expedita eum quas assumenda necessitatibus, tempore accusantium,
+                    nesciunt obcaecati ullam sunt labore voluptate.</p>
+            </div>
+        </div>
+        <div class="radio-wrapper">
+            <div class="radio-channel-container container ">
+
+                <!-- Navigation Arrows -->
+                <div class="arrow arrow-left" id="radio-arrow-left">&#10094;</div>
+                <!-- Radio Card 1 -->
+                <div class="radio-channel-card">
+
+                    <img src="./assets/images/radio/1.png" class="card-img-top" alt="Radio Channel 1">
+                    <div class="card-body">
+
+                        <div class="radio-info">
+                            <span class="name">Nathalie Grossman</span><br>
+                            <span class="date">1988-2021</span>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Radio Card 2 -->
+                <div class="radio-channel-card">
+
+                    <img src="./assets/images/radio/2.png" class="card-img-top" alt="Radio Channel 2">
+                    <div class="card-body">
+
+                        <div class="radio-info">
+                            <span class="name">Nathalie Grossman</span><br>
+                            <span class="date">1988-2021</span>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Radio Card 3 -->
+                <div class="radio-channel-card">
+
+                    <img src="./assets/images/radio/3.png" class="card-img-top" alt="Radio Channel 3">
+                    <div class="card-body">
+
+                        <div class="radio-info">
+                            <span class="name">Nathalie Grossman</span><br>
+                            <span class="date">1988-2021</span>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Radio Card 4 -->
+                <div class="radio-channel-card">
+
+                    <img src="./assets/images/radio/4.png" class="card-img-top" alt="Radio Channel 4">
+                    <div class="card-body">
+
+                        <div class="radio-info">
+                            <span class="name">Nathalie Grossman</span><br>
+                            <span class="date">1988-2021</span>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Radio Card 5 -->
+                <div class="radio-channel-card">
+
+                    <img src="./assets/images/radio/4.png" class="card-img-top" alt="Radio Channel 4">
+                    <div class="card-body">
+
+                        <div class="radio-info">
+                            <span class="name">Nathalie Grossman</span><br>
+                            <span class="date">1988-2021</span>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Radio Card 6 -->
+                <div class="radio-channel-card">
+
+                    <img src="./assets/images/radio/2.png" class="card-img-top" alt="Radio Channel 4">
+                    <div class="card-body">
+
+                        <div class="radio-info">
+                            <span class="name">Nathalie Grossman</span><br>
+                            <span class="date">1988-2021</span>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Radio Card 7 -->
+                <div class="radio-channel-card">
+
+                    <img src="./assets/images/radio/5.png" class="card-img-top" alt="Radio Channel 4">
+                    <div class="card-body">
+
+                        <div class="radio-info">
+                            <span class="name">Nathalie Grossman</span><br>
+                            <span class="date">1988-2021</span>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Radio Card 8 -->
+                <div class="radio-channel-card">
+
+                    <img src="./assets/images/radio/1.png" class="card-img-top" alt="Radio Channel 4">
+                    <div class="card-body">
+
+                        <div class="radio-info">
+                            <span class="name">Nathalie Grossman</span><br>
+                            <span class="date">1988-2021</span>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Radio Card 9 -->
+                <div class="radio-channel-card">
+
+                    <img src="./assets/images/radio/2.png" class="card-img-top" alt="Radio Channel 4">
+                    <div class="card-body">
+
+                        <div class="radio-info">
+                            <span class="name">Nathalie Grossman</span><br>
+                            <span class="date">1988-2021</span>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Radio Card 10 -->
+                <div class="radio-channel-card">
+
+                    <img src="./assets/images/radio/4.png" class="card-img-top" alt="Radio Channel 4">
+                    <div class="card-body">
+
+                        <div class="radio-info">
+                            <span class="name">Nathalie Grossman</span><br>
+                            <span class="date">1988-2021</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="arrow arrow-right" id="radio-arrow-right">&#10095;</div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========================= end ========================= -->
+
+
+    <!-- ========================= Visit Our YouTube's Channel ========================= -->
+    <section class="youtube-section py-3  text-center">
+        <div class="container">
+            <h2 class="heading">Visit Our YouTube's Channel</h2>
+            <p class="description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
+            </p>
+
+            <div class="youtube-video-container ">
+                <!-- Thumbnail image with Play button overlay -->
+                <img src="./assets/images/thumbnail.png" alt="YouTube Video Thumbnail" class="youtube-thumbnail"
+                    id="youtube-thumbnail">
+
+                <!-- Play button icon -->
+                <div class="youtube-play-icon" id="youtube-play-icon">
+                    <img src="./assets/images/youtubeicon.png" alt="YouTube Play Icon">
+                </div>
+
+                <!-- YouTube Video iframe, hidden initially -->
+                <iframe id="youtube-video"
+                    src="https://www.youtube.com/embed/QxddU3sjVRY?list=RDkyjg5kX4pT0&enablejsapi=1"
+                    title="AUR - SHIKAYAT - Raffey - Usama - Ahad (Official Music Video)" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                    style="display: none; width: 100%; height: 100%;">
+                </iframe>
+            </div>
+
+            <h3 class="video-title">YOUTUBE</h3>
+            <p class="video-description">CELEBRATING 300 YEARS OF MEER</p>
+
+            <div class="share-section">
+                <a href="#"><img src="./assets/images/share-icon.svg" alt="Share" class="share-icon"></a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ========================= end ========================= -->
+
+
+
+    <!--============================== word day========================  -->
+
+    <div class="container wrd py-3">
+        <div class="row">
+            <!-- Word of the Day Section -->
+            <div class="col-md-6 mb-4">
+                <div class="word-day-box  py-4">
+                    <div class="custom-badge me-4">Word of The Day</div>
+                    <h2 class="">Epistemology</h2>
+                    <p class="sub">In a laoreet purus. Integer turpis quam, laoreet id orci nec, ultrices lacinia nunc.
+                        Aliquam erat vo Integer turpis quam, laoreet id orci nec, ultrices lacinia nunc. Aliquam erat vo
+                    </p>
+                    <p class="bottom">In a laoreet purus. Integer turpis quam, laoreet id orci nec, ultrices lacinia
+                        nunc. Aliquam erat vo Integer turpis quam, laoreet id orci nec, ultrices lacinia nunc. Aliquam
+                        erat voIn a laoreet purus. Integer turpis quam, laoreet id orci nec, ultrices lacinia nunc.
+                        Aliquam erat vo Integer turpis quam, laoreet id orci nec, ultrices lacinia nunc. Aliquam erat vo
+                    </p>
+                    <a href="#" class="btn  explore">Explore Word of The Day &gt;</a>
+
+                </div>
+            </div>
+
+            <!-- Dictionary Section -->
+            <div class="col-md-6 dictionary-box mb-4">
+                <div class=" border dictionary-box-inner p-4">
+                    <h2 class="">Dictionary</h2>
+                    <p>In a laoreet purus. Integer turpis quam, laoreet id orci nec, ultrices lacinia nunc. </p>
+                    <p>Search Your Word Here</p>
+                    <div class="mb-3">
+
+                        <input type="text">
+                    </div>
+                    <div class="d-flex buttons">
+                        <button class="btn banner-btn-3 me-2">SEARCH NOW</button>
+                        <button class="btn banner-btn-4">VISIT DICTIONARY</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ======================== end ========================== -->
+
+
+
+    <!--============================== second banner ========================  -->
+
+    <section class="banner-section-2   my-3">
+
+        <div class="content">
+            <h1>Any mechanical keyboard enthusiasts in design?</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                <span class="d-none sm-d-flex">
+                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                    dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                </span>
+            </p>
+            <div class="buttons">
+                <a href="#" class="btn banner-btn">PLAY NOW</a>
+                <a href="#" class="btn banner-btn-2">VIEW MORE</a>
+            </div>
+        </div>
+
+    </section>
+    <!--==============================end========================  -->
+
+
+    <!-- ====================== boliyan and jokes ================== -->
+    <div class="container bly mt-5">
+        <div class="row">
+            <!-- Boliyan Card -->
+            <div class="col-md-6 mb-4">
+                <div class="custom-card boliyan-card text-white  h-100">
+                    <h2 class="fw-bold">Boliyan</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in <span
+                            class="d-none d-md-flex">
+                            reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat
+                            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </span></p>
+
+                    <a href="#" class="btn btn-outline-light mt-3">Explore More</a>
+
+                </div>
+            </div>
+
+            <!-- Jokes Card -->
+            <div class="col-md-6 mb-4">
+                <div class="custom-card jokes-card text-white  h-100">
+                    <h2 class="fw-bold">Jokes</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in <span
+                            class="d-none d-md-flex">
+                            reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat
+                            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </span></p>
+                    <a href="#" class="btn btn-outline-light mt-3">Explore More</a>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Small Cards Row -->
+        <div class="row text-center">
+            <div class="col-md-2 col-6 mb-3">
+                <div class="small-card d-flex justify-content-between bg-danger-1 text-white p-3">
+                    <div class="text-start">
+                        <h5>Books</h5>
+                        <p>01</p>
+                    </div>
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+            </div>
+            <div class="col-md-2 col-6 mb-3">
+                <div class="small-card d-flex justify-content-between bg-success-2 text-white p-3">
+                    <div class="text-start">
+                        <h5>Shyari</h5>
+                        <p>03</p>
+                    </div>
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+            </div>
+            <div class="col-md-2 col-6 mb-3">
+                <div class="small-card d-flex justify-content-between bg-dark-3 text-white p-3">
+                    <div class="text-start">
+                        <h5>Poet</h5>
+                        <p>011</p>
+                    </div>
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+            </div>
+            <div class="col-md-2 col-6 mb-3">
+                <div class="small-card d-flex justify-content-between bg-primary text-white p-3">
+                    <div class="text-start">
+                        <h5>History</h5>
+                        <p>056</p>
+                    </div>
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+            </div>
+            <div class="col-md-2 col-6 mb-3">
+                <div class="small-card d-flex justify-content-between bg-primary text-white p-3">
+                    <div class="text-start">
+                        <h5>Radio</h5>
+                        <p>125</p>
+                    </div>
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+            </div>
+            <div class="col-md-2 col-6 mb-3">
+                <div class="small-card d-flex justify-content-between bg-primary text-white p-3">
+                    <div class="text-start">
+                        <h5>Dictionary</h5>
+                        <p>654</p>
+                    </div>
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  end ======================= -->
+
+    <!-- ====================== logo slider ================== -->
+
+    <section class="slide-option">
+      <div class="text-center mt-3">
+        <h2 class="heading">Our Partners</h2>
+      </div>
+       
+
+        <div id="infinite" class="highway-slider ">
+            <div class="container-fluid highway-barrier">
+                <ul class="highway-lane ">
+                    <li class="highway-car"> <img src="./assets/images/Expedia-Group..svg" alt="expedia" /></li>
+                    <li class="highway-car"><img class="agil" src="./assets/images/Globe-Life.svg" alt="globe" /></li>
+                    <li class="highway-car"> <img src="./assets/images/Electronic-Arts.svg" alt="electriic" /></li>
+                    <li class="highway-car"><img src="./assets/images/Eaton-Corporation,.svg" alt="eton" /></li>
+                    <li class="highway-car"><img src="./assets/images/Deere-Company.svg" alt="dheree" /></li>
+                    <li class="highway-car"> <img src="./assets/images/Edison-International.svg" alt="edison" /></li>
+                    <li class="highway-car"><img src="./assets/images/Constellation-Energy-Corporation.svg" alt="cons" /></li>
+                    <li class="highway-car">  <img src="./assets/images/Expedia-Group..svg" alt="expedia" /></li>
+                    <li class="highway-car"><img src="./assets/images/Eaton-Corporation,.svg" alt="eton" /></li>
+                    <li class="highway-car">  <img src="./assets/images/Electronic-Arts.svg" alt="electriic" /></li>
+                    <li class="highway-car">  <img src="./assets/images/Edison-International.svg" alt="edison" /></li>
+                    <li class="highway-car">  <img src="./assets/images/Electronic-Arts.svg" alt="electriic" /></li>
+
+
+                    <li class="highway-car"><img class="agil" src="./assets/images/Comerica-Incorporated.svg" alt="com" /></li>
+                    <li class="highway-car">  <img src="./assets/images/Electronic-Arts.svg" alt="electriic" /></li>
+                    <li class="highway-car"><img src="./assets/images/Eaton-Corporation,.svg" alt="eton" /></li>
+                    <li class="highway-car"><img src="./assets/images/Deere-Company.svg" alt="dheree" /></li>
+                    <li class="highway-car"> <img src="./assets/images/Edison-International.svg" alt="edison" /></li>
+                    <li class="highway-car"><img src="./assets/images/Constellation-Energy-Corporation.svg" alt="cons" /></li>
+                    <li class="highway-car">  <img src="./assets/images/Expedia-Group..svg" alt="expedia" /></li>
+                    <li class="highway-car"><img src="./assets/images/Eaton-Corporation,.svg" alt="eton" /></li>
+                    <li class="highway-car">  <img src="./assets/images/Electronic-Arts.svg" alt="electriic" /></li>
+                    <li class="highway-car">  <img src="./assets/images/Edison-International.svg" alt="edison" /></li>
+                    <li class="highway-car">  <img src="./assets/images/Electronic-Arts.svg" alt="electriic" /></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="join-us">
+            <a href="#"> Want To Join Us ?</a>
+        </div>
+    </section>
+
+    <!-- ====================== end ================== -->
+
+    <!-- =====================Footer===================== -->
+    <footer class="footer-st">
+        <!-- Disclaimer Section -->
+        <div class="footer-top-outer-st">
+
+
+            <!-- Footer Top Section -->
+            <div class="footer-top">
+                <div class="footer-container-st">
+                    <!-- Contact Info -->
+                    <div class="footer-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>4517 Washington Ave. Manchester,
+                            Kentucky 39495</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="footer-item">
+                        <i class="fas fa-phone"></i>
+                        <p>(229) 555-0109</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="footer-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>jessica.hanson@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Link Section -->
+        <div class="container ">
+            <div class="row footer-menu-st ">
+                <!-- Motor Insurance -->
+                <div class="column col-3">
+                    <h6 class="title-st">Animal</h6>
+                    <p><a href="#">Business</a></p>
+                    <p><a href="#">Business</a></p>
+                    <p><a href="#">Business</a></p>
+                    <p><a href="#">Business</a></p>
+                    <p><a href="#">Business</a></p>
+                </div>
+
+                <!-- Life Insurance -->
+                <div class="column col-3">
+                    <h6 class="title-st">Architecture</h6>
+                    <p><a href="#">Business</a></p>
+                    <p><a href="#">Business</a></p>
+                    <p><a href="#">Business</a></p>
+                </div>
+
+                <!-- Resources -->
+                <div class="column col-3">
+                    <h6 class="title-st">Texture</h6>
+                    <p><a href="#">Business</a></p>
+                    <p><a href="#">Business</a></p>
+                    <p><a href="#">Business</a></p>
+                    <p><a href="#">Business</a></p>
+                </div>
+
+                <!-- About Us -->
+                <div class="column col-3" >
+                    <h6 class="title-st">Nature</h6>
+                    <p><a href="#">Art</a></p>
+                    <p><a href="#">Animal</a></p>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-section">
+            <img src="./assets/images/logo.png" alt="Logo">
+            <div class="social-icons-st">
+                <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+                <a href="#"><i class="fab fa-pinterest fa-lg"></i></a>
+                <a href="#"><i class="fab fa-youtube fa-lg"></i></a>
+                <a href="#"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+
+
+    </footer>
+    <!--===================== end ===================== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper1", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      keyboard: {
+        enabled: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    }); 
+</script>
+
+    <script>
+        const customSwiper = new Swiper('.mySwiper2', {
+            slidesPerView: 3,
+            spaceBetween: 80, // Increase space between slides
+            loop: true,
+            centeredSlides: true, // Center the active slide
+            navigation: {
+                nextEl: '.custom-swiper-button-nextt',
+                prevEl: '.custom-swiper-button-prevv',
+            },
+            autoplay: {
+                delay: 15000,
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 50,
+                },
+            },
+
+
+            on: {
+                // Handles scaling and opacity when slide transitions
+                slideChangeTransitionStart: function () {
+                    const activeSlide = this.slides[this.activeIndex];
+                    const prevSlide = this.slides[this.activeIndex - 1];
+                    const nextSlide = this.slides[this.activeIndex + 1];
+
+                    // Reset scale and opacity for all slides
+                    this.slides.forEach((slide) => {
+                        slide.style.transform = 'scale(1)';
+                        slide.style.opacity = '0.5';
+                    });
+
+                    // Set active slide to scale and full opacity
+                    activeSlide.style.transform = 'scale(1.1)'; // Slightly scale up active slide
+                    activeSlide.style.opacity = '1'; // Full opacity for active slide
+
+                    // Set previous and next slides to have a higher opacity than others
+                    if (prevSlide) prevSlide.style.opacity = '0.75';
+                    if (nextSlide) nextSlide.style.opacity = '0.75';
+                },
+
+                // Update progress bars inside each slide
+                slideChange: function () {
+                    // Loop through all slides to reset individual progress bars
+                    this.slides.forEach(function (slide, index) {
+                        const progressBar = slide.querySelector('.custom-progress-bar');
+                        if (progressBar) {
+                            progressBar.style.width = '0'; // Reset the progress bar width
+                        }
+                    });
+
+                    // Get the active slide and update its progress bar
+                    const activeSlide = this.slides[this.activeIndex];
+                    const activeProgressBar = activeSlide.querySelector('.custom-progress-bar');
+                    if (activeProgressBar) {
+                        activeProgressBar.style.transition = 'width 15s'; // Add smooth transition
+                        activeProgressBar.style.width = '100%'; // Set the progress bar width to 100%
+                    }
+                }
+            },
+        });
+    </script>
+
+
+
+
+    <!-- Custom JS -->
+    <script src="./assets/js/js.js"></script> <!-- Double-check the folder path -->
+
+    <!-- Bootstrap and Popper (no need for duplicate Bootstrap JS) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punjabi.com</title>
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" sizes="32x32" /> <!-- Corrected path -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Slick CSS from CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="./assets/css/book.css">
+    <link rel="stylesheet" href="./assets/css/style.css"> <!-- Corrected path -->
+
+
+
+</head>
+
+<body>
+    <!-- preloader -->
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+    <!--======================= nav ======================================== -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid ">
+            <div class="d-flex  justify-content-center align-items-center outer-div">
+                <div class="outer-div-inner ">
+                    <div class="d-flex justify-content-between outer-div-inner-first align-items-center  w-100 ">
+                        <!-- Left Section: Toggle Button and Logo -->
+                        <div class="d-flex align-items-center">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <a class="navbar-brand ms-3" href="#"><img src="./assets/images/logo.png" alt="Logo" /></a>
+                        </div>
+
+                        <!-- Right Section: Language Dropdown and Profile Icon -->
+                        <div class="d-flex align-items-center tnp">
+                            <ul class="navbar-nav translator d-flex d-md-none align-items-center">
+                                <!-- Language Dropdown -->
+                                <li class="nav-item dropdown me-3">
+                                    <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                        id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Pun
+                                    </a>
+                                    <ul class="dropdown-menu header-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Hindi</a></li>
+                                        <li><a class="dropdown-item" href="#">English</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Profile Icon -->
+
+                            </ul>
+                            <div class="nav-divider mx-2 d-flex d-md-none"></div>
+                            <div class="nav-item d-flex d-lg-none">
+                                <a href="#" class="profile-icon">
+                                    <img src="./assets/images/proflle-icon.svg" alt="Profile" class="rounded-circle"
+                                        width="40" height="40" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Cart Icon (optional) -->
+                        <!-- Uncomment this if you need the cart icon as well -->
+                        <!-- 
+                        <a href="#" class="cart-icon d-flex d-md-none ms-3">
+                            <img src="./assets/images/cart.svg" alt="Cart" width="24" height="24" />
+                        </a>
+                        -->
+                    </div>
+
+                    <div class="d-flex d-md-none justify-content-center w-100 search-div">
+                        <div class="nav-item dropdown d-flex justify-content-center w-100">
+                            <div class="search-bar w-100">
+                                <form class="d-flex w-100" role="search">
+                                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                    <input class="form-control me-2 w-100" type="search" aria-label="Search">
+                                    <i class="fa-solid fa-microphone mic-icon" onclick="activateMic()"></i>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="collapse navbar-collapse d-lg-block justify-content-center px-2" id="navbarNav">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><span>News</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Culture
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Boliyan
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Muhawara
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Baby Names
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Literature
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Poetry</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Audio Books</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Kids Section
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Games</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Poem</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Stories</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Essay</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Entertainment
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Radio</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Jokes</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <div class="search-bar">
+                                <form class="d-flex ms-3" role="search">
+                                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                    <input class="form-control me-2" type="search" placeholder="Search"
+                                        aria-label="Search">
+                                    <i class="fa-solid fa-microphone mic-icon" onclick="activateMic()"></i>
+                                </form>
+                            </div>
+                        </li>
+
+
+                        <li class="nav-item  dropdown  ms-2 w-2">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Pun
+                            </a>
+                            <ul class="dropdown-menu header-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Hindi</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">English</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <button class="btn main-btn " type="button">Login</button>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                            <a href="#" class="cart-icon me-3">
+                                <img src="./assets/images/cart.svg" alt="Cart" width="24" height="24" />
+                            </a>
+                        </li> -->
+                        <li class="nav-item dropdown">
+                            <a href="#" class="profile-icon">
+                                <img src="./assets/images/proflle-icon.svg" alt="Profile" class="rounded-circle"
+                                    width="40" height="40" />
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- New elements after the nav-items -->
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="offcanvas offcanvas-start offcanvas-glass d-lg-none" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="">
+                <div class="offcanvas-header ">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <a href="#" class="offcanvas-title" id="offcanvasNavbarLabel"><img src="./assets/images/logo.png"
+                            alt="" /></a>
+
+                </div>
+                <div class="offcanvas-body">
+
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+
+
+                        <li class="nav-item ">
+                            <a class="nav-link active" aria-current="page" href="#"><span>News</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Culture
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Boliyan
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Muhawara
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Baby Names
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Literature
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Poetry</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Audio Books</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Kids Section
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Games</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Poem</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Stories</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Essay</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Entertainment
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Radio</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Jokes</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+
+
+
+
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+    <!--===================================== end navabr =====================================  -->
+
+
+
+
+
+
+    <!-- tabs -->
+    <div class="container">
+        <h2 class="text-center heading mb-2 text-uppercase">Recipes</h2>
+        <p class="text-center story-para  mb-4">ਲੱਗੇ ਰੱਖਦੀ ਚੰਗੇ ਅਨੁਕੂਲ ਦੁਆਰਾ ਸਾਰੇ ਗੁੰਜਾਉਣ ਰਿਹਾ। ਸਾਰੇ ਹੁੰਦੀ ਅੱਖਾਂ ਸਿਖਰ ਤੇਰੀਆਂ
+            ਦੁਪਹਿਰ। ਗੱਭਰੂ ਹਾਥੀ ਚਾਹੀਦਾ ਬਣਾਈ ਉਨ੍ਹਾਂ ਧਿਆਨ ਘੁੰਮਦਾ। ਚਿੜੀ ਬੱਚਤ ਹਾਥੀ ਉਹਨਾਂ ਵੱਖ-ਵੱਖ ਤੁਸੀਂ ਡਾਕਘਰਾਂ। ਭੱਜੇ ਹਾਥੀ
+            ਕੀਤਾ ਸ਼ਾਨਾਂ। ਚੀਜ਼ਾਂ ਬਚਪਨ ਸਾਵਧਾਨੀ ਮੁਸ਼ਕਿਲਾਂ ਮੌਕਾ ਕੱਢਿਆ ਬਿਗਲ ਚੁੱਕਣ ਡੰਡਿਆਂ। ਵਾਂਝ ਵੀਣਾਂ ਸਾਰੀ ਆਪਣੇ ਸਰੀਰਕ। ਉਦੇਸ਼
+            ਹੁੰਦੀ ਕਰਦਿਆਂ ਹੋਇਆ। ਸਾਰੇ ਨਹੀਂ ਰੋਕਣ ਕਿਵੇਂ।
+            ਮੰਗੀਏ ਜਿਵੇਂ ਕੀਤਾ ਪਾਣੀ। ਆਪਣੀ ਬਹੁਤ ਪਾਣੀ ਪਿੰਡਾ ਪ੍ਰਕਾਰ ਸਥਿਤੀ ਆਪਣੀ ਖਿਸਕਣ ਭੈਣਾਂ। ਡੱਡੂ ਕੁੱਝ ਹਾਥੀ ਕਿਸੇ ਆਪਣੇ
+            ਤੋੜਦਾ–ਮਰੋੜਦਾ। ਚਿੰਘਾੜਤਾ ਅਮਰੀਕਾ ਪੱਧਰ ਨਹੀਂ। ਸ਼ੁਰੂ ਚਿੜੀ ਪਿੱਛੋਂ ਬਹੁਤ ਬਣਦੇ ਕਸਰਤ ਆਪਣੇ ਸਾਰੇ ਸਮਝਾਈ। ਲੱਗੇ ਬੱਚਤ ਸਹਾਇਤਾ
+            ਆਲ੍ਹਣੇ। ਜੀਵਨ ਉਸਨੂੰ ਸੱਚੀਂ ਖੁਰਲੀ ਤਲਾਸ਼ ਬਿਮਾਰ ਮੁਸ਼ਕਿਲਾਂ ਮੇਰੀ ਚੀਕਾਂ। ਕਰਦਾ ਭੈਣ=ਭਾਈ ਸਾਰੇ ਸਿਵਾ ਸਚਮੁੱਚ ਨਫ਼ਰਤ।</p>
+        <div class="row">
+            
+                <div class="tab-section">
+                    <div class="genre-section">
+                        <div class="scrollable-tabs">
+                            <button class="tab-btn active" data-tab="tab1">ALL</button>
+                            <button class="tab-btn" data-tab="tab2">Veg</button>
+                            <button class="tab-btn" data-tab="tab3">Non Veg </button>
+                            <button class="tab-btn" data-tab="tab4">Desi</button>
+                            <button class="tab-btn" data-tab="tab5">Desi Ghee</button>
+                            <button class="tab-btn" data-tab="tab6">SLAPSTICK</button>
+                            <button class="tab-btn" data-tab="tab7">DEADPAN</button>
+
+                            <div class="underline"></div> <!-- Underline div inside scrollable-tabs -->
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                    <div class="content-section  ">
+                        <div class="row" id="tab1">
+
+                            <div class="col-12">
+                                <div class="row poems-page page " id="poems-page-1">
+                                  
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food1.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                                
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Vegetable Biryani with Paneer and Mixed Nuts</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                                
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Stuffed Bell Peppers with Quinoa and Spinach in Tomato Sauce</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food3.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                               
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Vegetable Moussaka with Eggplant, Potatoes, and Zucchini</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                               
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                               
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+                                    
+
+
+                                </div>
+
+
+                                <div class="row poems-page page " id="poems-page-2" style="display: none;">
+
+                                   
+                                   
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+                                   
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+                                   
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+
+                                </div>
+                                <div class="row poems-page page " id="poems-page-3" style="display: none;">
+
+                                   
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+
+                                </div>
+
+
+
+                                <div class="pagination-section">
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination">
+                                            <li class="page-item prev-page-quotes">
+                                                <a class="page-link" href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="#" data-page="1">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" data-page="2">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" data-page="3">3</a></li>
+                                            <li class="page-item next-page-quotes">
+                                                <a class="page-link" href="#" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="content-section  ">
+                        <div class="row" id="tab2">
+
+
+                            <div class="col-12">
+                                <div class="row poems-page page " id="poems-page-1">
+                                  
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+
+                                </div>
+
+
+                                <div class="row poems-page page " id="poems-page-2" style="display: none;">
+
+                                  
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+
+                                </div>
+                                <div class="row poems-page page " id="poems-page-3" style="display: none;">
+
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+
+                                </div>
+
+
+
+                                <div class="pagination-section">
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination">
+                                            <li class="page-item prev-page-quotes">
+                                                <a class="page-link" href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="#" data-page="1">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" data-page="2">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" data-page="3">3</a></li>
+                                            <li class="page-item next-page-quotes">
+                                                <a class="page-link" href="#" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="content-section  ">
+                        <div class="row" id="tab3">
+                            <div class="col-12">
+                                <div class="row poems-page page " id="poems-page-1">
+                                  
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+
+                                </div>
+
+
+                                <div class="row poems-page page " id="poems-page-2" style="display: none;">
+
+                                  
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+
+                                </div>
+                                <div class="row poems-page page " id="poems-page-3" style="display: none;">
+
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+
+                                </div>
+
+
+
+                                <div class="pagination-section">
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination">
+                                            <li class="page-item prev-page-quotes">
+                                                <a class="page-link" href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="#" data-page="1">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" data-page="2">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" data-page="3">3</a></li>
+                                            <li class="page-item next-page-quotes">
+                                                <a class="page-link" href="#" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="content-section  ">
+                        <div class="row" id="tab4">
+
+                            <div class="col-12">
+                                <div class="row poems-page page " id="poems-page-1">
+                                  
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+
+                                </div>
+
+
+                                <div class="row poems-page page " id="poems-page-2" style="display: none;">
+
+                                  
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+
+                                </div>
+                                <div class="row poems-page page " id="poems-page-3" style="display: none;">
+
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+                                    <div class="col-12 col-md-4 col-lg-4 mb-4">
+                                        <div class="card" >
+                                            <div class="position-relative">
+                                                <img src="./assets/images/recipes/food2.svg" class="card-img-top" alt="101 Bedtime Stories cover">
+                                              
+                                            </div>
+
+                                            <div class="card-body story-text">
+                                              <p class="card-title">Creamy Coconut Curry with Tofu and Seasonal Vegetables</p>
+                                              
+                                             
+                                            </div>
+                                             <div class="story-read-now">
+                                                <a href="#" class="btn ">READ NOW</a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                   
+
+                                </div>
+
+
+
+                                <div class="pagination-section">
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination">
+                                            <li class="page-item prev-page-quotes">
+                                                <a class="page-link" href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="#" data-page="1">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" data-page="2">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" data-page="3">3</a></li>
+                                            <li class="page-item next-page-quotes">
+                                                <a class="page-link" href="#" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+<style>
+    .story-text p{
+        margin: 0 auto;
+     font-size: 15px;
+     font-family: 'Inter',sans-serif;
+     font-weight: 400;
+    }
+    .story-text{
+        text-align: center;
+    }
+    .story-read-now{
+        text-align: center;
+        background-color: #348214CC;
+    }
+    .story-read-now a{
+        font-size: 14px;
+        font-family: 'Roboto',sans-serif;
+        color: #fff;
+    }
+    .story-read-now a:hover{
+        font-size: 14px;
+        font-family: 'Roboto',sans-serif;
+        color: #fff;
+    }
+    .story-badge{
+        background-color: #FF7E47;
+        position: absolute;
+        padding:5px 10px;
+        top: 0;
+        margin: 10px;
+        border-radius: 20px;
+    }
+    .story-badge p{
+        font-size: 11px;
+        padding-top: 0;
+        margin-bottom: 0;
+        font-weight: bold;
+        letter-spacing: 1px;
+        font-family: 'Roboto',sans-serif;
+        color: #fff;
+    }
+    .story-para{
+        font-size: 16px;
+        color: #b2b2b2;
+    } 
+</style>
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const pages = {
+                poems: document.querySelectorAll('#tab2 .poems-page'),
+                quotes: document.querySelectorAll('#tab3 .poems-page'),
+                books: document.querySelectorAll('#tab4 .poems-page') // Books section
+            };
+
+            const paginationLinks = {
+                poems: document.querySelectorAll('#tab2 .page-link'),
+                quotes: document.querySelectorAll('#tab3 .page-link'),
+                books: document.querySelectorAll('#tab4 .page-link') // Books section
+            };
+
+            let currentPage = { poems: 1, quotes: 1, books: 1 }; // Current page tracking
+
+            // Function to show the current page
+            function showPage(section, page) {
+                pages[section].forEach((pageElement, index) => {
+                    pageElement.style.display = (index + 1 === page) ? 'flex' : 'none';
+                });
+            }
+
+            // Show the first page initially for all sections
+            showPage('poems', currentPage.poems);
+            showPage('quotes', currentPage.quotes);
+            showPage('books', currentPage.books);
+
+            // Event listener for pagination links
+            for (const section in paginationLinks) {
+                paginationLinks[section].forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault(); // Prevent default anchor click behavior
+                        const page = parseInt(this.getAttribute('data-page'));
+
+                        if (!isNaN(page)) {
+                            currentPage[section] = page; // Update current page
+                            showPage(section, currentPage[section]); // Show the selected page
+                            updatePagination(section); // Update the active page class
+                        }
+                    });
+                });
+            }
+
+            // Function to update active page link
+            function updatePagination(section) {
+                paginationLinks[section].forEach(link => {
+                    const page = parseInt(link.getAttribute('data-page'));
+                    link.parentElement.classList.toggle('active', page === currentPage[section]);
+                });
+            }
+
+            // Navigation buttons for the books section
+            document.addEventListener("DOMContentLoaded", function() {
+    // Navigation buttons for the books section
+    const prevPageBooksBtn = document.getElementById('prev-page-books');
+    
+    if (prevPageBooksBtn) {
+        prevPageBooksBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (currentPage.books > 1) {
+                currentPage.books--;
+                showPage('books', currentPage.books);
+                updatePagination('books');
+            }
+        });
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const nextPageBooksBtn = document.getElementById('next-page-books');
+    
+    if (nextPageBooksBtn) {
+        nextPageBooksBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (currentPage.books < pages.books.length) {
+                currentPage.books++;
+                showPage('books', currentPage.books);
+                updatePagination('books');
+            }
+        });
+    }
+});
+
+
+            // Add navigation buttons for poems and quotes similarly if needed
+        });
+    </script>
+
+
+
+
+    <!-- Bootstrap and Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./assets/js/js.js"></script>
+
+</body>
+
+</html> 

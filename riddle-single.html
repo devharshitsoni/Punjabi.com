@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Punjabi.com</title>
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" sizes="32x32" />
+    <!-- Corrected path -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@100..900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <!-- Slick CSS from CDN -->
+    <!-- Owl Carousel CSS -->
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Custom CSS -->
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="./assets/css/book.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- Corrected path -->
+
+</head>
+
+<body>
+    <!-- preloader -->
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+    <!--======================= nav ======================================== -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-center align-items-center outer-div">
+                <div class="outer-div-inner">
+                    <div class="d-flex justify-content-between outer-div-inner-first align-items-center w-100">
+                        <!-- Left Section: Toggle Button and Logo -->
+                        <div class="d-flex align-items-center">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <a class="navbar-brand ms-3" href="#"><img src="./assets/images/logo.png" alt="Logo" /></a>
+                        </div>
+
+                        <!-- Right Section: Language Dropdown and Profile Icon -->
+                        <div class="d-flex align-items-center tnp">
+                            <ul class="navbar-nav translator d-flex d-md-none align-items-center">
+                                <!-- Language Dropdown -->
+                                <li class="nav-item dropdown me-3">
+                                    <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                        id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Pun
+                                    </a>
+                                    <ul class="dropdown-menu header-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Hindi</a></li>
+                                        <li><a class="dropdown-item" href="#">English</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Profile Icon -->
+                            </ul>
+                            <div class="nav-divider mx-2 d-flex d-md-none"></div>
+                            <div class="nav-item d-flex d-lg-none">
+                                <a href="#" class="profile-icon">
+                                    <img src="./assets/images/proflle-icon.svg" alt="Profile" class="rounded-circle"
+                                        width="37" height="37" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Cart Icon (optional) -->
+                        <!-- Uncomment this if you need the cart icon as well -->
+                        <!-- 
+                    <a href="#" class="cart-icon d-flex d-md-none ms-3">
+                        <img src="./assets/images/cart.svg" alt="Cart" width="24" height="24" />
+                    </a>
+                    -->
+                    </div>
+
+                    <div class="d-flex d-md-none justify-content-center w-100 search-div">
+                        <div class="nav-item dropdown d-flex justify-content-center w-100">
+                            <div class="search-bar w-100">
+                                <form class="d-flex w-100" role="search">
+                                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                    <input class="form-control me-2 w-100" type="search" aria-label="Search" />
+                                    <i class="fa-solid fa-microphone mic-icon" onclick="activateMic()"></i>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse d-lg-block justify-content-center px-2" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><span>News</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Culture
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#"> Boliyan </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"> Muhawara </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"> Baby Names </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Literature
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Poetry</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Audio Books</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Kids Section
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Games</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Poem</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Stories</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Essay</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Entertainment
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Radio</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Jokes</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <div class="search-bar">
+                                <form class="d-flex ms-3" role="search">
+                                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                    <input class="form-control me-2" type="search" placeholder="Search"
+                                        aria-label="Search" />
+                                    <i class="fa-solid fa-microphone mic-icon" onclick="activateMic()"></i>
+                                </form>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown ms-2 w-2">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Pun
+                            </a>
+                            <ul class="dropdown-menu header-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Hindi</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">English</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <button class="btn main-btn" type="button">Login</button>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                        <a href="#" class="cart-icon me-3">
+                            <img src="./assets/images/cart.svg" alt="Cart" width="24" height="24" />
+                        </a>
+                    </li> -->
+                        <li class="nav-item dropdown">
+                            <a href="#" class="profile-icon">
+                                <img src="./assets/images/proflle-icon.svg" alt="Profile" class="rounded-circle"
+                                    width="40" height="40" />
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- New elements after the nav-items -->
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-start offcanvas-glass d-lg-none" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="">
+                <div class="offcanvas-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <a href="#" class="offcanvas-title" id="offcanvasNavbarLabel"><img src="./assets/images/logo.png"
+                            alt="" /></a>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><span>News</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Culture
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#"> Boliyan </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"> Muhawara </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"> Baby Names </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Literature
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Poetry</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Audio Books</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Kids Section
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Games</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Poem</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Stories</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Essay</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Entertainment
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Radio</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Jokes</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--===================================== end navabr =====================================  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+      
+
+        .prev-next-btn button {
+            border: 1px solid #348214;
+            background-color: transparent;
+            padding: 5px 15px;
+            border-radius: 8px;
+            transition: .5s;
+        }
+
+        .prev-next-btn button a {
+            color: #348214;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .prev-next-btn button:hover {
+            background-color: #348214;
+        }
+
+        .prev-next-btn button:hover a {
+            color: #fff;
+        }
+        .riddle-outer{
+            padding-top: 20px;
+            border-top: 1px solid #DDDDDD;
+        }
+        .single-riddle{
+            font-size: 14px;
+            font-family: 'Roboto', sans-serif;
+        }
+        .demo-img{
+            height: 75px;
+            width: auto;
+        }
+        .riddle-item {
+        text-align: left;
+        border-bottom: 1px solid #cccc;
+        padding-bottom: 10px;
+        }
+        .riddle-sidline-heading{
+            margin-bottom: 0;
+            color: #348214;
+            font-weight: 700;
+            font-size: 15px;
+            font-family: 'Roboto', sans-serif;
+        }
+        .riddle-news{
+            font-size: 12px;
+            font-family: 'Inter',sans-serif;
+        }
+    </style>
+
+
+
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <nav class="quote-page-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#"><i class="fa-solid fa-arrow-left"></i></a></li>
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Riddle</a></li>
+                        <li class="breadcrumb-item active"> I'm golden and pure, Cold is my press</li>
+                    </ol>
+                </nav>
+
+
+                <!-- Quote Item 2 -->
+
+                <div class="quiz-option-content">
+
+                    <div class="quiz-question">
+                        I'm golden and pure, cold is my press, <br>A drop in your dish adds health and finesse. <br>I'm
+                        natural and fresh, no chemicals in sight, <br>What am I, that's perfect for your bite?
+
+                    </div>
+                    <div class="quiz-options">
+                        <button class="btn quiz-option correct-option">Quiz 1</button>
+                        <button class="btn quiz-option">Quiz 2</button>
+                        <button class="btn quiz-option">Quiz 3</button>
+                        <button class="btn quiz-option wrong-option">Quiz 4</button>
+                    </div>
+
+                    <div class="quiz-answer">
+                        <p><strong>Answer :</strong> The Taj Mahal is made primarily of white marble, which was
+                            sourced from Makrana in Rajasthan, India. The marble's unique quality reflects different
+                            colors at different times of the day.</p>
+                    </div>
+                    <div class="d-flex justify-content-between prev-next-btn">
+                        <button><a href="#">Previous</a></button>
+                        <button><a href="#">Next</a></button>
+                    </div>
+                </div>
+                <!-- Quote Item 2 -->
+               <div class="riddle-outer">
+                <div class="quotes-ui-item">
+
+                    <div class="quotes-ui-content">
+                        <div class="">
+                            <div class="d-flex justify-content-between pb-2">
+                                <p class="single-riddle ps-0">
+                                    I'm golden and pure, cold is my press,<br> A drop in your dish adds health and
+                                    finesse. <br> I'm natural and fresh, no chemicals in sight, <br>What am I, that's
+                                    perfect for your bite?
+                                </p>
+                                <button class="solve-now-btn"><a href="#">Solve Now</a></button>
+                            </div>
+                            <p class="quotes-ui-source  ps-0">
+                                Tags: <span>WisdomQuotes | Category: QuotesOnLife |
+                                    MotivationMonday</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="quotes-ui-item">
+
+                    <div class="quotes-ui-content">
+                        <div class="">
+                            <div class="d-flex justify-content-between pb-2">
+                                <p class="single-riddle ps-0">
+                                    I'm golden and pure, cold is my press,<br> A drop in your dish adds health and
+                                    finesse. <br> I'm natural and fresh, no chemicals in sight, <br>What am I, that's
+                                    perfect for your bite?
+                                </p>
+                                <button class="solve-now-btn"><a href="#">Solve Now</a></button>
+                            </div>
+                            <p class="quotes-ui-source  ps-0">
+                                Tags: <span>WisdomQuotes | Category: QuotesOnLife |
+                                    MotivationMonday</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="quotes-ui-item">
+
+                    <div class="quotes-ui-content">
+                        <div class="">
+                            <div class="d-flex justify-content-between pb-2">
+                                <p class="single-riddle ps-0">
+                                    I'm golden and pure, cold is my press,<br> A drop in your dish adds health and
+                                    finesse. <br> I'm natural and fresh, no chemicals in sight, <br>What am I, that's
+                                    perfect for your bite?
+                                </p>
+                                <button class="solve-now-btn"><a href="#">Solve Now</a></button>
+                            </div>
+                            <p class="quotes-ui-source  ps-0">
+                                Tags: <span>WisdomQuotes | Category: QuotesOnLife |
+                                    MotivationMonday</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="quotes-ui-item">
+
+                    <div class="quotes-ui-content">
+                        <div class="">
+                            <div class="d-flex justify-content-between pb-2">
+                                <p class="single-riddle ps-0">
+                                    I'm golden and pure, cold is my press,<br> A drop in your dish adds health and
+                                    finesse. <br> I'm natural and fresh, no chemicals in sight, <br>What am I, that's
+                                    perfect for your bite?
+                                </p>
+                                <button class="solve-now-btn"><a href="#">Solve Now</a></button>
+                            </div>
+                            <p class="quotes-ui-source  ps-0">
+                                Tags: <span>WisdomQuotes | Category: QuotesOnLife |
+                                    MotivationMonday</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="quotes-ui-item">
+
+                    <div class="quotes-ui-content">
+                        <div class="">
+                            <div class="d-flex justify-content-between pb-2">
+                                <p class="single-riddle ps-0">
+                                    I'm golden and pure, cold is my press,<br> A drop in your dish adds health and
+                                    finesse. <br> I'm natural and fresh, no chemicals in sight, <br>What am I, that's
+                                    perfect for your bite?
+                                </p>
+                                <button class="solve-now-btn"><a href="#">Solve Now</a></button>
+                            </div>
+                            <p class="quotes-ui-source  ps-0">
+                                Tags: <span>WisdomQuotes | Category: QuotesOnLife |
+                                    MotivationMonday</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a href="#" class="watch-more">Watch More</a>
+                </div>
+               </div>
+            </div>
+            <div class="col-md-3">
+
+
+<div class="ad mb-3"></div>
+
+
+                <div class="text-center  ">
+
+                    <!-- Latest News Items -->
+                    <div class="riddle-item mb-3 d-flex justify-content-evenly">
+
+                        <div class="me-2 ">
+                            <img src="./assets/images/quiz-games/Greek-god-Athena-Mythology.svg" alt="Video Thumbnail"
+                                class=" demo-img mb-2">
+                        </div>
+                        <div class="">
+                          <p class="riddle-sidline-heading">Name That Greek God Quiz</p>
+                            <p class="riddle-news">Prepare for your next trip to Mount
+                                Olympus by identifying these ......<br>
+                              
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Latest News Items -->
+                    <div class="riddle-item mb-3 d-flex justify-content-evenly">
+
+                        <div class="me-2 ">
+                            <img src="./assets/images/quiz-games/Greek-god-Athena-Mythology.svg" alt="Video Thumbnail"
+                                class=" demo-img mb-2">
+                        </div>
+                        <div class="">
+                          <p class="riddle-sidline-heading">Name That Greek God Quiz</p>
+                            <p class="riddle-news">Prepare for your next trip to Mount
+                                Olympus by identifying these ......<br>
+                              
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Latest News Items -->
+                    <div class="riddle-item mb-3 d-flex justify-content-evenly">
+
+                        <div class="me-2 ">
+                            <img src="./assets/images/quiz-games/Greek-god-Athena-Mythology.svg" alt="Video Thumbnail"
+                                class=" demo-img mb-2">
+                        </div>
+                        <div class="">
+                          <p class="riddle-sidline-heading">Name That Greek God Quiz</p>
+                            <p class="riddle-news">Prepare for your next trip to Mount
+                                Olympus by identifying these ......<br>
+                              
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Latest News Items -->
+                    <div class="riddle-item mb-3 d-flex justify-content-evenly">
+
+                        <div class="me-2 ">
+                            <img src="./assets/images/quiz-games/Greek-god-Athena-Mythology.svg" alt="Video Thumbnail"
+                                class=" demo-img mb-2">
+                        </div>
+                        <div class="">
+                          <p class="riddle-sidline-heading">Name That Greek God Quiz</p>
+                            <p class="riddle-news">Prepare for your next trip to Mount
+                                Olympus by identifying these ......<br>
+                              
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Latest News Items -->
+                    <div class="riddle-item mb-3 d-flex justify-content-evenly">
+
+                        <div class="me-2 ">
+                            <img src="./assets/images/quiz-games/Greek-god-Athena-Mythology.svg" alt="Video Thumbnail"
+                                class=" demo-img mb-2">
+                        </div>
+                        <div class="">
+                          <p class="riddle-sidline-heading">Name That Greek God Quiz</p>
+                            <p class="riddle-news">Prepare for your next trip to Mount
+                                Olympus by identifying these ......<br>
+                              
+                            </p>
+                        </div>
+                    </div>
+
+                  
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- ====================popular======================= -->
+
+
+
+
+
+    <!-- =================================end======================== -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function initializeSlider(sliderClass, leftArrowClass, rightArrowClass, scrollAmount = 300) {
+                const sliders = document.querySelectorAll(sliderClass);
+                const leftArrows = document.querySelectorAll(leftArrowClass);
+                const rightArrows = document.querySelectorAll(rightArrowClass);
+
+                if (sliders.length === 0 || leftArrows.length === 0 || rightArrows.length === 0) {
+                    console.error('Slider or arrows not found. Please check your selectors and ensure they exist on this page.');
+                    return;
+                }
+
+                sliders.forEach((sliderContainer, index) => {
+                    const leftArrow = leftArrows[index];
+                    const rightArrow = rightArrows[index];
+
+                    if (!sliderContainer || !leftArrow || !rightArrow) {
+                        console.error(`Slider or arrow elements not found at index ${index}. Please check the HTML structure.`);
+                        return;
+                    }
+
+                    function checkArrowVisibility() {
+                        const maxScrollLeft = sliderContainer.scrollWidth - sliderContainer.clientWidth;
+                        leftArrow.style.display = sliderContainer.scrollLeft <= 0 ? 'none' : 'block';
+                        rightArrow.style.display = sliderContainer.scrollLeft >= maxScrollLeft ? 'none' : 'block';
+                    }
+
+                    checkArrowVisibility();
+
+                    leftArrow.addEventListener('click', () => {
+                        sliderContainer.scrollBy({
+                            left: -scrollAmount,
+                            behavior: 'smooth'
+                        });
+                    });
+
+                    rightArrow.addEventListener('click', () => {
+                        sliderContainer.scrollBy({
+                            left: scrollAmount,
+                            behavior: 'smooth'
+                        });
+                    });
+
+                    sliderContainer.addEventListener('scroll', checkArrowVisibility);
+                });
+            }
+
+            // Initialize sliders for each specific slider section
+            initializeSlider('.slider-container', '.quiz-arrow.arrow-left', '.quiz-arrow.arrow-right');
+        });
+
+    </script>
+
+    <!-- Include jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Bootstrap and Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                items: 1,
+                nav: true,
+                navText: [
+                    '<img src="./assets/images/games/prev.png" alt="Previous" class="custom-prev" >', // Customize the path and size
+                    '<img src="./assets/images/games/next.png" alt="Next" class="custom-next" >'   // Customize the path and size
+                ],
+            });
+        });
+
+    </script>
+
+    <!-- Custom JS (if any external JS file) -->
+    <script src="./assets/js/js.js"></script>
+
+    <!-- Inline Custom JS for Owl Carousel -->
+
+</body>
+
+</html>

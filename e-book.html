@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Punjabi.com | E-book</title>
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png" sizes="32x32" /> <!-- Corrected path -->
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+
+
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Slick CSS from CDN -->
+  <!-- Include Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+
+
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="./assets/css/book.css">
+  <link rel="stylesheet" href="./assets/css/style.css"> <!-- Corrected path -->
+
+
+  <style>
+    /* Base styles for the navbar */
+    .e-navbar {
+      height: 50px;
+      padding: 15px 30px;
+      /* Adjusted padding */
+    }
+
+    /* Adjust the logo and icon size */
+    .e-navbar .navbar-brand img {
+      width: auto;
+      height: 34px;
+      margin-right: 5px;
+    }
+
+    .e-icon {
+      width: auto;
+
+      /* Default icon size */
+    }
+
+    /* Tooltip Container (Initially hidden) */
+    .tooltip-container {
+        position: absolute;
+        top: 70px;
+        right: 85px;
+        background-color: #fff;
+        border: 2px solid #d2d2d2;
+        padding: 10px;
+        border-radius: 5px;
+        display: none; /* Hidden by default */
+        z-index: 1000;
+        width: 100%;
+        max-width: 594px;
+
+        border-top-right-radius: 0px !important;
+      }
+
+
+    
+      .tooltip-arrow {
+        position: absolute;
+        top: -16px; /* Adjust the position so it's attached to the top-right corner */
+        right: 0px;
+        width: 0;
+        height: 0;
+        border-left: 21px solid transparent; /* This side will be transparent */
+        border-right: 0px solid transparent; /* This side will be transparent */
+        border-bottom: 20px solid #fff; /* Matches the background color of the rectangle */
+        z-index: -1; /* Place it behind the tooltip content */
+      }
+      .tooltip-arrow-border {
+        position: absolute;
+        top: -22px;
+        right: -3px;
+        width: 0;
+        height: 0;
+        border-left: 20px solid #96515100;
+        border-right: 2px solid transparent;
+        border-bottom: 22px solid #d2d2d2;
+        z-index: -2;
+        transform: rotate(4deg);
+      }
+    /* Tooltip Content Alignment */
+    .tooltip-content {
+      display: flex;
+
+    }
+
+    /* Tooltip Image */
+    .tooltip-image {
+      width: auto;
+      position: sticky;
+      height: 253px;
+      margin-right: 10px;
+
+    }
+
+    /*/* List Style */
+    .tooltip-details ul {
+      display: grid;
+      list-style: none;
+      /* Remove default list style */
+      padding: 0;
+      /* Remove default padding */
+      margin: 0;
+      /* Remove default margin */
+      gap: 10px;
+
+      font-size: 16px;
+      /* Font size for list */
+    }
+
+    /* List Item Style */
+    .tooltip-details ul li {
+      border-bottom: 1px solid #dddddd;
+      /* Bottom border for list items */
+      padding: 5px 0;
+      /* Padding for list items */
+      padding-top: 0 !important;
+    }
+
+    /* Strong Text Underline */
+
+    .tooltip-details ul li strong {
+
+      font-size: 18px;
+      /* Increased font size for emphasis */
+    }
+
+    /* Text Success Style */
+    .text-success {
+      color: green;
+      /* Color for success text */
+    }
+
+    /* Responsive Styling */
+    @media (max-width: 767px) {
+      .tooltip-container {
+        width: 100%;
+        left: 0;
+      }
+
+      .tooltip-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .tooltip-image {
+        margin-bottom: 10px;
+      }
+    }
+
+
+    /* Responsive for smaller devices */
+    @media (max-width: 767px) {
+
+      /* Adjust navbar height and padding */
+      .e-navbar {
+        padding: 10px 15px;
+        height: 40px;
+      }
+
+      /* Adjust logo size */
+      .e-navbar .navbar-brand img {
+        height: 28px;
+        margin-right: 5px;
+      }
+
+      /* Resize icons for smaller screens */
+      .e-icon {
+        height: 20px;
+      }
+
+      /* Adjust spacing between icons */
+      .d-flex.align-items-center>a {
+        margin-right: 8px;
+      }
+    }
+
+    @media (max-width: 576px) {
+
+      /* Further reduce navbar height for very small screens */
+      .e-navbar {
+        padding: 8px 10px;
+        height: 35px;
+      }
+
+      /* Resize logo and icons further */
+      .e-navbar .navbar-brand img {
+        height: 24px;
+      }
+
+      .e-icon {
+        height: 18px;
+      }
+
+      /* Adjust space between icons */
+      .d-flex.align-items-center>a {
+        margin-right: 6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Bootstrap Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light e-navbar">
+    <div class="container-fluid">
+      <!-- Back Arrow Icon and Logo -->
+      <div class="d-flex align-items-center">
+        <a href="#" class="text-gray me-2">
+          <img src="./assets/images/e-book/arrow.png" class="e-icon me-3" alt="Back Arrow">
+        </a>
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="./assets/images/logo.png" alt="Logo">
+        </a>
+      </div>
+
+      <!-- Right Icons (Settings, Info, Maximize) -->
+      <div class="ms-auto d-flex align-items-center">
+        <a href="#" class="text-gray me-3">
+          <img src="./assets/images/e-book/setting.png" class="e-icon" alt="Settings">
+        </a>
+        <a href="#" class="text-gray me-3" id="infoIcon">
+          <img src="./assets/images/e-book/details.png" class="e-icon" alt="Info">
+        </a>
+        <!-- Tooltip Structure -->
+        <div class="tooltip-container" id="tooltip">
+          <div class="tooltip-arrow"></div>
+          <div class="tooltip-arrow-border"></div>
+          <div class="tooltip-content">
+            <div class="sticky">
+              <img src="./assets/images/e-book/tooltip.png" alt="Author Image" class="tooltip-image ">
+            </div>
+            <div class="tooltip-details">
+              <ul class="list-unstyled mt-1 custom-list">
+                <li>
+                  <strong>Publish Date</strong>
+                  <span>1988</span>
+                </li>
+                <li>
+                  <strong>Genre</strong>
+                  <span class="text-success">Love, Fiction, Literature</span>
+                </li>
+                <li>
+                  <strong>Influences</strong>
+                  <span class="text-success">Crime And Punishment</span>
+                </li>
+                <li>
+                  <strong>Awards</strong>
+                  <span>December 2014</span>
+                </li>
+
+
+
+
+              </ul>
+              <!-- <p><strong>Author Name:</strong> Shiv Kumar Batalvi</p>
+      <p><strong>Book Name</strong> <span class="text-success">Love, Fiction, Literature</span></p>
+      <p><strong>Category</strong> <span class="text-success"> Crime And Punishment</span></p>
+      <p><strong>Publish Date</strong>December 2014</p>
+      <p><strong>Page</strong>30</p> -->
+
+            </div>
+          </div>
+        </div>
+        <a href="#" class="text-gray">
+          <img src="./assets/images/e-book/full-screen.png" class="e-icon" alt="Full Screen">
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var infoIcon = document.getElementById("infoIcon");
+      var tooltip = document.getElementById("tooltip");
+
+      infoIcon.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent default anchor click behavior
+
+        // Toggle tooltip visibility
+        if (tooltip.style.display === "none" || tooltip.style.display === "") {
+          tooltip.style.display = "block";
+        } else {
+          tooltip.style.display = "none";
+        }
+      });
+
+      // Close the tooltip when clicking outside of it
+      document.addEventListener("click", function (event) {
+        if (!tooltip.contains(event.target) && !infoIcon.contains(event.target)) {
+          tooltip.style.display = "none";
+        }
+      });
+    });
+
+  </script>
+
+
+  <!-- E-Book Section -->
+
+
+  <section class="ebook-section mt-4">
+    <div class="container-fluid">
+      <div class="owl-carousel">
+        <!-- Page 1 and 2 -->
+        <div class="item">
+          <img src="./assets/images/e-book/e-page.png" alt="Page 3" class="img-fluid page-image">
+        </div>
+        <div class="item">
+          <img src="./assets/images/e-book/e-page.png" alt="Page 4" class="img-fluid page-image">
+        </div>
+
+        <!-- Page 3 and 4 -->
+        <div class="item">
+          <img src="./assets/images/e-book/e-page.png" alt="Page 3" class="img-fluid page-image">
+        </div>
+        <div class="item">
+          <img src="./assets/images/e-book/e-page.png" alt="Page 4" class="img-fluid page-image">
+        </div>
+
+        <div class="item">
+          <img src="./assets/images/e-book/e-page.png" alt="Page 3" class="img-fluid page-image">
+        </div>
+        <div class="item">
+          <img src="./assets/images/e-book/e-page.png" alt="Page 4" class="img-fluid page-image">
+        </div>
+
+
+        <div class="item">
+          <img src="./assets/images/e-book/e-page.png" alt="Page 3" class="img-fluid page-image">
+        </div>
+        <div class="item">
+          <img src="./assets/images/e-book/e-page.png" alt="Page 4" class="img-fluid page-image">
+        </div>
+
+        <div class="item">
+          <img src="./assets/images/e-book/e-page.png" alt="Page 3" class="img-fluid page-image">
+        </div>
+        <div class="item">
+          <img src="./assets/images/e-book/e-page.png" alt="Page 4" class="img-fluid page-image">
+        </div>
+
+        <!-- Add more pages as necessary -->
+      </div>
+      <!-- Progress Bar for Slider -->
+      <div class="slider-track-container">
+        <span id="sliderLabel">1 / 12</span>
+        <input type="range" min="1" max="12" value="1" class="slider" id="pageSlider">
+      </div>
+    </div>
+  </section>
+
+
+  <style>
+    /* Owl Carousel Navigation */
+    .owl-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .owl-nav .owl-prev {
+      position: absolute;
+      left: 0px;
+    }
+
+    .owl-nav .owl-next {
+      position: absolute;
+      right: 0px;
+    }
+
+    /* Image and Carousel Settings */
+    .page-image {
+      max-height: 100%;
+      object-fit: cover;
+      width: 100%;
+      display: block;
+    }
+
+    .owl-carousel .item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      height: calc(100vh - 150px);
+      /* Adjust height to fill most of the viewport */
+      width: calc(50% - 5px);
+      /* Adjust for 2 items per slide on larger screens */
+      box-sizing: border-box;
+      margin: 0;
+      width: 100% !important;
+      max-width: 200px !important;
+    }
+    .owl-carousel .item img{
+      width: 100% !important;
+    }
+    /* Progress Bar Container */
+    .slider-track-container {
+      position: fixed;
+      width: 100%;
+      background-color: #f3f3f3;
+      padding: 30px 20px;
+      bottom: 0;
+      left: 0;
+      border-radius: 5px 5px 0 0;
+      text-align: center;
+      z-index: 100;
+    }
+
+    .slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 8px;
+      background: #dddddd;
+      outline: none;
+      margin: 0 auto;
+      display: block;
+      position: relative;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: green;
+      cursor: pointer;
+      border: 2px solid #fff;
+    }
+
+    .owl-carousel {
+      padding: 0 5px;
+      /* Add padding to the carousel container for some spacing */
+    }
+
+    .slider::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: green;
+      cursor: pointer;
+      border: 2px solid #fff;
+    }
+
+    #sliderLabel {
+      font-size: 16px;
+      color: green;
+      font-weight: bold;
+      position: absolute;
+      top: 2px;
+      background: transparent;
+      z-index: 1;
+    }
+
+    @media (min-width: 1024px) {
+      .owl-carousel .item {
+        width: 100% !important;
+      }
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 767px) {
+      .owl-carousel .item {
+        width: 100%;
+        /* Full width on mobile */
+
+      }
+
+      .page-image {
+        max-height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .page-image {
+        max-height: 80vh;
+        object-fit: contain;
+      }
+
+      .owl-carousel .item {
+        width: 50%;
+        /* Two items per slide */
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .owl-carousel .item {
+        width: 50%;
+        /* Ensures two items are shown on larger screens */
+      }
+    }
+
+    @media (max-width: 567px) {
+      .nav-arrow {
+        display: none;
+      }
+    }
+  </style>
+
+
+
+
+
+
+
+
+
+
+  <script>
+    const range = document.getElementById('myRange');
+    const tooltip = document.getElementById('sliderTooltip');
+
+    range.addEventListener('input', function () {
+      const value = range.value;
+      const rangeWidth = range.offsetWidth;
+      const thumbWidth = 24; /* Width of the thumb */
+
+      // Update the tooltip value
+      tooltip.innerHTML = value;
+
+      // Calculate position for the tooltip
+      const percentage = (value - range.min) / (range.max - range.min);
+      const offsetX = percentage * (rangeWidth - thumbWidth);
+      tooltip.style.left = `${offsetX + thumbWidth / 2}px`;
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+  <script>
+    $(document).ready(function () {
+      var owl = $('.owl-carousel');
+
+      // Initialize Owl Carousel
+      owl.owlCarousel({
+
+        loop: true,  // Set to true for looping
+        margin: 0,
+        nav: true,
+
+        navText: [
+          "<img src='./assets/images/e-book/prev-arrow.png' alt='Previous' class='nav-arrow'>",
+          "<img src='./assets/images/e-book/next-arrow.png' alt='Next' class='nav-arrow'>"
+        ],
+        responsive: {
+          // Mobile view
+          0: {
+            items: 1 // 1 item per view on mobile screens
+          },
+          // Tablet view
+          768: {
+            items: 1 // 2 items per view on tablets and above
+          },
+          // Desktop view
+          1024: {
+            items: 2 // 2 items per view on desktop
+          }
+        },
+        onInitialized: updateSlider,
+        onTranslated: updateSlider
+      });
+
+      // Get total number of pages (excluding cloned items)
+      var totalPages = owl.find('.owl-item:not(.cloned)').length;
+
+      $('#pageSlider').attr('max', totalPages); // Set the slider's max value
+
+      // Throttle the scrolling to avoid skipping multiple slides
+      let isScrolling = false;
+
+      owl.on('mousewheel', '.owl-stage', function (e) {
+        e.preventDefault();
+
+        if (!isScrolling) {
+          isScrolling = true;
+
+          if (e.deltaY > 0) {
+            owl.trigger('next.owl.carousel', [300]);  // Move to the next item
+          } else {
+            owl.trigger('prev.owl.carousel', [300]);  // Move to the previous item
+          }
+
+          setTimeout(function () {
+            isScrolling = false;
+          }, 300);
+        }
+      });
+
+      // Update the slider and label whenever the carousel changes
+      function updateSlider(event) {
+        var currentItem = event.item.index - event.relatedTarget._clones.length / 2;  // Adjust for cloned items
+        var totalItems = event.item.count;
+
+        // Wrap the currentItem to ensure it's within the valid range
+        if (currentItem < 1) currentItem = totalPages;  // Looping backward (wrap to last page)
+        if (currentItem > totalPages) currentItem = 1;  // Looping forward (wrap to first page)
+
+        $('#pageSlider').val(currentItem);  // Update the slider value
+        $('#sliderLabel').text(currentItem + " / " + totalItems);  // Update the label text
+      }
+
+      // Event listener for manual slider input
+      $('#pageSlider').on('input', function () {
+        var pageIndex = $(this).val() - 1;  // Convert to 0-based index
+        owl.trigger('to.owl.carousel', [pageIndex, 300]);  // Slide to the selected page
+      });
+    });
+
+  </script>
+
+
+
+  <!-- Bootstrap and Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <!-- Custom JS -->
+  <script src="./assets/js/js.js"></script>
+</body>
+
+</html>

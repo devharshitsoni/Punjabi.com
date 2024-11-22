@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Punjabi.com</title>
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" sizes="32x32" />
+    <!-- Corrected path -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@100..900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <!-- Slick CSS from CDN -->
+    <!-- Owl Carousel CSS -->
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+    <!-- Custom CSS -->
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="./assets/css/book.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- Corrected path -->
+</head>
+
+<body>
+    <!-- preloader -->
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+    <!--======================= nav ======================================== -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-center align-items-center outer-div">
+                <div class="outer-div-inner">
+                    <div class="d-flex justify-content-between outer-div-inner-first align-items-center w-100">
+                        <!-- Left Section: Toggle Button and Logo -->
+                        <div class="d-flex align-items-center">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <a class="navbar-brand ms-3" href="#"><img src="./assets/images/logo.png" alt="Logo" /></a>
+                        </div>
+
+                        <!-- Right Section: Language Dropdown and Profile Icon -->
+                        <div class="d-flex align-items-center tnp">
+                            <ul class="navbar-nav translator d-flex d-md-none align-items-center">
+                                <!-- Language Dropdown -->
+                                <li class="nav-item dropdown me-3">
+                                    <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                        id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Pun
+                                    </a>
+                                    <ul class="dropdown-menu header-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Hindi</a></li>
+                                        <li><a class="dropdown-item" href="#">English</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Profile Icon -->
+                            </ul>
+                            <div class="nav-divider mx-2 d-flex d-md-none"></div>
+                            <div class="nav-item d-flex d-lg-none">
+                                <a href="#" class="profile-icon">
+                                    <img src="./assets/images/proflle-icon.svg" alt="Profile" class="rounded-circle"
+                                        width="37" height="37" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Cart Icon (optional) -->
+                        <!-- Uncomment this if you need the cart icon as well -->
+                        <!-- 
+                    <a href="#" class="cart-icon d-flex d-md-none ms-3">
+                        <img src="./assets/images/cart.svg" alt="Cart" width="24" height="24" />
+                    </a>
+                    -->
+                    </div>
+
+                    <div class="d-flex d-md-none justify-content-center w-100 search-div">
+                        <div class="nav-item dropdown d-flex justify-content-center w-100">
+                            <div class="search-bar w-100">
+                                <form class="d-flex w-100" role="search">
+                                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                    <input class="form-control me-2 w-100" type="search" aria-label="Search" />
+                                    <i class="fa-solid fa-microphone mic-icon" onclick="activateMic()"></i>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse d-lg-block justify-content-center px-2" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><span>News</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Culture
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#"> Boliyan </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"> Muhawara </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"> Baby Names </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Literature
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Poetry</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Audio Books</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Kids Section
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Games</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Poem</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Stories</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Essay</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Entertainment
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Radio</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Jokes</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <div class="search-bar">
+                                <form class="d-flex ms-3" role="search">
+                                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                    <input class="form-control me-2" type="search" placeholder="Search"
+                                        aria-label="Search" />
+                                    <i class="fa-solid fa-microphone mic-icon" onclick="activateMic()"></i>
+                                </form>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown ms-2 w-2">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Pun
+                            </a>
+                            <ul class="dropdown-menu header-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Hindi</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">English</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <button class="btn main-btn" type="button">Login</button>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                        <a href="#" class="cart-icon me-3">
+                            <img src="./assets/images/cart.svg" alt="Cart" width="24" height="24" />
+                        </a>
+                    </li> -->
+                        <li class="nav-item dropdown">
+                            <a href="#" class="profile-icon">
+                                <img src="./assets/images/proflle-icon.svg" alt="Profile" class="rounded-circle"
+                                    width="40" height="40" />
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- New elements after the nav-items -->
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-start offcanvas-glass d-lg-none" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="">
+                <div class="offcanvas-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <a href="#" class="offcanvas-title" id="offcanvasNavbarLabel"><img src="./assets/images/logo.png"
+                            alt="" /></a>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><span>News</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Culture
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#"> Boliyan </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"> Muhawara </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"> Baby Names </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Literature
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Poetry</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Audio Books</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Kids Section
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Games</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Poem</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Stories</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Essay</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Entertainment
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Radio</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Jokes</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--===================================== end navabr =====================================  -->
+
+
+
+
+
+
+
+
+<style>
+    .poetry-heading{
+        border-bottom: 1px solid #3382148a;
+    }
+      .poem-title {
+            font-size: 32px;
+            font-weight: bold;
+            font-family: 'Roboto',sans-serif;
+            margin-top: 20px;
+        }
+        .poem-author {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .poem-author span{
+            color: #28a745;
+        }
+        .poem-content {
+            font-size: 1rem;
+            line-height: 1.6;
+           
+        }
+        .poem-content p{
+            font-size: 18px;
+            font-weight: 500;
+            font-family: 'Inter',sans-serif;
+            margin: 20px auto;
+        }
+        .source {
+            font-size: 18px;
+            font-family: 'Inter',sans-serif;
+            color: #000000;
+            margin-top: 20px;
+        }
+        .source span{
+            color: #348214;
+        }
+        .related-quotes {
+            font-size: 1rem;
+            font-weight: bold;
+            border-bottom: 1px solid #ccc;
+            margin-top: 20px;
+            padding-bottom: 10px;
+            font-family: 'Roboto',sans-serif;
+
+        }
+        .sidebar {
+            background-color: #e9ecef;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .sidebar img {
+            width: 100%;
+            height: auto;
+        }
+</style>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+               <div class="poetry-heading">
+                <div class="poem-title">WATERSHED AND SHIELD REMINISCENCE</div>
+                <div class="d-flex justify-content-between">
+                    <div class="poem-author">BY <span>LIZ HOWARD</span></div>
+                   <a href="#"><img src="./assets/images/share.svg" alt=""></a>
+                </div>
+               </div>
+                <div class="poem-content text-center">
+                <p>Amid moonscape railings <br> cognition drained its basin</p>
+                   <p>all ventricles sap and terminate <br> a girlish toss of stones into water <br>green from copper</p>
+                   <p>limbs angled and familial as industry <br>these days without antidote <br>tumbling into silt</p>
+                    <p>sleek as a grey lip another cadaver lake <br> ground seepage of acids <br> hydrochloric said the railroad</p>
+                  <p>came after the caribou or smoke <br> to crack the sky open this caustic history <br> of moisture</p>
+                <p>before the caribou metabolic alleys <br>diverged <br>into currents and embryos <br>crack the sky into a filter of words <br>mutagenic</p>
+                    <p>Lux</p>
+                    <p>Sucrose</p>
+                    
+                </div>
+                <div class="source">
+                   <p> Source: <span> Infinite Citizen of the Shaking Tent (McClelland & Stewart, Ltd., 2015)</span></p>
+                  <p>  Copyright Credit: Liz Howard, "Watershed and Field Reminiscence" from Infinite Citizen of the Shaking Tent. Copyright © 2015 by Liz Howard.</p>
+                </div>
+                <div class="related-quotes">Related Quotes</div>
+
+                <!-- Quote Item 2 -->
+                <div class="quotes-ui-item pt-3">
+                    <img src="./assets/images/qp1.svg" alt="Profile"
+                        class="quotes-ui-profile" />
+                    <div class="quotes-ui-content">
+                        <p class="quotes-ui-text">
+                            "Life is like riding a bicycle. To keep your
+                            balance, you must keep moving."
+                        </p>
+                        <p class="quotes-ui-author">- Albert Einstein</p>
+                        <p class="quotes-ui-source">
+                            Tags: WisdomQuotes | Category: QuotesOnLife |
+                            MotivationMonday
+                        </p>
+                    </div>
+                </div>
+                <!-- Quote Item 2 -->
+                <div class="quotes-ui-item">
+                    <img src="./assets/images/qp1.svg" alt="Profile"
+                        class="quotes-ui-profile" />
+                    <div class="quotes-ui-content">
+                        <p class="quotes-ui-text">
+                            "Life is like riding a bicycle. To keep your
+                            balance, you must keep moving."
+                        </p>
+                        <p class="quotes-ui-author">- Albert Einstein</p>
+                        <p class="quotes-ui-source">
+                            Tags: WisdomQuotes | Category: QuotesOnLife |
+                            MotivationMonday
+                        </p>
+                    </div>
+                </div>
+                <!-- Quote Item 2 -->
+                <div class="quotes-ui-item">
+                    <img src="./assets/images/qp1.svg" alt="Profile"
+                        class="quotes-ui-profile" />
+                    <div class="quotes-ui-content">
+                        <p class="quotes-ui-text">
+                            "Life is like riding a bicycle. To keep your
+                            balance, you must keep moving."
+                        </p>
+                        <p class="quotes-ui-author">- Albert Einstein</p>
+                        <p class="quotes-ui-source">
+                            Tags: WisdomQuotes | Category: QuotesOnLife |
+                            MotivationMonday
+                        </p>
+                    </div>
+                </div>
+                <!-- Quote Item 2 -->
+                <div class="quotes-ui-item">
+                    <img src="./assets/images/qp1.svg" alt="Profile"
+                        class="quotes-ui-profile" />
+                    <div class="quotes-ui-content">
+                        <p class="quotes-ui-text">
+                            "Life is like riding a bicycle. To keep your
+                            balance, you must keep moving."
+                        </p>
+                        <p class="quotes-ui-author">- Albert Einstein</p>
+                        <p class="quotes-ui-source">
+                            Tags: WisdomQuotes | Category: QuotesOnLife |
+                            MotivationMonday
+                        </p>
+                    </div>
+                </div>
+                <!-- Quote Item 2 -->
+                <div class="quotes-ui-item">
+                    <img src="./assets/images/qp1.svg" alt="Profile"
+                        class="quotes-ui-profile" />
+                    <div class="quotes-ui-content">
+                        <p class="quotes-ui-text">
+                            "Life is like riding a bicycle. To keep your
+                            balance, you must keep moving."
+                        </p>
+                        <p class="quotes-ui-author">- Albert Einstein</p>
+                        <p class="quotes-ui-source">
+                            Tags: WisdomQuotes | Category: QuotesOnLife |
+                            MotivationMonday
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3">
+                <div class="sidebar">
+                    <!-- Advertisement or informational graphic -->
+                    <img src="https://via.placeholder.com/300" alt="Ad">
+                    <div class="blank-section bg-primary text-white text-center py-5 mt-3">
+                        Blank blue section
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- =================================end======================== -->
+
+    <!-- Include jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Bootstrap and Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                items: 1,
+                nav: true,
+                navText: [
+                    '<img src="./assets/images/games/prev.png" alt="Previous" class="custom-prev" >', // Customize the path and size
+                    '<img src="./assets/images/games/next.png" alt="Next" class="custom-next" >', // Customize the path and size
+                ],
+            });
+        });
+    </script>
+
+    <!-- Custom JS (if any external JS file) -->
+    <script src="./assets/js/js.js"></script>
+
+    <!-- Inline Custom JS for Owl Carousel -->
+</body>
+
+</html>

@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punjabi.com</title>
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" sizes="32x32" /> <!-- Corrected path -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Slick CSS from CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="./assets/css/book.css">
+    <link rel="stylesheet" href="./assets/css/style.css"> <!-- Corrected path -->
+
+
+
+</head>
+
+<body>
+    <!-- preloader -->
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+    <!--======================= nav ======================================== -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid ">
+            <div class="d-flex  justify-content-center align-items-center outer-div">
+                <div class="outer-div-inner ">
+                    <div class="d-flex justify-content-between outer-div-inner-first align-items-center  w-100 ">
+                        <!-- Left Section: Toggle Button and Logo -->
+                        <div class="d-flex align-items-center">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <a class="navbar-brand ms-3" href="#"><img src="./assets/images/logo.png" alt="Logo" /></a>
+                        </div>
+
+                        <!-- Right Section: Language Dropdown and Profile Icon -->
+                        <div class="d-flex align-items-center tnp">
+                            <ul class="navbar-nav translator d-flex d-md-none align-items-center">
+                                <!-- Language Dropdown -->
+                                <li class="nav-item dropdown me-3">
+                                    <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                        id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Pun
+                                    </a>
+                                    <ul class="dropdown-menu header-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Hindi</a></li>
+                                        <li><a class="dropdown-item" href="#">English</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Profile Icon -->
+
+                            </ul>
+                            <div class="nav-divider mx-2 d-flex d-md-none"></div>
+                            <div class="nav-item d-flex d-lg-none">
+                                <a href="#" class="profile-icon">
+                                    <img src="./assets/images/proflle-icon.svg" alt="Profile" class="rounded-circle"
+                                        width="40" height="40" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Cart Icon (optional) -->
+                        <!-- Uncomment this if you need the cart icon as well -->
+                        <!-- 
+                        <a href="#" class="cart-icon d-flex d-md-none ms-3">
+                            <img src="./assets/images/cart.svg" alt="Cart" width="24" height="24" />
+                        </a>
+                        -->
+                    </div>
+
+                    <div class="d-flex d-md-none justify-content-center w-100 search-div">
+                        <div class="nav-item dropdown d-flex justify-content-center w-100">
+                            <div class="search-bar w-100">
+                                <form class="d-flex w-100" role="search">
+                                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                    <input class="form-control me-2 w-100" type="search" aria-label="Search">
+                                    <i class="fa-solid fa-microphone mic-icon" onclick="activateMic()"></i>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="collapse navbar-collapse d-lg-block justify-content-center px-2" id="navbarNav">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><span>News</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Culture
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Boliyan
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Muhawara
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Baby Names
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Literature
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Poetry</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Audio Books</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Kids Section
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Games</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Poem</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Stories</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Essay</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Entertainment
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Radio</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Jokes</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <div class="search-bar">
+                                <form class="d-flex ms-3" role="search">
+                                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                    <input class="form-control me-2" type="search" placeholder="Search"
+                                        aria-label="Search">
+                                    <i class="fa-solid fa-microphone mic-icon" onclick="activateMic()"></i>
+                                </form>
+                            </div>
+                        </li>
+
+
+                        <li class="nav-item  dropdown  ms-2 w-2">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Pun
+                            </a>
+                            <ul class="dropdown-menu header-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Hindi</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">English</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <button class="btn main-btn " type="button">Login</button>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+                            <a href="#" class="cart-icon me-3">
+                                <img src="./assets/images/cart.svg" alt="Cart" width="24" height="24" />
+                            </a>
+                        </li> -->
+                        <li class="nav-item dropdown">
+                            <a href="#" class="profile-icon">
+                                <img src="./assets/images/proflle-icon.svg" alt="Profile" class="rounded-circle"
+                                    width="40" height="40" />
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- New elements after the nav-items -->
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="offcanvas offcanvas-start offcanvas-glass d-lg-none" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="">
+                <div class="offcanvas-header ">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <a href="#" class="offcanvas-title" id="offcanvasNavbarLabel"><img src="./assets/images/logo.png"
+                            alt="" /></a>
+
+                </div>
+                <div class="offcanvas-body">
+
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+
+
+                        <li class="nav-item ">
+                            <a class="nav-link active" aria-current="page" href="#"><span>News</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Culture
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Boliyan
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Muhawara
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        Baby Names
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Literature
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Poetry</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Audio Books</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Kids Section
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Games</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Poem</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Stories</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Essay</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="#"
+                                id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown"
+                                aria-expanded="false">
+                                Entertainment
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li>
+                                    <a class="dropdown-item" href="#">Radio</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Jokes</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+
+
+
+
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+    <!--===================================== end navabr =====================================  -->
+
+
+
+
+
+    <!-- =======================header============================ -->
+    <div class="container main-head">
+        <div class="row">
+            <!-- Left section: Sticky image -->
+            <div class="col-lg-3  left-img">
+                <div class="sticky">
+                    <img src="./assets/images/books-page-img/author-books.png" class="book-sticky-img" alt="Book Cover">
+                    <a href="#" class="d-flex d-lg-none share-icon-img"> <img
+                            src="./assets/images/books-page-img/share.svg" class="share" alt=""></a>
+                    <div class="order-buttons">
+                        <a href="#" class="btn rating mt-1">4.5 Rating | 15 Review | 4.5 Avg Rating</a>
+                        <button class="btn buy-now follow-up mt-1 pe-0"><a href="#">Follow </a> </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right section: Book details -->
+            <div class="col-lg-9  right-section">
+                <div class="d-flex justify-content-between w-100 border-bottom book-title">
+                    <h3 class="heading">Shiv Kumar Batalvi </h3>
+                    <a href="#"> <img src="./assets/images/books-page-img/author-booklogo.png" class="pt-2" alt=""></a>
+                </div>
+
+                <!-- Unordered List for Book Details with 100px spacing -->
+                <div class="container">
+                    <div class="publish-info d-flex justify-content-between">
+                        <div class="">
+                            <ul class="list-unstyled custom-list">
+                                <li>
+                                    <strong>Born</strong>
+                                    <span class="text-success">13 June 2024- 00000</span>
+                                </li>
+                                <li>
+                                    <strong>Place</strong>
+                                    <span class="text-success">Sirsa, Haryana</span>
+                                </li>
+                                <li>
+                                    <strong>Genre</strong>
+                                    <span class="text-success">Love, Fiction, Literature</span>
+                                </li>
+                                <li>
+                                    <strong>Influences</strong>
+                                    <span>Crime And Punishment</span>
+                                </li>
+                                <li>
+                                    <strong>Awards</strong>
+                                    <span>December 2014</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="image-gallery">
+                            <div class="row g-2">
+                                <div class="col-8">
+                                    <img src="./assets/images/books-page-img/author-gallery-1.png" alt="Main image"
+                                        class="img-fluid gallery-item-author author-main-img" data-bs-toggle="modal"
+                                        data-bs-target="#imageModal">
+                                </div>
+                                <div class="col-4">
+                                    <div class="row g-2">
+                                        <div class="col-12">
+                                            <img src="./assets/images/books-page-img/author-galler-2.png"
+                                                alt="Thumbnail 1" class="img-fluid gallery-item-author-2"
+                                                data-bs-toggle="modal" data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="image-container">
+                                                <img src="./assets/images/books-page-img/author-galler-2.png"
+                                                    alt="Thumbnail 2" class="img-fluid gallery-item-author-2">
+                                                <div class="watch-more-overlay" data-bs-toggle="modal"
+                                                    data-bs-target="#imageModal">
+                                                    <button class="watch-more-gallery">
+                                                        +3 Watch More
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="imageModalLabel">Image Gallery</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="./assets/images/profile.png" class="d-block w-100" alt="Image 1">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="./assets/images/profile.png" class="d-block w-100" alt="Image 2">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="./assets/images/profile.png" class="d-block w-100" alt="Image 3">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="./assets/images/profile.png" class="d-block w-100" alt="Image 4">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="./assets/images/profile.png" class="d-block w-100" alt="Image 5">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel"
+                                        data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel"
+                                        data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="content-wrapper">
+                    <p class="short-content " readonly>
+                        ਚੀਜ਼ਾਂ <span class="text-success">ਆਵਾਜਾਈ</span> ਦੇਣੇ ਲਾਇਆ। ਕਰਨਾ ਚਿਹਰਾ ਪੈਸੇ ਪੂਰਾ ਕਰਨਾ। ਵੱਡਾ ਲੈਂਦਾ
+                        ਚੰਗਾ ਹੌਲੀ ਸ਼ੁਰੂ ਖਰਚਿਆਂ ਰੱਖੀ। ਲਿਬੜਿਆ
+                        ਹੈਰਾਨ ਉਦੋਂ ਪੈਸੇ ਕੇਵਲ ਕਰਨਾ ਨਫ਼ਰਤ ਮਿਲਦਾ। ਅੱਧੀ ਤਿਜੋਰੀਆਂ ਤੁਹਾਨੂੰ ਸਾਰੇ ਚਮਕਾਈ ਬੰਬਾਂ ਕਿਨਾਰੇ ਬਿਤਾ ਸਾਨੂੰ।
+                        ਆਪਣੀ
+                        ਆਵਾਜ਼ ਬਿਗਲ ਅਚਾਨਕ ਉਨ੍ਹਾਂ ਦੀਆਂ ਸ਼ਰਾਰਤਾਂ ਜਮਾਤ। ਪ੍ਰਾਪਤ ਸਾਰਿਆਂ ਰਹਿਣਾ ਠੰਡਾ ਹਿਲਜੁੱਲ ਲੌਢੇ ਬੱਚਤ। ਕਠਫੋੜਵੀ
+                        ਸਮੱਸਿਆ
+                        ਚੀਖਣ ਖਿਡਾਉਣਾ ਵਿੱਚ। ਨਿਵੇਸ਼ ਰੱਖਿਆ ਤੁਹਾਡੇ ਜੰਗਲ ਨਵੇਂ ਆਪਣਾ। ਸ਼ਾਖਾਵਾਂ ਸਿਵਾ ਲੈਂਦਾ ਸਿਵਾ ਯੋਂਗ ਖਰਚੇ। ਪਿੰਜਰੇ
+                        ਆਵਾਜ਼ ਬਿਗਲ ਅਚਾਨਕ ਉਨ੍ਹਾਂ ਦੀਆਂ ਸ਼ਰਾਰਤਾਂ ਜਮਾਤ। ਪ੍ਰਾਪਤ ਸਾਰਿਆਂ ਰਹਿਣਾ ਠੰਡਾ ਹਿਲਜੁੱਲ ਲੌਢੇ ਬੱਚਤ। ਕਠਫੋੜਵੀ
+                        ਸਮੱਸਿਆ
+
+
+                    </p>
+                    <p class="full-content view-more-content">
+                        ਚੀਜ਼ਾਂ ਆਵਾਜਾਈ ਦੇਣੇ ਲਾਇਆ। ਕਰਨਾ ਚਿਹਰਾ ਪੈਸੇ ਪੂਰਾ ਕਰਨਾ। ਵੱਡਾ ਲੈਂਦਾ ਚੰਗਾ ਹੌਲੀ ਸ਼ੁਰੂ ਖਰਚਿਆਂ ਰੱਖੀ। ਲਿਬੜਿਆ
+                        ਹੈਰਾਨ ਉਦੋਂ ਪੈਸੇ ਕੇਵਲ ਕਰਨਾ ਨਫ਼ਰਤ ਮਿਲਦਾ। ਅੱਧੀ ਤਿਜੋਰੀਆਂ ਤੁਹਾਨੂੰ ਸਾਰੇ ਚਮਕਾਈ ਬੰਬਾਂ ਕਿਨਾਰੇ ਬਿਤਾ ਸਾਨੂੰ।
+                        ਆਪਣੀ
+                        ਆਵਾਜ਼ ਬਿਗਲ ਅਚਾਨਕ ਉਨ੍ਹਾਂ ਦੀਆਂ ਸ਼ਰਾਰਤਾਂ ਜਮਾਤ। ਪ੍ਰਾਪਤ ਸਾਰਿਆਂ ਰਹਿਣਾ ਠੰਡਾ ਹਿਲਜੁੱਲ ਲੌਢੇ ਬੱਚਤ। ਕਠਫੋੜਵੀ
+                        ਸਮੱਸਿਆ
+                        ਚੀਖਣ ਖਿਡਾਉਣਾ ਵਿੱਚ। ਨਿਵੇਸ਼ ਰੱਖਿਆ ਤੁਹਾਡੇ ਜੰਗਲ ਨਵੇਂ ਆਪਣਾ। ਸ਼ਾਖਾਵਾਂ ਸਿਵਾ ਲੈਂਦਾ ਸਿਵਾ ਯੋਂਗ ਖਰਚੇ। ਪਿੰਜਰੇ
+                        ਧੋਤੇ ਉੱਤੇ ਵਿੱਚੋਂ ਪੈਸਾ ਨਿਸਾਲ
+                    </p>
+                    <div class="w-100 d-flex justify-content-center">
+                        <span class="view-more"><i class="fa fa-angle-down" aria-hidden="true"></i> View More</span>
+
+                    </div>
+                </div>
+                <!-- Author Section -->
+
+
+
+
+
+
+
+
+                <!-- ========================= end ========================= -->
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+<!-- tabs -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="tab-section">
+                    <div class="genre-section">
+                        <div class="scrollable-tabs">
+                            <button class="tab-btn active" data-tab="tab1">All</button>
+                            <button class="tab-btn" data-tab="tab2">Poem</button>
+                            <button class="tab-btn" data-tab="tab3">Shayar</button>
+                            <button class="tab-btn" data-tab="tab4">Books</button>
+                            <!-- <button class="tab-btn" data-tab="tab5">Option 2</button> 
+                            <button class="tab-btn" data-tab="tab6">Option 3</button>
+                            <button class="tab-btn" data-tab="tab7">Option 4</button>
+                            <button class="tab-btn" data-tab="tab8">Option 5</button> -->
+                            <div class="underline"></div> <!-- Underline div inside scrollable-tabs -->
+                        </div>
+                    </div>
+
+                    <div class="content-section ps-4 ">
+                        <div class="row" id="tab1">
+                            <div class="col-12 section-title">Poem</div>
+                            <div class="col-12">
+                                <ul class="list-unstyled">
+                                    <li class="poem-item">ਕਦੇ ਜਿੰਦਗੀ ਦੇ ਵਿੱਚ ਸਭ ਕੁਝ ਹਾਸਿਲ ਕਰਨ ਲਈ ਸਮਾਂ ਕੁਝ ਜਰੂਰੀ ਲੋੜਾਂ
+                                        ਨੂੰ ਵੀ ਵਿਸਾਰ ਦਿੰਦਾ।</li>
+                                    <li class="poem-item">ਵਿਸ਼ਵ ਪਸਾਰਿਆਂ ਵਿੱਚ ਜ਼ਰੂਰੀ ਤਾਂ ਨਹੀਂ ਹੁੰਦੀ ਹਮੇਸ਼ਾ ਵੱਡੀਆਂ ਜਿੱਤਾਂ
+                                        ਹੀ ਰਾਹ ਮੋੜਦੇ ਜੀਵਨ</li>
+                                    <li class="poem-item">ਤੁਸੀਂ ਕਦੇ ਵੀ ਕੁਝ ਚੰਗਾ ਕਰਕੇ ਕਿਸੇ ਨਤੀਜੇ ਦੀ ਉਡੀਕ ਨਹੀਂ ਕਰਦੇ ਉਹ
+                                        ਸਿਰਫ਼ ਕਰਮ ਹੋਵੇ</li>
+                                    <li class="poem-item">ਜਿਵੇਂ ਕਿਸੇ ਯਾਤਰੀ ਨੂੰ ਸਹੀ ਰਸਤਾ ਦਿਖਾਉਣਾ ਕੋਈ ਮਜਦੂਰੀ ਨਹੀਂ ਹੈ ਉਹ
+                                        ਸੇਵਾ ਹੈ, ਇਸ ਨੂੰ ਸੇਵਾ ਸੇਵਕ ਬਣਦਾ ਹੈ।</li>
+                                    <li class="poem-item">ਪੁਰਾਣੇ ਚੰਗੇ ਵਕਤ ਨੂੰ ਯਾਦ ਕਰਨਾ, ਯਾਦਾਂ ਸੱਚੀਆਂ ਯਾਦਾਂ ਬਣਾ ਦਿੰਦੀ ਹੈ
+                                        ਸੱਜਣਾ</li>
+                                </ul>
+                                <div class="watch-all"><a href="#">Watch All</a></div>
+                            </div>
+                            <div class="col-12 section-title">ਹੋਟੇਸਟ ਸਫ਼ਾਂ</div>
+                            <div class="col-12">
+                                <ul class="list-unstyled">
+                                    <li class="poem-item-2 ps-0 pt-3 text-center">
+                                        <p>ਹਾਲਾਤਾਂ ਪ੍ਰਾਪਤ ਸਹਾਇਤਾ ਮਹੀਨਾਵਾਰ ਸਾਰੇ। ਖੱਡੇ ਅਚਾਨਕ ਆਪਣੀ </p>
+                                        <p>ਦੁਨੀਆਂ ਪੂਰਾ ਜੀਵਨ ਸਮੇਂ ਮੇਰੀਆਂ ਮੁੰਡੇ।</p>
+                                    </li>
+                                    <li class="poem-item-2 ps-0 pt-3 text-center">
+                                        <p>ਹਾਲਾਤਾਂ ਪ੍ਰਾਪਤ ਸਹਾਇਤਾ ਮਹੀਨਾਵਾਰ ਸਾਰੇ। ਖੱਡੇ ਅਚਾਨਕ ਆਪਣੀ </p>
+                                        <p>ਦੁਨੀਆਂ ਪੂਰਾ ਜੀਵਨ ਸਮੇਂ ਮੇਰੀਆਂ ਮੁੰਡੇ।</p>
+                                    </li>
+                                    <li class="poem-item-2 ps-0 pt-3 text-center">
+                                        <p>ਹਾਲਾਤਾਂ ਪ੍ਰਾਪਤ ਸਹਾਇਤਾ ਮਹੀਨਾਵਾਰ ਸਾਰੇ। ਖੱਡੇ ਅਚਾਨਕ ਆਪਣੀ </p>
+                                        <p>ਦੁਨੀਆਂ ਪੂਰਾ ਜੀਵਨ ਸਮੇਂ ਮੇਰੀਆਂ ਮੁੰਡੇ।</p>
+                                    </li>
+                                    <li class="poem-item-2 ps-0 pt-3 text-center">
+                                        <p>ਹਾਲਾਤਾਂ ਪ੍ਰਾਪਤ ਸਹਾਇਤਾ ਮਹੀਨਾਵਾਰ ਸਾਰੇ। ਖੱਡੇ ਅਚਾਨਕ ਆਪਣੀ </p>
+                                        <p>ਦੁਨੀਆਂ ਪੂਰਾ ਜੀਵਨ ਸਮੇਂ ਮੇਰੀਆਂ ਮੁੰਡੇ।</p>
+                                    </li>
+                                    <li class="poem-item-2 ps-0 pt-3 text-center">
+                                        <p>ਹਾਲਾਤਾਂ ਪ੍ਰਾਪਤ ਸਹਾਇਤਾ ਮਹੀਨਾਵਾਰ ਸਾਰੇ। ਖੱਡੇ ਅਚਾਨਕ ਆਪਣੀ </p>
+                                        <p>ਦੁਨੀਆਂ ਪੂਰਾ ਜੀਵਨ ਸਮੇਂ ਮੇਰੀਆਂ ਮੁੰਡੇ।</p>
+                                    </li>
+                                </ul>
+                                <div class="watch-all text-center"><a href="#">Watch All</a></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="content-section ps-4 ">
+                        <div class="row" id="tab2">
+
+                            <div class="col-12 section-title">ਹੋਟੇਸਟ ਸਫ਼ਾਂ</div>
+                            <div class="col-12">
+                                <div class="poems-page page" id="poems-page-1">
+                                    <ul class="list-unstyled">
+                                        <li class="poem-item-2 ps-0 pt-2 text-center">
+                                            <p>“ ਹਾਲਾਤਾਂ ਪ੍ਰਾਪਤ ਸਹਾਇਤਾ ਮਹੀਨਾਵਾਰ ਸਾਰੇ। ਖੱਡੇ ਅਚਾਨਕ ਆਪਣੀ</p>
+                                            <p>ਦੁਨੀਆਂ ਪੂਰਾ ਜੀਵਨ ਸਮੇਂ ਮੇਰੀਆਂ ਮੁੰਡੇ।“</p>
+                                            <div class="d-flex justify-content-center action-buttons">
+
+                                                <div class="action-button me-3">
+                                                    <i class="fa-solid fa-share-nodes pt-1"></i>
+                                                    <p>Share</p>
+                                                </div>
+
+
+                                            </div>
+
+
+                                        </li>
+                                        
+                                        <li class="poem-item-2 ps-0 pt-2 text-center">
+                                            <p>“ ਹਾਲਾਤਾਂ ਪ੍ਰਾਪਤ ਸਹਾਇਤਾ ਮਹੀਨਾਵਾਰ ਸਾਰੇ। ਖੱਡੇ ਅਚਾਨਕ ਆਪਣੀ</p>
+                                            <p>ਦੁਨੀਆਂ ਪੂਰਾ ਜੀਵਨ ਸਮੇਂ ਮੇਰੀਆਂ ਮੁੰਡੇ।“</p>
+                                            <div class="d-flex justify-content-center action-buttons">
+
+                                                <div class="action-button me-3">
+                                                    <i class="fa-solid fa-share-nodes pt-1"></i>
+                                                    <p>Share</p>
+                                                </div>
+
+
+                                            </div>
+                                        </li>
+                                        <li class="poem-item-2 ps-0 pt-2 text-center">
+                                            <p>“ ਹਾਲਾਤਾਂ ਪ੍ਰਾਪਤ ਸਹਾਇਤਾ ਮਹੀਨਾਵਾਰ ਸਾਰੇ। ਖੱਡੇ ਅਚਾਨਕ ਆਪਣੀ</p>
+                                            <p>ਦੁਨੀਆਂ ਪੂਰਾ ਜੀਵਨ ਸਮੇਂ ਮੇਰੀਆਂ ਮੁੰਡੇ।“</p>
+                                            <div class="d-flex justify-content-center action-buttons">
+
+                                                <div class="action-button me-3">
+                                                    <i class="fa-solid fa-share-nodes pt-1"></i>
+                                                    <p>Share</p>
+                                                </div>
+
+
+                                            </div>
+                                        </li>
+                                        <li class="poem-item-2 ps-0 pt-2 text-center">
+                                            <p>“ ਹਾਲਾਤਾਂ ਪ੍ਰਾਪਤ ਸਹਾਇਤਾ ਮਹੀਨਾਵਾਰ ਸਾਰੇ। ਖੱਡੇ ਅਚਾਨਕ ਆਪਣੀ</p>
+                                            <p>ਦੁਨੀਆਂ ਪੂਰਾ ਜੀਵਨ ਸਮੇਂ ਮੇਰੀਆਂ ਮੁੰਡੇ।“</p>
+                                            <div class="d-flex justify-content-center action-buttons">
+                                                <div class="action-button me-3">
+                                                    <i class="fa-regular fa-heart pt-1 "></i>
+                                                    <!-- Keep the heart icon -->
+                                                    <p>Save to Collection</p>
+                                                </div>
+                                                <div class="action-button me-3">
+                                                    <i class="fa-solid fa-share-nodes pt-1"></i>
+                                                    <p>Share</p>
+                                                </div>
+                                                <div class="action-button me-3">
+                                                    <i class="fa-regular fa-clone pt-1 "></i>
+                                                    <p>Copy to Clipboard</p>
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="poems-page page" id="poems-page-2" style="display:none;">
+                                    <ul class="list-unstyled">
+                                        <li class="poem-item-2 ps-0 pt-2 text-center">
+                                            <p>“ ਹਾਲਾਤਾਂ ਪ੍ਰਾਪਤ ਸਹਾਇਤਾ ਮਹੀਨਾਵਾਰ ਸਾਰੇ। ਖੱਡੇ ਅਚਾਨਕ ਆਪਣੀ</p>
+                                            <p>ਦੁਨੀਆਂ ਪੂਰਾ ਜੀਵਨ ਸਮੇਂ ਮੇਰੀਆਂ ਮੁੰਡੇ।“</p>
+                                            <div class="d-flex justify-content-center action-buttons">
+
+                                                <div class="action-button me-3">
+                                                    <i class="fa-solid fa-share-nodes pt-1"></i>
+                                                    <p>Share</p>
+                                                </div>
+
+
+                                            </div>
+
+
+                                        </li>
+                                        
+                                        <li class="poem-item-2 ps-0 pt-2 text-center">
+                                            <p>“ ਹਾਲਾਤਾਂ ਪ੍ਰਾਪਤ ਸਹਾਇਤਾ ਮਹੀਨਾਵਾਰ ਸਾਰੇ। ਖੱਡੇ ਅਚਾਨਕ ਆਪਣੀ</p>
+                                            <p>ਦੁਨੀਆਂ ਪੂਰਾ ਜੀਵਨ ਸਮੇਂ ਮੇਰੀਆਂ ਮੁੰਡੇ।“</p>
+                                            <div class="d-flex justify-content-center action-buttons">
+
+                                                <div class="action-button me-3">
+                                                    <i class="fa-solid fa-share-nodes pt-1"></i>
+                                                    <p>Share</p>
+                                                </div>
+
+
+                                            </div>
+                                        </li>
+                                        
+                                        <li class="poem-item-2 ps-0 pt-2 text-center">
+                                            <p>“ ਹਾਲਾਤਾਂ ਪ੍ਰਾਪਤ ਸਹਾਇਤਾ ਮਹੀਨਾਵਾਰ ਸਾਰੇ। ਖੱਡੇ ਅਚਾਨਕ ਆਪਣੀ</p>
+                                            <p>ਦੁਨੀਆਂ ਪੂਰਾ ਜੀਵਨ ਸਮੇਂ ਮੇਰੀਆਂ ਮੁੰਡੇ।“</p>
+                                            <div class="d-flex justify-content-center action-buttons">
+
+                                                <div class="action-button me-3">
+                                                    <i class="fa-solid fa-share-nodes pt-1"></i>
+                                                    <p>Share</p>
+                                                </div>
+
+
+                                            </div>
+                                        </li>
+                                        <li class="poem-item-2 ps-0 pt-2 text-center">
+                                            <p>“ ਹਾਲਾਤਾਂ ਪ੍ਰਾਪਤ ਸਹਾਇਤਾ ਮਹੀਨਾਵਾਰ ਸਾਰੇ। ਖੱਡੇ ਅਚਾਨਕ ਆਪਣੀ</p>
+                                            <p>ਦੁਨੀਆਂ ਪੂਰਾ ਜੀਵਨ ਸਮੇਂ ਮੇਰੀਆਂ ਮੁੰਡੇ।“</p>
+                                            <div class="d-flex justify-content-center action-buttons">
+                                                <div class="action-button me-3">
+                                                    <i class="fa-regular fa-heart pt-1 "></i>
+                                                    <!-- Keep the heart icon -->
+                                                    <p>Save to Collection</p>
+                                                </div>
+                                                <div class="action-button me-3">
+                                                    <i class="fa-solid fa-share-nodes pt-1"></i>
+                                                    <p>Share</p>
+                                                </div>
+                                                <div class="action-button me-3">
+                                                    <i class="fa-regular fa-clone pt-1 "></i>
+                                                    <p>Copy to Clipboard</p>
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="poems-page page" id="poems-page-3" style="display:none;">
+                                    <ul class="list-unstyled">
+                                        
+                                        <li class="poem-item-2 ps-0 pt-2 text-center">
+                                            <p>“ ਹਾਲਾਤਾਂ ਪ੍ਰਾਪਤ ਸਹਾਇਤਾ ਮਹੀਨਾਵਾਰ ਸਾਰੇ। ਖੱਡੇ ਅਚਾਨਕ ਆਪਣੀ</p>
+                                            <p>ਦੁਨੀਆਂ ਪੂਰਾ ਜੀਵਨ ਸਮੇਂ ਮੇਰੀਆਂ ਮੁੰਡੇ।“</p>
+                                            <div class="d-flex justify-content-center action-buttons">
+
+                                                <div class="action-button me-3">
+                                                    <i class="fa-solid fa-share-nodes pt-1"></i>
+                                                    <p>Share</p>
+                                                </div>
+
+
+                                            </div>
+                                        </li>
+                                        <li class="poem-item-2 ps-0 pt-2 text-center">
+                                            <p>“ ਹਾਲਾਤਾਂ ਪ੍ਰਾਪਤ ਸਹਾਇਤਾ ਮਹੀਨਾਵਾਰ ਸਾਰੇ। ਖੱਡੇ ਅਚਾਨਕ ਆਪਣੀ</p>
+                                            <p>ਦੁਨੀਆਂ ਪੂਰਾ ਜੀਵਨ ਸਮੇਂ ਮੇਰੀਆਂ ਮੁੰਡੇ।“</p>
+                                            <div class="d-flex justify-content-center action-buttons">
+
+                                                <div class="action-button me-3">
+                                                    <i class="fa-solid fa-share-nodes pt-1"></i>
+                                                    <p>Share</p>
+                                                </div>
+
+
+                                            </div>
+                                        </li>
+                                        <li class="poem-item-2 ps-0 pt-2 text-center">
+                                            <p>“ ਹਾਲਾਤਾਂ ਪ੍ਰਾਪਤ ਸਹਾਇਤਾ ਮਹੀਨਾਵਾਰ ਸਾਰੇ। ਖੱਡੇ ਅਚਾਨਕ ਆਪਣੀ</p>
+                                            <p>ਦੁਨੀਆਂ ਪੂਰਾ ਜੀਵਨ ਸਮੇਂ ਮੇਰੀਆਂ ਮੁੰਡੇ।“</p>
+                                            <div class="d-flex justify-content-center action-buttons">
+
+                                                <div class="action-button me-3">
+                                                    <i class="fa-solid fa-share-nodes pt-1"></i>
+                                                    <p>Share</p>
+                                                </div>
+
+
+                                            </div>
+                                        </li>
+                                        <li class="poem-item-2 ps-0 pt-2 text-center">
+                                            <p>“ ਹਾਲਾਤਾਂ ਪ੍ਰਾਪਤ ਸਹਾਇਤਾ ਮਹੀਨਾਵਾਰ ਸਾਰੇ। ਖੱਡੇ ਅਚਾਨਕ ਆਪਣੀ</p>
+                                            <p>ਦੁਨੀਆਂ ਪੂਰਾ ਜੀਵਨ ਸਮੇਂ ਮੇਰੀਆਂ ਮੁੰਡੇ।“</p>
+                                            <div class="d-flex justify-content-center action-buttons">
+
+                                                <div class="action-button me-3">
+                                                    <i class="fa-solid fa-share-nodes pt-1"></i>
+                                                    <p>Share</p>
+                                                </div>
+
+
+                                            </div>
+                                        </li>
+                                        <li class="poem-item-2 ps-0 pt-2 text-center">
+                                            <p>“ ਹਾਲਾਤਾਂ ਪ੍ਰਾਪਤ ਸਹਾਇਤਾ ਮਹੀਨਾਵਾਰ ਸਾਰੇ। ਖੱਡੇ ਅਚਾਨਕ ਆਪਣੀ</p>
+                                            <p>ਦੁਨੀਆਂ ਪੂਰਾ ਜੀਵਨ ਸਮੇਂ ਮੇਰੀਆਂ ਮੁੰਡੇ।“</p>
+                                            <div class="d-flex justify-content-center action-buttons">
+                                                <div class="action-button me-3">
+                                                    <i class="fa-regular fa-heart pt-1 "></i>
+                                                    <!-- Keep the heart icon -->
+                                                    <p>Save to Collection</p>
+                                                </div>
+                                                <div class="action-button me-3">
+                                                    <i class="fa-solid fa-share-nodes pt-1"></i>
+                                                    <p>Share</p>
+                                                </div>
+                                                <div class="action-button me-3">
+                                                    <i class="fa-regular fa-clone pt-1 "></i>
+                                                    <p>Copy to Clipboard</p>
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="pagination-section">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination">
+                                        <li class="page-item" id="prev-page">
+                                            <a class="page-link" href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item active"><a class="page-link" href="#" data-page="1">1</a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#" data-page="2">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#" data-page="3">3</a></li>
+                                        <li class="page-item" id="next-page">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                    <div class="content-section ps-4 ">
+                        <div class="row" id="tab3">
+                            <div class="col-12 section-title">Quotes</div>
+                            <div class="col-12">
+                                <div class="poems-page page" id="poems-page-1">
+                                <ul class="list-unstyled">
+                                    <li class="poem-item text-center" >ਕਦੇ ਜਿੰਦਗੀ ਦੇ ਵਿੱਚ ਸਭ ਕੁਝ ਹਾਸਿਲ ਕਰਨ ਲਈ ਸਮਾਂ ਕੁਝ ਜਰੂਰੀ ਲੋੜਾਂ
+                                        ਨੂੰ ਵੀ ਵਿਸਾਰ ਦਿੰਦਾ।</li>
+                                    <li class="poem-item text-center">ਵਿਸ਼ਵ ਪਸਾਰਿਆਂ ਵਿੱਚ ਜ਼ਰੂਰੀ ਤਾਂ ਨਹੀਂ ਹੁੰਦੀ ਹਮੇਸ਼ਾ ਵੱਡੀਆਂ ਜਿੱਤਾਂ
+                                        ਹੀ ਰਾਹ ਮੋੜਦੇ ਜੀਵਨ</li>
+                                 
+                                  
+                                </ul>
+                                </div>
+                                <div class="poems-page page" id="poems-page-2" style="display:none;">
+                                <ul class="list-unstyled">
+                                   
+                                    <li class="poem-item text-center">ਪੁਰਾਣੇ ਚੰਗੇ ਵਕਤ ਨੂੰ ਯਾਦ ਕਰਨਾ, ਯਾਦਾਂ ਸੱਚੀਆਂ ਯਾਦਾਂ ਬਣਾ ਦਿੰਦੀ ਹੈ
+                                        ਸੱਜਣਾ</li>
+                                    <li class="poem-item text-center">ਪੁਰਾਣੇ ਚੰਗੇ ਵਕਤ ਨੂੰ ਯਾਦ ਕਰਨਾ, ਯਾਦਾਂ ਸੱਚੀਆਂ ਯਾਦਾਂ ਬਣਾ ਦਿੰਦੀ ਹੈ
+                                        ਸੱਜਣਾ</li>
+                                    <li class="poem-item text-center">ਪੁਰਾਣੇ ਚੰਗੇ ਵਕਤ ਨੂੰ ਯਾਦ ਕਰਨਾ, ਯਾਦਾਂ ਸੱਚੀਆਂ ਯਾਦਾਂ ਬਣਾ ਦਿੰਦੀ ਹੈ
+                                        ਸੱਜਣਾ</li>
+                                  
+                                   
+                                </ul>
+                                </div>
+                                <div class="poems-page page" id="poems-page-3" style="display:none;">
+                                <ul class="list-unstyled">
+                                    <li class="poem-item text-center" >ਕਦੇ ਜਿੰਦਗੀ ਦੇ ਵਿੱਚ ਸਭ ਕੁਝ ਹਾਸਿਲ ਕਰਨ ਲਈ ਸਮਾਂ ਕੁਝ ਜਰੂਰੀ ਲੋੜਾਂ
+                                        ਨੂੰ ਵੀ ਵਿਸਾਰ ਦਿੰਦਾ।</li>
+                                    <li class="poem-item text-center">ਵਿਸ਼ਵ ਪਸਾਰਿਆਂ ਵਿੱਚ ਜ਼ਰੂਰੀ ਤਾਂ ਨਹੀਂ ਹੁੰਦੀ ਹਮੇਸ਼ਾ ਵੱਡੀਆਂ ਜਿੱਤਾਂ
+                                        ਹੀ ਰਾਹ ਮੋੜਦੇ ਜੀਵਨ</li>
+                                    <li class="poem-item text-center">ਤੁਸੀਂ ਕਦੇ ਵੀ ਕੁਝ ਚੰਗਾ ਕਰਕੇ ਕਿਸੇ ਨਤੀਜੇ ਦੀ ਉਡੀਕ ਨਹੀਂ ਕਰਦੇ ਉਹ
+                                        ਸਿਰਫ਼ ਕਰਮ ਹੋਵੇ</li>
+                                    <li class="poem-item text-center">ਜਿਵੇਂ ਕਿਸੇ ਯਾਤਰੀ ਨੂੰ ਸਹੀ ਰਸਤਾ ਦਿਖਾਉਣਾ ਕੋਈ ਮਜਦੂਰੀ ਨਹੀਂ ਹੈ ਉਹ
+                                        ਸੇਵਾ ਹੈ, ਇਸ ਨੂੰ ਸੇਵਾ ਸੇਵਕ ਬਣਦਾ ਹੈ।</li>
+                                    <li class="poem-item text-center">ਪੁਰਾਣੇ ਚੰਗੇ ਵਕਤ ਨੂੰ ਯਾਦ ਕਰਨਾ, ਯਾਦਾਂ ਸੱਚੀਆਂ ਯਾਦਾਂ ਬਣਾ ਦਿੰਦੀ ਹੈ
+                                        ਸੱਜਣਾ</li>
+                                   
+                                   
+                                </ul>
+                                </div>
+                                <div class="pagination-section">
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination">
+                                            <li class="page-item" id="prev-page-quotes">
+                                                <a class="page-link" href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="#" data-page="1">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" data-page="2">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" data-page="3">3</a></li>
+                                            <li class="page-item" id="next-page-quotes">
+                                                <a class="page-link" href="#" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                           
+
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="content-section ps-4 ">
+                        <div class="row" id="tab4">
+                            <div class="col-12 section-title">Books</div>
+                            <div class="col-12">
+                                <div class="row poems-page page " id="poems-page-1" >
+                                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                        <div class="card">
+                                            <img src="./assets/images/cards/2.png" class="card-img-top" alt="Book 1">
+                                            <div class="card-body  d-flex justify-content-between">
+                                                <h5 class="card-title">Book Name 1</h5>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                        <div class="card">
+                                            <img src="./assets/images/cards/5.png" class="card-img-top" alt="Book 1">
+                                            <div class="card-body  d-flex justify-content-between">
+                                                <h5 class="card-title">Book Name 1</h5>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                        <div class="card">
+                                            <img src="./assets/images/cards/1.png" class="card-img-top" alt="Book 1">
+                                            <div class="card-body  d-flex justify-content-between">
+                                                <h5 class="card-title">Book Name 1</h5>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                        <div class="card">
+                                            <img src="./assets/images/cards/1.png" class="card-img-top" alt="Book 1">
+                                            <div class="card-body  d-flex justify-content-between">
+                                                <h5 class="card-title">Book Name 1</h5>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                               
+
+                                <div class="row poems-page page " id="poems-page-2"  style="display: none;">
+                                    
+                                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                        <div class="card">
+                                            <img src="./assets/images/cards/1.png" class="card-img-top" alt="Book 1">
+                                            <div class="card-body  d-flex justify-content-between">
+                                                <h5 class="card-title">Book Name 1</h5>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                        <div class="card">
+                                            <img src="./assets/images/cards/1.png" class="card-img-top" alt="Book 1">
+                                            <div class="card-body  d-flex justify-content-between">
+                                                <h5 class="card-title">Book Name 1</h5>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                        <div class="card">
+                                            <img src="./assets/images/cards/1.png" class="card-img-top" alt="Book 1">
+                                            <div class="card-body  d-flex justify-content-between">
+                                                <h5 class="card-title">Book Name 1</h5>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                        <div class="card">
+                                            <img src="./assets/images/cards/1.png" class="card-img-top" alt="Book 1">
+                                            <div class="card-body  d-flex justify-content-between">
+                                                <h5 class="card-title">Book Name 1</h5>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row poems-page page " id="poems-page-3"  style="display: none;">
+                                    
+                                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                        <div class="card">
+                                            <img src="./assets/images/cards/1.png" class="card-img-top" alt="Book 1">
+                                            <div class="card-body  d-flex justify-content-between">
+                                                <h5 class="card-title">Book Name 1</h5>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                        <div class="card">
+                                            <img src="./assets/images/cards/1.png" class="card-img-top" alt="Book 1">
+                                            <div class="card-body  d-flex justify-content-between">
+                                                <h5 class="card-title">Book Name 1</h5>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                        <div class="card">
+                                            <img src="./assets/images/cards/1.png" class="card-img-top" alt="Book 1">
+                                            <div class="card-body  d-flex justify-content-between">
+                                                <h5 class="card-title">Book Name 1</h5>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                        <div class="card">
+                                            <img src="./assets/images/cards/1.png" class="card-img-top" alt="Book 1">
+                                            <div class="card-body  d-flex justify-content-between">
+                                                <h5 class="card-title">Book Name 1</h5>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+
+
+                                <div class="pagination-section">
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination">
+                                            <li class="page-item" id="prev-page-quotes">
+                                                <a class="page-link" href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="#" data-page="1">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" data-page="2">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" data-page="3">3</a></li>
+                                            <li class="page-item" id="next-page-quotes">
+                                                <a class="page-link" href="#" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const pages = {
+            poems: document.querySelectorAll('#tab2 .poems-page'),
+            quotes: document.querySelectorAll('#tab3 .poems-page'),
+            books: document.querySelectorAll('#tab4 .poems-page') // Books section
+        };
+        
+        const paginationLinks = {
+            poems: document.querySelectorAll('#tab2 .page-link'),
+            quotes: document.querySelectorAll('#tab3 .page-link'),
+            books: document.querySelectorAll('#tab4 .page-link') // Books section
+        };
+        
+        let currentPage = { poems: 1, quotes: 1, books: 1 }; // Current page tracking
+    
+        // Function to show the current page
+        function showPage(section, page) {
+            pages[section].forEach((pageElement, index) => {
+                pageElement.style.display = (index + 1 === page) ? 'flex' : 'none';
+            });
+        }
+    
+        // Show the first page initially for all sections
+        showPage('poems', currentPage.poems);
+        showPage('quotes', currentPage.quotes);
+        showPage('books', currentPage.books);
+    
+        // Event listener for pagination links
+        for (const section in paginationLinks) {
+            paginationLinks[section].forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent default anchor click behavior
+                    const page = parseInt(this.getAttribute('data-page'));
+    
+                    if (!isNaN(page)) {
+                        currentPage[section] = page; // Update current page
+                        showPage(section, currentPage[section]); // Show the selected page
+                        updatePagination(section); // Update the active page class
+                    }
+                });
+            });
+        }
+    
+        // Function to update active page link
+        function updatePagination(section) {
+            paginationLinks[section].forEach(link => {
+                const page = parseInt(link.getAttribute('data-page'));
+                link.parentElement.classList.toggle('active', page === currentPage[section]);
+            });
+        }
+    
+        // Navigation buttons for the books section
+        document.getElementById('prev-page-books').addEventListener('click', function(e) {
+            e.preventDefault();
+            if (currentPage.books > 1) {
+                currentPage.books--;
+                showPage('books', currentPage.books);
+                updatePagination('books');
+            }
+        });
+    
+        document.getElementById('next-page-books').addEventListener('click', function(e) {
+            e.preventDefault();
+            if (currentPage.books < pages.books.length) {
+                currentPage.books++;
+                showPage('books', currentPage.books);
+                updatePagination('books');
+            }
+        });
+    
+        // Add navigation buttons for poems and quotes similarly if needed
+    });
+    </script>
+     
+
+
+
+    <!-- Bootstrap and Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./assets/js/js.js"></script>
+
+</body>
+
+</html>
